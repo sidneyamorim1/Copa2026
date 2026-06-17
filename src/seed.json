@@ -1,0 +1,722 @@
+[
+  {
+    "id": 1,
+    "data": "12/06/2026",
+    "hora": "16:00",
+    "time_casa": "México",
+    "time_fora": "Africa",
+    "gols_casa_real": 2,
+    "gols_fora_real": 0,
+    "grupo": "Primeira fase          GRUPO A"
+  },
+  {
+    "id": 2,
+    "data": "12/06/2026",
+    "hora": "16:00",
+    "time_casa": "Canadá",
+    "time_fora": "Bósnia",
+    "gols_casa_real": 1,
+    "gols_fora_real": 1,
+    "grupo": "Primeira fase          GRUPO B"
+  },
+  {
+    "id": 3,
+    "data": "13/06/2026",
+    "hora": "19:00",
+    "time_casa": "Brasil",
+    "time_fora": "Marrocos",
+    "gols_casa_real": 1,
+    "gols_fora_real": 1,
+    "grupo": "Primeira fase          GRUPO C"
+  },
+  {
+    "id": 4,
+    "data": "12/06/2026",
+    "hora": "22:00",
+    "time_casa": "EUA",
+    "time_fora": "Paraguai",
+    "gols_casa_real": 4,
+    "gols_fora_real": 1,
+    "grupo": "Primeira fase          GRUPO D"
+  },
+  {
+    "id": 5,
+    "data": "14/06/2026",
+    "hora": "14:00",
+    "time_casa": "Alemanha",
+    "time_fora": "Curaçao",
+    "gols_casa_real": 7,
+    "gols_fora_real": 1,
+    "grupo": "Primeira fase          GRUPO E"
+  },
+  {
+    "id": 6,
+    "data": "14/06/2026",
+    "hora": "17:00",
+    "time_casa": "Holanda",
+    "time_fora": "Japão",
+    "gols_casa_real": 2,
+    "gols_fora_real": 2,
+    "grupo": "Primeira fase          GRUPO F"
+  },
+  {
+    "id": 7,
+    "data": "15/06/2026",
+    "hora": "16:00",
+    "time_casa": "Bélgica",
+    "time_fora": "Egito",
+    "gols_casa_real": 1,
+    "gols_fora_real": 1,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 8,
+    "data": "15/06/2026",
+    "hora": "13:00",
+    "time_casa": "Espanha",
+    "time_fora": "Cabo Verde",
+    "gols_casa_real": 0,
+    "gols_fora_real": 0,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 9,
+    "data": "16/06/2026",
+    "hora": "16:00",
+    "time_casa": "França",
+    "time_fora": "Senegal",
+    "gols_casa_real": 3,
+    "gols_fora_real": 1,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 10,
+    "data": "16/06/2026",
+    "hora": "22:00",
+    "time_casa": "Argentina",
+    "time_fora": "Argélia",
+    "gols_casa_real": 3,
+    "gols_fora_real": 0,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 11,
+    "data": "17/06/2026",
+    "hora": "14:00",
+    "time_casa": "Portugal",
+    "time_fora": "RD Congo",
+    "gols_casa_real": 1,
+    "gols_fora_real": 1,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 12,
+    "data": "17/06/2026",
+    "hora": "20:00",
+    "time_casa": "Gana",
+    "time_fora": "Panamá",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 13,
+    "data": "13/06/2026",
+    "hora": "16:00",
+    "time_casa": "Coréa",
+    "time_fora": "Tchéquia",
+    "gols_casa_real": 2,
+    "gols_fora_real": 1,
+    "grupo": "Primeira fase          GRUPO A"
+  },
+  {
+    "id": 14,
+    "data": "13/06/2026",
+    "hora": "16:00",
+    "time_casa": "Catar",
+    "time_fora": "Suíça",
+    "gols_casa_real": 1,
+    "gols_fora_real": 1,
+    "grupo": "Primeira fase          GRUPO B"
+  },
+  {
+    "id": 15,
+    "data": "13/06/2026",
+    "hora": "22:00",
+    "time_casa": "Haití",
+    "time_fora": "Escócia",
+    "gols_casa_real": 0,
+    "gols_fora_real": 1,
+    "grupo": "Primeira fase          GRUPO C"
+  },
+  {
+    "id": 16,
+    "data": "14/06/2026",
+    "hora": "01:00",
+    "time_casa": "Austrália",
+    "time_fora": "Turquia",
+    "gols_casa_real": 2,
+    "gols_fora_real": 0,
+    "grupo": "Primeira fase          GRUPO D"
+  },
+  {
+    "id": 17,
+    "data": "14/06/2026",
+    "hora": "20:00",
+    "time_casa": "Cost Marfim",
+    "time_fora": "Equador",
+    "gols_casa_real": 1,
+    "gols_fora_real": 0,
+    "grupo": "Primeira fase          GRUPO E"
+  },
+  {
+    "id": 18,
+    "data": "14/06/2026",
+    "hora": "23:00",
+    "time_casa": "Suécia",
+    "time_fora": "Tunisia",
+    "gols_casa_real": 5,
+    "gols_fora_real": 1,
+    "grupo": "Primeira fase          GRUPO F"
+  },
+  {
+    "id": 19,
+    "data": "15/06/2026",
+    "hora": "22:00",
+    "time_casa": "Irã",
+    "time_fora": "Nova Zelandia",
+    "gols_casa_real": 2,
+    "gols_fora_real": 2,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 20,
+    "data": "15/06/2026",
+    "hora": "19:00",
+    "time_casa": "Arab Saudita",
+    "time_fora": "Uruguai",
+    "gols_casa_real": 1,
+    "gols_fora_real": 1,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 21,
+    "data": "16/06/2026",
+    "hora": "19:00",
+    "time_casa": "Iraque",
+    "time_fora": "Noruega",
+    "gols_casa_real": 1,
+    "gols_fora_real": 4,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 22,
+    "data": "17/06/2026",
+    "hora": "01:00",
+    "time_casa": "Austria",
+    "time_fora": "Jordania",
+    "gols_casa_real": 3,
+    "gols_fora_real": 1,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 23,
+    "data": "17/06/2026",
+    "hora": "23:00",
+    "time_casa": "Colômbia",
+    "time_fora": "Uzbequistão",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 24,
+    "data": "17/06/2026",
+    "hora": "17:00",
+    "time_casa": "Inglaterra",
+    "time_fora": "Croácia",
+    "gols_casa_real": 0,
+    "gols_fora_real": 0,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 25,
+    "data": "18/06/2026",
+    "hora": "19:00",
+    "time_casa": "Tchéquia",
+    "time_fora": "Africa",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO A"
+  },
+  {
+    "id": 26,
+    "data": "18/06/2026",
+    "hora": "19:00",
+    "time_casa": "Canadá",
+    "time_fora": "Catar",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO B"
+  },
+  {
+    "id": 27,
+    "data": "19/06/2026",
+    "hora": "21:30",
+    "time_casa": "Brasil",
+    "time_fora": "Haití",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO C"
+  },
+  {
+    "id": 28,
+    "data": "19/06/2026",
+    "hora": "16:00",
+    "time_casa": "EUA",
+    "time_fora": "Austrália",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO D"
+  },
+  {
+    "id": 29,
+    "data": "20/06/2026",
+    "hora": "17:00",
+    "time_casa": "Alemanha",
+    "time_fora": "Cost Marfim",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO E"
+  },
+  {
+    "id": 30,
+    "data": "20/06/2026",
+    "hora": "14:00",
+    "time_casa": "Holanda",
+    "time_fora": "Suécia",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO F"
+  },
+  {
+    "id": 31,
+    "data": "21/06/2026",
+    "hora": "16:00",
+    "time_casa": "Bélgica",
+    "time_fora": "Irã",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 32,
+    "data": "21/06/2026",
+    "hora": "13:00",
+    "time_casa": "Espanha",
+    "time_fora": "Arábia",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 33,
+    "data": "22/06/2026",
+    "hora": "18:00",
+    "time_casa": "França",
+    "time_fora": "Iraque",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 34,
+    "data": "22/06/2026",
+    "hora": "14:00",
+    "time_casa": "Argentina",
+    "time_fora": "Aústria",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 35,
+    "data": "23/06/2026",
+    "hora": "14:00",
+    "time_casa": "Portugal",
+    "time_fora": "Uzbequistão",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 36,
+    "data": "23/06/2026",
+    "hora": "20:00",
+    "time_casa": "Panamá",
+    "time_fora": "Croácia",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 37,
+    "data": "18/06/2026",
+    "hora": "16:00",
+    "time_casa": "México",
+    "time_fora": "Coréa",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO A"
+  },
+  {
+    "id": 38,
+    "data": "18/06/2026",
+    "hora": "16:00",
+    "time_casa": "Suíça",
+    "time_fora": "Bósnia",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO B"
+  },
+  {
+    "id": 39,
+    "data": "19/06/2026",
+    "hora": "19:00",
+    "time_casa": "Escócia",
+    "time_fora": "Marrocos",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO C"
+  },
+  {
+    "id": 40,
+    "data": "20/06/2026",
+    "hora": "01:00",
+    "time_casa": "Turquia",
+    "time_fora": "Paraguai",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO D"
+  },
+  {
+    "id": 41,
+    "data": "20/06/2026",
+    "hora": "21:00",
+    "time_casa": "Equador",
+    "time_fora": "Curaçao",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO E"
+  },
+  {
+    "id": 42,
+    "data": "21/06/2026",
+    "hora": "01:00",
+    "time_casa": "Tunisia",
+    "time_fora": "Japão",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO F"
+  },
+  {
+    "id": 43,
+    "data": "21/06/2026",
+    "hora": "22:00",
+    "time_casa": "Nova Zelandia",
+    "time_fora": "Egito",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 44,
+    "data": "21/06/2026",
+    "hora": "19:00",
+    "time_casa": "Uruguai",
+    "time_fora": "Cabo verde",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 45,
+    "data": "22/06/2026",
+    "hora": "21:00",
+    "time_casa": "Noroega",
+    "time_fora": "Senegal",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 46,
+    "data": "23/06/2026",
+    "hora": "00:00",
+    "time_casa": "Jordania",
+    "time_fora": "Argélia",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 47,
+    "data": "23/06/2026",
+    "hora": "23:00",
+    "time_casa": "Colômbia",
+    "time_fora": "RD Congo",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 48,
+    "data": "23/06/2026",
+    "hora": "17:00",
+    "time_casa": "Inglaterra",
+    "time_fora": "Gana",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 49,
+    "data": "24/06/2026",
+    "hora": "16:00",
+    "time_casa": "Tchéquia",
+    "time_fora": "México",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO A"
+  },
+  {
+    "id": 50,
+    "data": "24/06/2026",
+    "hora": "16:00",
+    "time_casa": "Suíça",
+    "time_fora": "Canadá",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO B"
+  },
+  {
+    "id": 51,
+    "data": "24/06/2026",
+    "hora": "19:00",
+    "time_casa": "Marrocos",
+    "time_fora": "Haití",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO C"
+  },
+  {
+    "id": 52,
+    "data": "25/06/2026",
+    "hora": "23:00",
+    "time_casa": "Turquia",
+    "time_fora": "EUA",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO D"
+  },
+  {
+    "id": 53,
+    "data": "25/06/2026",
+    "hora": "17:00",
+    "time_casa": "Curaçao",
+    "time_fora": "Cost Marfim",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO E"
+  },
+  {
+    "id": 54,
+    "data": "25/06/2026",
+    "hora": "20:00",
+    "time_casa": "Japão",
+    "time_fora": "Suécia",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO F"
+  },
+  {
+    "id": 55,
+    "data": "27/06/2026",
+    "hora": "00:00",
+    "time_casa": "Egito",
+    "time_fora": "Irã",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 56,
+    "data": "26/06/2026",
+    "hora": "21:00",
+    "time_casa": "Uruguai",
+    "time_fora": "Espanha",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 57,
+    "data": "26/06/2026",
+    "hora": "16:00",
+    "time_casa": "Noroega",
+    "time_fora": "França",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 58,
+    "data": "27/06/2026",
+    "hora": "23:00",
+    "time_casa": "Argélia",
+    "time_fora": "Aústria",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 59,
+    "data": "27/06/2026",
+    "hora": "20:30",
+    "time_casa": "Colômbia",
+    "time_fora": "Portugal",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 60,
+    "data": "27/06/2026",
+    "hora": "18:00",
+    "time_casa": "Croácia",
+    "time_fora": "Gana",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 61,
+    "data": "24/06/2026",
+    "hora": "16:00",
+    "time_casa": "Africa",
+    "time_fora": "Corea",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO B"
+  },
+  {
+    "id": 62,
+    "data": "24/06/2026",
+    "hora": "16:00",
+    "time_casa": "Bósnia",
+    "time_fora": "Catar",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO B"
+  },
+  {
+    "id": 63,
+    "data": "24/06/2026",
+    "hora": "19:00",
+    "time_casa": "Escócia",
+    "time_fora": "Brasil",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO C"
+  },
+  {
+    "id": 64,
+    "data": "25/06/2026",
+    "hora": "23:00",
+    "time_casa": "Paraguai",
+    "time_fora": "Austrália",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO D"
+  },
+  {
+    "id": 65,
+    "data": "25/06/2026",
+    "hora": "17:00",
+    "time_casa": "Equador",
+    "time_fora": "Alemanha",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO E"
+  },
+  {
+    "id": 66,
+    "data": "25/06/2026",
+    "hora": "20:00",
+    "time_casa": "Tunisia",
+    "time_fora": "Holanda",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          GRUPO F"
+  },
+  {
+    "id": 67,
+    "data": "27/06/2026",
+    "hora": "00:00",
+    "time_casa": "Bélgica",
+    "time_fora": "Nova Zelandia",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 68,
+    "data": "26/06/2026",
+    "hora": "21:00",
+    "time_casa": "Cabo",
+    "time_fora": "Arábia",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 69,
+    "data": "26/06/2026",
+    "hora": "16:00",
+    "time_casa": "Senegal",
+    "time_fora": "Iraque",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 70,
+    "data": "27/06/2026",
+    "hora": "23:00",
+    "time_casa": "Jordania",
+    "time_fora": "Argentina",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 71,
+    "data": "27/06/2026",
+    "hora": "20:30",
+    "time_casa": "RD Congo",
+    "time_fora": "Uzbequistão",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  },
+  {
+    "id": 72,
+    "data": "27/06/2026",
+    "hora": "18:00",
+    "time_casa": "Panamá",
+    "time_fora": "Inglaterra",
+    "gols_casa_real": null,
+    "gols_fora_real": null,
+    "grupo": "Primeira fase          Grupo G"
+  }
+]

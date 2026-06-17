@@ -1,0 +1,845 @@
+import React, { useState, useEffect } from 'react';
+import { dbService } from './services/db';
+import { isSupabaseConfigured, configSupabaseLocal } from './supabaseClient';
+
+// Função para calcular pontos de um palpite
+export function calcularPontos(palpiteCasa, palpiteFora, realCasa, realFora) {
+  if (realCasa === null || realFora === null) return 0;
+  if (palpiteCasa === null || palpiteFora === null) return 0;
+  
+  // 1. Placar Exato: +5 pontos
+  if (palpiteCasa === realCasa && palpiteFora === realFora) {
+    return 5;
+  }
+  
+  // 2. Placar Invertido Exato: -3 pontos (ex: real 2x0, palpite 0x2)
+  if (palpiteCasa === realFora && palpiteFora === realCasa && realCasa !== realFora) {
+    return -3;
+  }
+  
+  // 3. Acertou Vencedor ou Empate: +3 pontos
+  const vencedorReal = realCasa > realFora ? 'casa' : (realCasa < realFora ? 'fora' : 'empate');
+  const vencedorPalpite = palpiteCasa > palpiteFora ? 'casa' : (palpiteCasa < palpiteFora ? 'fora' : 'empate');
+  
+  if (vencedorReal === vencedorPalpite) {
+    return 3;
+  }
+  
+  return 0;
+}
+
+// Retorna a data de hoje no formato DD/MM/YYYY
+function obterDataHoje() {
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+  const ano = hoje.getFullYear();
+  return `${dia}/${mes}/${ano}`;
+}
+
+// Converte DD/MM/YYYY para um Date comparável
+function parseDateBR(dataStr) {
+  const [dia, mes, ano] = dataStr.split('/').map(Number);
+  return new Date(ano, mes - 1, dia);
+}
+
+function App() {
+  // Dados do banco
+  const [jogos, setJogos] = useState([]);
+  const [palpites, setPalpites] = useState([]);
+  
+  // Estados da UI
+  const [loading, setLoading] = useState(true);
+  const [dataSelecionada, setDataSelecionada] = useState(obterDataHoje());
+  const [jogoAtivoIdx, setJogoAtivoIdx] = useState(0); // Index global do jogo ativado (0 a N-1)
+  
+  // Calendário visual
+  const hoje = new Date();
+  const [calMes, setCalMes] = useState(hoje.getMonth()); // 0-11
+  const [calAno, setCalAno] = useState(hoje.getFullYear());
+  
+  // Formulário de palpites
+  const [nomeJogador, setNomeJogador] = useState(localStorage.getItem('bolao_nome_jogador') || '');
+  const [palpiteCasa, setPalpiteCasa] = useState('');
+  const [palpiteFora, setPalpiteFora] = useState('');
+  
+  // Formulário de administração de resultados oficiais
+  const [jogoSelecionadoAdmin, setJogoSelecionadoAdmin] = useState('');
+  const [adminGolsCasa, setAdminGolsCasa] = useState('');
+  const [adminGolsFora, setAdminGolsFora] = useState('');
+  
+  // Modal de configurações do Supabase
+  const [modalConfigAberto, setModalConfigAberto] = useState(false);
+  const [inputUrl, setInputUrl] = useState(localStorage.getItem('bolao_supabase_url') || '');
+  const [inputKey, setInputKey] = useState(localStorage.getItem('bolao_supabase_anon_key') || '');
+  
+  // Carrega jogos e palpites iniciais
+  const carregarDados = async () => {
+    setLoading(true);
+    try {
+      const dataJogos = await dbService.obterJogos();
+      const dataPalpites = await dbService.obterPalpites();
+      setJogos(dataJogos);
+      setPalpites(dataPalpites);
+      
+      if (dataJogos.length > 0) {
+        const hoje = obterDataHoje();
+        
+        // 1. Tenta achar jogo de HOJE
+        let idxEncontrado = dataJogos.findIndex(j => j.data === hoje);
+        
+        if (idxEncontrado >= 0) {
+          // Encontrou jogo hoje
+          setJogoAtivoIdx(idxEncontrado);
+          setDataSelecionada(hoje);
+        } else {
+          // 2. Não tem jogo hoje — busca a data futura mais próxima
+          const hojeDate = parseDateBR(hoje);
+          const datasUnicas = Array.from(new Set(dataJogos.map(j => j.data)));
+          
+          let melhorData = null;
+          let menorDiff = Infinity;
+          
+          for (const d of datasUnicas) {
+            const diff = parseDateBR(d) - hojeDate;
+            // Prioriza datas futuras (diff > 0), senão a mais recente passada
+            if (diff >= 0 && diff < menorDiff) {
+              menorDiff = diff;
+              melhorData = d;
+            }
+          }
+          
+          // Se não achou nenhuma data futura, pega a última data passada
+          if (!melhorData) {
+            datasUnicas.sort((a, b) => parseDateBR(b) - parseDateBR(a));
+            melhorData = datasUnicas[0];
+          }
+          
+          idxEncontrado = dataJogos.findIndex(j => j.data === melhorData);
+          setJogoAtivoIdx(idxEncontrado >= 0 ? idxEncontrado : 0);
+          setDataSelecionada(melhorData || dataJogos[0].data);
+        }
+        
+        // Inicializa o jogo do admin
+        setJogoSelecionadoAdmin(dataJogos[idxEncontrado >= 0 ? idxEncontrado : 0].id.toString());
+      }
+    } catch (e) {
+      console.error("Erro ao carregar os dados:", e);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    carregarDados();
+  }, []);
+
+  const jogoAtivo = jogos[jogoAtivoIdx] || null;
+
+  // Atualiza os palpites exibidos nos inputs quando o jogo ativo ou o nome do jogador mudar
+  useEffect(() => {
+    if (jogoAtivo && nomeJogador.trim()) {
+      const palpiteExistente = palpites.find(
+        p => p.jogo_id === jogoAtivo.id && p.jogador_nome.toLowerCase() === nomeJogador.trim().toLowerCase()
+      );
+      if (palpiteExistente) {
+        setPalpiteCasa(palpiteExistente.palpite_casa.toString());
+        setPalpiteFora(palpiteExistente.palpite_fora.toString());
+      } else {
+        setPalpiteCasa('');
+        setPalpiteFora('');
+      }
+    } else {
+      setPalpiteCasa('');
+      setPalpiteFora('');
+    }
+  }, [jogoAtivoIdx, nomeJogador, palpites]);
+
+  // Atualiza o formulário de administração quando o jogo do admin mudar
+  useEffect(() => {
+    if (jogoSelecionadoAdmin) {
+      const jogo = jogos.find(j => j.id.toString() === jogoSelecionadoAdmin);
+      if (jogo) {
+        setAdminGolsCasa(jogo.gols_casa_real !== null ? jogo.gols_casa_real.toString() : '');
+        setAdminGolsFora(jogo.gols_fora_real !== null ? jogo.gols_fora_real.toString() : '');
+      }
+    }
+  }, [jogoSelecionadoAdmin, jogos]);
+
+  // Salvar palpite do usuário
+  const handleEnviarPalpite = async (e) => {
+    e.preventDefault();
+    if (!nomeJogador.trim()) {
+      alert("Por favor, preencha o seu nome.");
+      return;
+    }
+    if (palpiteCasa === '' || palpiteFora === '') {
+      alert("Por favor, preencha o placar do seu palpite.");
+      return;
+    }
+    if (!jogoAtivo) return;
+    
+    // Persiste o nome do jogador localmente
+    localStorage.setItem('bolao_nome_jogador', nomeJogador.trim());
+    
+    try {
+      setLoading(true);
+      const novoPalpite = await dbService.salvarPalpite(
+        jogoAtivo.id,
+        nomeJogador.trim(),
+        parseInt(palpiteCasa),
+        parseInt(palpiteFora)
+      );
+      
+      // Atualiza palpites em memória
+      const novosPalpites = [...palpites];
+      const idx = novosPalpites.findIndex(p => p.jogo_id === jogoAtivo.id && p.jogador_nome.toLowerCase() === nomeJogador.trim().toLowerCase());
+      if (idx >= 0) {
+        novosPalpites[idx] = novoPalpite;
+      } else {
+        novosPalpites.push(novoPalpite);
+      }
+      setPalpites(novosPalpites);
+      alert("Palpite salvo com sucesso!");
+    } catch (err) {
+      console.error(err);
+      alert("Erro ao salvar palpite.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Atualizar resultado oficial (Admin)
+  const handleAtualizarResultado = async (e) => {
+    e.preventDefault();
+    if (!jogoSelecionadoAdmin) return;
+    if (adminGolsCasa === '' || adminGolsFora === '') {
+      alert("Por favor, digite o placar oficial.");
+      return;
+    }
+    
+    try {
+      setLoading(true);
+      const jogoId = parseInt(jogoSelecionadoAdmin);
+      const jogoAtualizado = await dbService.atualizarResultadoJogo(
+        jogoId,
+        parseInt(adminGolsCasa),
+        parseInt(adminGolsFora)
+      );
+      
+      // Atualiza jogos em memória
+      setJogos(jogos.map(j => j.id === jogoId ? {
+        ...j,
+        gols_casa_real: jogoAtualizado.gols_casa_real,
+        gols_fora_real: jogoAtualizado.gols_fora_real
+      } : j));
+      
+      alert("Resultado oficial atualizado!");
+    } catch (err) {
+      console.error(err);
+      alert("Erro ao atualizar o resultado.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Trata a seleção de uma data (via calendário)
+  const selecionarData = (data) => {
+    setDataSelecionada(data);
+    
+    // Acha o primeiro jogo dessa data e navega até ele
+    const idx = jogos.findIndex(j => j.data === data);
+    if (idx >= 0) {
+      setJogoAtivoIdx(idx);
+    }
+  };
+
+  // Navegar mês do calendário
+  const navegarCalendario = (direcao) => {
+    let novoMes = calMes + direcao;
+    let novoAno = calAno;
+    if (novoMes < 0) { novoMes = 11; novoAno--; }
+    if (novoMes > 11) { novoMes = 0; novoAno++; }
+    setCalMes(novoMes);
+    setCalAno(novoAno);
+  };
+
+  // Gera grid do calendário para o mês/ano atual
+  const gerarGridCalendario = () => {
+    const primeiroDia = new Date(calAno, calMes, 1);
+    const ultimoDia = new Date(calAno, calMes + 1, 0);
+    const diasNoMes = ultimoDia.getDate();
+    const diaSemanaInicio = primeiroDia.getDay(); // 0=Dom, 1=Seg...
+
+    const cells = [];
+    // Células vazias antes do 1º dia
+    for (let i = 0; i < diaSemanaInicio; i++) {
+      cells.push({ dia: null });
+    }
+    // Dias do mês
+    for (let d = 1; d <= diasNoMes; d++) {
+      const dataStr = `${String(d).padStart(2, '0')}/${String(calMes + 1).padStart(2, '0')}/${calAno}`;
+      const temJogo = jogos.some(j => j.data === dataStr);
+      const qtdJogos = jogos.filter(j => j.data === dataStr).length;
+      const ehHoje = d === hoje.getDate() && calMes === hoje.getMonth() && calAno === hoje.getFullYear();
+      const ehSelecionado = dataStr === dataSelecionada;
+      cells.push({ dia: d, dataStr, temJogo, qtdJogos, ehHoje, ehSelecionado });
+    }
+    return cells;
+  };
+
+  const nomeMeses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+  const diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+  const gridCalendario = gerarGridCalendario();
+
+  // Navegar entre jogos
+  const navegarJogo = (direcao) => {
+    let novoIdx = jogoAtivoIdx + direcao;
+    if (novoIdx >= 0 && novoIdx < jogos.length) {
+      setJogoAtivoIdx(novoIdx);
+      const novaData = jogos[novoIdx].data;
+      setDataSelecionada(novaData);
+      // Sincroniza o calendário com o mês do jogo
+      const parsed = parseDateBR(novaData);
+      setCalMes(parsed.getMonth());
+      setCalAno(parsed.getFullYear());
+    }
+  };
+
+  // Salvar conexões do Supabase
+  const handleSalvarSupabase = (e) => {
+    e.preventDefault();
+    configSupabaseLocal(inputUrl.trim(), inputKey.trim());
+  };
+
+  // Limpar chaves locais do Supabase
+  const handleLimparSupabase = () => {
+    if (confirm("Deseja realmente limpar as credenciais e reiniciar os dados locais?")) {
+      dbService.limparConfiguracoesLocais();
+    }
+  };
+
+  // Cálculos de Estatísticas e Classificação
+  
+  // 1. Participantes únicos
+  const participantesUnicos = Array.from(new Set(palpites.map(p => p.jogador_nome.toLowerCase())))
+    .map(nomeLower => {
+      // Retorna o nome original com a grafia correta (primeira ocorrência)
+      return palpites.find(p => p.jogador_nome.toLowerCase() === nomeLower).jogador_nome;
+    });
+    
+  // 2. Jogos avaliados (que possuem resultado real preenchido)
+  const jogosAvaliadosCount = jogos.filter(j => j.gols_casa_real !== null && j.gols_fora_real !== null).length;
+  
+  // 3. Montar Tabela de Ranking
+  const ranking = participantesUnicos.map(nome => {
+    let pontos = 0;
+    let acertos = 0; // +5 ou +3
+    let erros = 0; // 0 ou -3
+    
+    const palpitesDoJogador = palpites.filter(p => p.jogador_nome.toLowerCase() === nome.toLowerCase());
+    
+    palpitesDoJogador.forEach(p => {
+      const jogo = jogos.find(j => j.id === p.jogo_id);
+      if (jogo && jogo.gols_casa_real !== null && jogo.gols_fora_real !== null) {
+        const pts = calcularPontos(p.palpite_casa, p.palpite_fora, jogo.gols_casa_real, jogo.gols_fora_real);
+        pontos += pts;
+        if (pts > 0) {
+          acertos += 1;
+        } else {
+          erros += 1;
+        }
+      }
+    });
+    
+    return {
+      jogador: nome,
+      pontos,
+      acertos,
+      erros
+    };
+  });
+  
+  // Ordena ranking: Pontos desc, depois Acertos desc, depois Erros asc, depois Nome asc
+  ranking.sort((a, b) => {
+    if (b.pontos !== a.pontos) return b.pontos - a.pontos;
+    if (b.acertos !== a.acertos) return b.acertos - a.acertos;
+    if (a.erros !== b.erros) return a.erros - b.erros;
+    return a.jogador.localeCompare(b.jogador);
+  });
+  
+  // 4. Pontos somados de todos
+  const pontosSomadosTotal = ranking.reduce((acc, curr) => acc + curr.pontos, 0);
+
+  // Palpites enviados pelo jogador ativo HOJE (na data selecionada)
+  const palpitesHoje = jogoAtivo ? palpites.filter(p => {
+    const jogo = jogos.find(j => j.id === p.jogo_id);
+    return jogo && jogo.data === dataSelecionada && p.jogador_nome.toLowerCase() === nomeJogador.trim().toLowerCase();
+  }) : [];
+
+  // Obter datas únicas para o seletor de data
+  const datasUnicas = Array.from(new Set(jogos.map(j => j.data)));
+  
+  // Quantidade de jogos na data selecionada
+  const jogosNaDataCount = jogos.filter(j => j.data === dataSelecionada).length;
+
+  return (
+    <div>
+      {/* Header */}
+      <header className="main-header">
+        <h1>Bolão Copa 2026</h1>
+        <p>Competição interna entre amigos, sem pagamentos, prêmios ou monetização</p>
+        
+        <div style={{ marginTop: '12px' }}>
+          {isSupabaseConfigured() ? (
+            <span className="config-badge configured">Supabase Conectado</span>
+          ) : (
+            <span className="config-badge not-configured">Modo Offline (Local)</span>
+          )}
+          <button 
+            className="config-trigger-btn" 
+            style={{ marginLeft: '8px' }} 
+            onClick={() => setModalConfigAberto(true)}
+          >
+            Configurações
+          </button>
+        </div>
+      </header>
+
+      <div className="app-container">
+        {/* Alertas */}
+        <div className="alerts-container">
+          <div className="alert alert-warning">
+            Regras: placar exato vale +5; acertar vencedor ou empate vale +3; placar invertido penaliza -3.
+          </div>
+          <div className="alert alert-info">
+            Calendário alinhado com os blocos oficiais da FIFA para a Copa de 2026. Os confrontos deste projeto continuam sendo a base do bolão.
+          </div>
+        </div>
+
+        {loading && (
+          <div style={{ textAlign: 'center', padding: '20px', fontWeight: 'bold', color: 'var(--color-primary)' }}>
+            Carregando dados...
+          </div>
+        )}
+
+        {/* Layout de duas colunas */}
+        <div className="app-grid">
+          {/* LADO ESQUERDO */}
+          <div className="left-column">
+            {/* Painel Calendário */}
+            <div className="panel">
+              <h2>Calendário</h2>
+              
+              <div className="calendar-widget">
+                {/* Cabeçalho do mês */}
+                <div className="calendar-header">
+                  <button className="cal-nav-btn" onClick={() => navegarCalendario(-1)} title="Mês anterior">‹</button>
+                  <span className="cal-month-label">{nomeMeses[calMes]} {calAno}</span>
+                  <button className="cal-nav-btn" onClick={() => navegarCalendario(1)} title="Próximo mês">›</button>
+                </div>
+                
+                {/* Dias da semana */}
+                <div className="calendar-grid">
+                  {diasSemana.map(ds => (
+                    <div key={ds} className="cal-weekday">{ds}</div>
+                  ))}
+                  
+                  {/* Dias do mês */}
+                  {gridCalendario.map((cell, i) => (
+                    cell.dia === null ? (
+                      <div key={`empty-${i}`} className="cal-day cal-empty"></div>
+                    ) : (
+                      <button
+                        key={cell.dia}
+                        className={`cal-day${cell.temJogo ? ' has-game' : ''}${cell.ehHoje ? ' is-today' : ''}${cell.ehSelecionado ? ' is-selected' : ''}`}
+                        onClick={() => cell.temJogo && selecionarData(cell.dataStr)}
+                        disabled={!cell.temJogo}
+                        title={cell.temJogo ? `${cell.qtdJogos} jogo${cell.qtdJogos > 1 ? 's' : ''}` : ''}
+                      >
+                        <span className="cal-day-num">{cell.dia}</span>
+                        {cell.temJogo && <span className="cal-dot-indicator">{cell.qtdJogos}</span>}
+                      </button>
+                    )
+                  ))}
+                </div>
+                
+                <div className="calendar-legend">
+                  <span><span className="legend-dot has-game-dot"></span> Dia com jogos</span>
+                  <span><span className="legend-dot today-dot"></span> Hoje</span>
+                </div>
+                
+                <div className="game-count-label">
+                  {jogosNaDataCount} {jogosNaDataCount === 1 ? 'jogo' : 'jogos'} em {dataSelecionada}
+                </div>
+              </div>
+              
+              <hr style={{ border: 'none', borderTop: '1px solid var(--border-color)', margin: '16px 0' }} />
+
+              {/* Card de Navegação e Confronto */}
+              {jogoAtivo ? (
+                <div>
+                  <div className="match-card">
+                    <div className="match-meta">
+                      {jogoAtivo.grupo} - {jogoAtivo.data} às {jogoAtivo.hora}
+                    </div>
+                    <div className="match-teams">
+                      {jogoAtivo.time_casa} x {jogoAtivo.time_fora}
+                    </div>
+                    
+                    {jogoAtivo.gols_casa_real !== null ? (
+                      <div className="match-status-badge" style={{ backgroundColor: '#e2e8f0', color: '#475569' }}>
+                        Placar oficial: {jogoAtivo.gols_casa_real} x {jogoAtivo.gols_fora_real}
+                      </div>
+                    ) : (
+                      <div className="match-status-badge">
+                        Palpites ainda abertos
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Controle de Navegação */}
+                  <div className="navigation-controls">
+                    <button 
+                      className="nav-btn" 
+                      onClick={() => navegarJogo(-1)}
+                      disabled={jogoAtivoIdx === 0}
+                      title="Jogo anterior"
+                    >
+                      &lsaquo;
+                    </button>
+                    <span className="nav-indicator">
+                      {jogoAtivoIdx + 1} de {jogos.length}
+                    </span>
+                    <button 
+                      className="nav-btn" 
+                      onClick={() => navegarJogo(1)}
+                      disabled={jogoAtivoIdx === jogos.length - 1}
+                      title="Próximo jogo"
+                    >
+                      &rsaquo;
+                    </button>
+                  </div>
+
+                  {/* Formulário de Palpite */}
+                  <form onSubmit={handleEnviarPalpite}>
+                    <div className="form-group">
+                      <label htmlFor="player-name">Seu nome</label>
+                      <input 
+                        type="text" 
+                        id="player-name"
+                        className="input-control"
+                        placeholder="Ex: João"
+                        value={nomeJogador}
+                        onChange={(e) => setNomeJogador(e.target.value)}
+                        required
+                      />
+                    </div>
+
+                    <div className="form-group">
+                      <label style={{ marginBottom: '12px' }}>Seu palpite</label>
+                      <div className="scores-input-grid">
+                        <input 
+                          type="number"
+                          className="score-input"
+                          min="0"
+                          max="99"
+                          value={palpiteCasa}
+                          onChange={(e) => setPalpiteCasa(e.target.value)}
+                          required
+                        />
+                        <span className="score-divider">x</span>
+                        <input 
+                          type="number"
+                          className="score-input"
+                          min="0"
+                          max="99"
+                          value={palpiteFora}
+                          onChange={(e) => setPalpiteFora(e.target.value)}
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <button type="submit" className="btn-submit">
+                      Enviar palpite
+                    </button>
+                  </form>
+                </div>
+              ) : (
+                <div className="empty-box-msg">Nenhum jogo cadastrado.</div>
+              )}
+            </div>
+
+            {/* Painel Meus palpites de hoje */}
+            <div className="panel">
+              <h2>Meus palpites de hoje</h2>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
+                Palpites do dia selecionado, com o que você já enviou para cada jogo.
+              </p>
+              
+              {!nomeJogador.trim() ? (
+                <div className="empty-box-msg">
+                  Digite seu nome no formulário para ver seus palpites.
+                </div>
+              ) : (
+                <div className="user-palpites-list">
+                  {jogos.filter(j => j.data === dataSelecionada).map(jogo => {
+                    const palpite = palpites.find(p => 
+                      p.jogo_id === jogo.id && 
+                      p.jogador_nome.toLowerCase() === nomeJogador.trim().toLowerCase()
+                    );
+                    
+                    return (
+                      <div key={jogo.id} className="user-palpite-item">
+                        <span className="match">{jogo.time_casa} x {jogo.time_fora}</span>
+                        {palpite ? (
+                          <span className="score predicted">{palpite.palpite_casa} x {palpite.palpite_fora}</span>
+                        ) : (
+                          <span className="score missing">? x ?</span>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* LADO DIREITO */}
+          <div className="right-column">
+            {/* Painel Resumo */}
+            <div className="panel">
+              <h2>Resumo</h2>
+              
+              <div className="summary-widget-container">
+                <div className="summary-widget">
+                  <div className="value">{participantesUnicos.length}</div>
+                  <div className="label">Participantes</div>
+                </div>
+                <div className="summary-widget">
+                  <div className="value">{jogosAvaliadosCount}</div>
+                  <div className="label">Jogos Avaliados</div>
+                </div>
+                <div className="summary-widget">
+                  <div className="value">{pontosSomadosTotal}</div>
+                  <div className="label">Pontos Somados</div>
+                </div>
+              </div>
+              
+              <div className="info-text-summary">
+                A classificação sobe automaticamente quando os resultados oficiais forem registrados.
+              </div>
+            </div>
+
+            {/* Painel Ranking de Usuários */}
+            <div className="panel">
+              <h2>Usuários com ranking</h2>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
+                Lista resumida dos participantes, ordenada pelos pontos acumulados.
+              </p>
+
+              {ranking.length > 0 ? (
+                <div className="table-wrapper">
+                  <table className="ranking-table">
+                    <thead>
+                      <tr>
+                        <th style={{ width: '50px' }}>#</th>
+                        <th>Jogador</th>
+                        <th>Pontos</th>
+                        <th>Acertos</th>
+                        <th>Erros</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {ranking.map((row, idx) => (
+                        <tr 
+                          key={row.jogador} 
+                          className={nomeJogador.trim().toLowerCase() === row.jogador.toLowerCase() ? 'highlight' : ''}
+                        >
+                          <td className="pos">{idx + 1}</td>
+                          <td className="player-name">{row.jogador}</td>
+                          <td className="points">{row.pontos}</td>
+                          <td style={{ color: 'var(--color-primary)', fontWeight: '600' }}>{row.acertos}</td>
+                          <td style={{ color: '#ef4444', fontWeight: '600' }}>{row.erros}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <div className="empty-box-msg">
+                  Nenhum usuário ranqueado ainda. Quando os resultados oficiais entrarem, a lista aparece aqui.
+                </div>
+              )}
+            </div>
+
+            {/* Painel Resultados Oficiais (Admin) */}
+            <div className="panel">
+              <h2>Resultados oficiais</h2>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
+                Preencha o placar final quando o jogo terminar. A classificação será recalculada automaticamente.
+              </p>
+
+              <form onSubmit={handleAtualizarResultado}>
+                <div className="form-group">
+                  <label htmlFor="admin-select-game">Jogo selecionado</label>
+                  <select 
+                    id="admin-select-game"
+                    className="input-control"
+                    value={jogoSelecionadoAdmin}
+                    onChange={(e) => setJogoSelecionadoAdmin(e.target.value)}
+                  >
+                    {jogos.map(j => (
+                      <option key={j.id} value={j.id.toString()}>
+                        {j.time_casa} x {j.time_fora} - {j.data} às {j.hora}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label>Placar final</label>
+                  <div className="scores-input-grid">
+                    <input 
+                      type="number"
+                      className="score-input"
+                      min="0"
+                      max="99"
+                      value={adminGolsCasa}
+                      onChange={(e) => setAdminGolsCasa(e.target.value)}
+                      required
+                    />
+                    <span className="score-divider">x</span>
+                    <input 
+                      type="number"
+                      className="score-input"
+                      min="0"
+                      max="99"
+                      value={adminGolsFora}
+                      onChange={(e) => setAdminGolsFora(e.target.value)}
+                      required
+                    />
+                  </div>
+                </div>
+
+                <button type="submit" className="btn-submit">
+                  Atualizar resultado
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Modal de Configuração do Supabase */}
+      {modalConfigAberto && (
+        <div className="modal-backdrop">
+          <div className="modal-content">
+            <div className="modal-header">Configurar Conexão do Supabase</div>
+            
+            <form onSubmit={handleSalvarSupabase}>
+              <div className="form-group">
+                <label htmlFor="sb-url">Supabase URL</label>
+                <input 
+                  type="url"
+                  id="sb-url"
+                  className="input-control"
+                  placeholder="https://xxxxxx.supabase.co"
+                  value={inputUrl}
+                  onChange={(e) => setInputUrl(e.target.value)}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="sb-key">Supabase Anon Key</label>
+                <input 
+                  type="password"
+                  id="sb-key"
+                  className="input-control"
+                  placeholder="Chave secreta pública (anon key)"
+                  value={inputKey}
+                  onChange={(e) => setInputKey(e.target.value)}
+                />
+              </div>
+
+              <div className="modal-actions">
+                <button 
+                  type="button" 
+                  className="btn-secondary"
+                  onClick={() => setModalConfigAberto(false)}
+                >
+                  Fechar
+                </button>
+                <button type="submit" className="btn-submit" style={{ flex: 1 }}>
+                  Salvar Conexão
+                </button>
+              </div>
+
+              <div style={{ marginTop: '20px', borderTop: '1px solid var(--border-color)', paddingTop: '15px' }}>
+                <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '10px' }}>
+                  Se o aplicativo estiver travado em dados antigos (ex: faltando jogos na lista), clique abaixo para forçar a limpeza do cache.
+                </p>
+                <button 
+                  type="button"
+                  className="btn-secondary"
+                  style={{ width: '100%', color: '#ef4444', borderColor: '#fecaca', marginBottom: '10px' }}
+                  onClick={() => {
+                    if (confirm("Deseja realmente forçar a limpeza dos dados e recarregar os 72 jogos corretos?")) {
+                      localStorage.removeItem('bolao_jogos_local');
+                      localStorage.removeItem('bolao_palpites_local');
+                      localStorage.removeItem('bolao_seed_version');
+                      window.location.reload();
+                    }
+                  }}
+                >
+                  Forçar Limpeza do Cache Local (Reset)
+                </button>
+
+                {isSupabaseConfigured() && (
+                  <>
+                    <button 
+                      type="button"
+                      className="btn-secondary"
+                      style={{ width: '100%', color: '#ef4444', borderColor: '#fecaca', marginBottom: '10px' }}
+                      onClick={handleLimparSupabase}
+                    >
+                      Desconectar Supabase
+                    </button>
+
+                    <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '10px', marginTop: '10px' }}>
+                      Se a nuvem estiver faltando jogos, force a sincronização para enviar todos os 72 jogos.
+                    </p>
+                    <button 
+                      type="button" 
+                      className="btn-secondary" 
+                      style={{ width: '100%', borderColor: '#f59e0b', color: '#b45309' }}
+                      onClick={async (e) => {
+                        const btn = e.target;
+                        btn.textContent = 'Sincronizando... aguarde';
+                        btn.disabled = true;
+                        try {
+                          await dbService.forcarSincronizacaoSupabase();
+                          alert('Supabase atualizado com sucesso (72 jogos e 294 palpites sincronizados)!');
+                          window.location.reload();
+                        } catch (err) {
+                          alert('Erro ao sincronizar: ' + err.message);
+                          btn.textContent = 'Forçar Sincronização (Nuvem)';
+                          btn.disabled = false;
+                        }
+                      }}
+                    >
+                      Forçar Sincronização (Nuvem)
+                    </button>
+                  </>
+                )}
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default App;

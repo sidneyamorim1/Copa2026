@@ -1,0 +1,2354 @@
+[
+  {
+    "id": "1-Aline",
+    "jogo_id": 1,
+    "jogador_nome": "Aline",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 3
+  },
+  {
+    "id": "1-Matheus",
+    "jogo_id": 1,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 5
+  },
+  {
+    "id": "1-Eduardo",
+    "jogo_id": 1,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 3
+  },
+  {
+    "id": "1-Sidney",
+    "jogo_id": 1,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 3
+  },
+  {
+    "id": "1-Silvio",
+    "jogo_id": 1,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 3
+  },
+  {
+    "id": "1-Daniel",
+    "jogo_id": 1,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 3
+  },
+  {
+    "id": "2-Aline",
+    "jogo_id": 2,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 5
+  },
+  {
+    "id": "2-Matheus",
+    "jogo_id": 2,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "2-Eduardo",
+    "jogo_id": 2,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 5
+  },
+  {
+    "id": "2-Sidney",
+    "jogo_id": 2,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "2-Silvio",
+    "jogo_id": 2,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "2-Daniel",
+    "jogo_id": 2,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "3-Aline",
+    "jogo_id": 3,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "3-Matheus",
+    "jogo_id": 3,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "3-Eduardo",
+    "jogo_id": 3,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "3-Sidney",
+    "jogo_id": 3,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "3-Silvio",
+    "jogo_id": 3,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "3-Daniel",
+    "jogo_id": 3,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "4-Aline",
+    "jogo_id": 4,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 3
+  },
+  {
+    "id": "4-Matheus",
+    "jogo_id": 4,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "4-Eduardo",
+    "jogo_id": 4,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "4-Sidney",
+    "jogo_id": 4,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "4-Silvio",
+    "jogo_id": 4,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "4-Daniel",
+    "jogo_id": 4,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "5-Aline",
+    "jogo_id": 5,
+    "jogador_nome": "Aline",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "5-Matheus",
+    "jogo_id": 5,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "5-Eduardo",
+    "jogo_id": 5,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 6,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "5-Sidney",
+    "jogo_id": 5,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 3
+  },
+  {
+    "id": "5-Silvio",
+    "jogo_id": 5,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 5,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "5-Daniel",
+    "jogo_id": 5,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "6-Aline",
+    "jogo_id": 6,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "6-Matheus",
+    "jogo_id": 6,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "6-Eduardo",
+    "jogo_id": 6,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "6-Sidney",
+    "jogo_id": 6,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 5
+  },
+  {
+    "id": "6-Silvio",
+    "jogo_id": 6,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "6-Daniel",
+    "jogo_id": 6,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "7-Aline",
+    "jogo_id": 7,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "7-Matheus",
+    "jogo_id": 7,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "7-Eduardo",
+    "jogo_id": 7,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "7-Sidney",
+    "jogo_id": 7,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "7-Silvio",
+    "jogo_id": 7,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "7-Daniel",
+    "jogo_id": 7,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "8-Aline",
+    "jogo_id": 8,
+    "jogador_nome": "Aline",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "8-Matheus",
+    "jogo_id": 8,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "8-Eduardo",
+    "jogo_id": 8,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 7,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "8-Sidney",
+    "jogo_id": 8,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "8-Silvio",
+    "jogo_id": 8,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "8-Daniel",
+    "jogo_id": 8,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "9-Aline",
+    "jogo_id": 9,
+    "jogador_nome": "Aline",
+    "palpite_casa": 5,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "9-Matheus",
+    "jogo_id": 9,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "9-Eduardo",
+    "jogo_id": 9,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "9-Sidney",
+    "jogo_id": 9,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 5
+  },
+  {
+    "id": "9-Silvio",
+    "jogo_id": 9,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 2,
+    "pontos_excel": 3
+  },
+  {
+    "id": "9-Daniel",
+    "jogo_id": 9,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 3
+  },
+  {
+    "id": "10-Aline",
+    "jogo_id": 10,
+    "jogador_nome": "Aline",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 5
+  },
+  {
+    "id": "10-Matheus",
+    "jogo_id": 10,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "10-Eduardo",
+    "jogo_id": 10,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 3
+  },
+  {
+    "id": "10-Sidney",
+    "jogo_id": 10,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "10-Silvio",
+    "jogo_id": 10,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "10-Daniel",
+    "jogo_id": 10,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 3
+  },
+  {
+    "id": "11-Aline",
+    "jogo_id": 11,
+    "jogador_nome": "Aline",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "11-Matheus",
+    "jogo_id": 11,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "11-Eduardo",
+    "jogo_id": 11,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 4,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "11-Sidney",
+    "jogo_id": 11,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "11-Silvio",
+    "jogo_id": 11,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "11-Daniel",
+    "jogo_id": 11,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "12-Aline",
+    "jogo_id": 12,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "12-Matheus",
+    "jogo_id": 12,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "12-Eduardo",
+    "jogo_id": 12,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "12-Sidney",
+    "jogo_id": 12,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "12-Silvio",
+    "jogo_id": 12,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "12-Daniel",
+    "jogo_id": 12,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "13-Aline",
+    "jogo_id": 13,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "13-Matheus",
+    "jogo_id": 13,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "13-Eduardo",
+    "jogo_id": 13,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "13-Sidney",
+    "jogo_id": 13,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "13-Silvio",
+    "jogo_id": 13,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "13-Daniel",
+    "jogo_id": 13,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "14-Aline",
+    "jogo_id": 14,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "14-Matheus",
+    "jogo_id": 14,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "14-Eduardo",
+    "jogo_id": 14,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "pontos_excel": 0
+  },
+  {
+    "id": "14-Sidney",
+    "jogo_id": 14,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "pontos_excel": 0
+  },
+  {
+    "id": "14-Silvio",
+    "jogo_id": 14,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "14-Daniel",
+    "jogo_id": 14,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "15-Aline",
+    "jogo_id": 15,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "pontos_excel": 3
+  },
+  {
+    "id": "15-Matheus",
+    "jogo_id": 15,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "pontos_excel": 5
+  },
+  {
+    "id": "15-Eduardo",
+    "jogo_id": 15,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "pontos_excel": 3
+  },
+  {
+    "id": "15-Sidney",
+    "jogo_id": 15,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "pontos_excel": 5
+  },
+  {
+    "id": "15-Silvio",
+    "jogo_id": 15,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "pontos_excel": 3
+  },
+  {
+    "id": "15-Daniel",
+    "jogo_id": 15,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "pontos_excel": 3
+  },
+  {
+    "id": "16-Aline",
+    "jogo_id": 16,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "pontos_excel": -3
+  },
+  {
+    "id": "16-Matheus",
+    "jogo_id": 16,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "16-Eduardo",
+    "jogo_id": 16,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "pontos_excel": -3
+  },
+  {
+    "id": "16-Sidney",
+    "jogo_id": 16,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "16-Silvio",
+    "jogo_id": 16,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "pontos_excel": -3
+  },
+  {
+    "id": "16-Daniel",
+    "jogo_id": 16,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "17-Aline",
+    "jogo_id": 17,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "17-Matheus",
+    "jogo_id": 17,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "pontos_excel": -3
+  },
+  {
+    "id": "17-Eduardo",
+    "jogo_id": 17,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "pontos_excel": 5
+  },
+  {
+    "id": "17-Sidney",
+    "jogo_id": 17,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "17-Silvio",
+    "jogo_id": 17,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "pontos_excel": 0
+  },
+  {
+    "id": "17-Daniel",
+    "jogo_id": 17,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "18-Aline",
+    "jogo_id": 18,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "18-Matheus",
+    "jogo_id": 18,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "18-Eduardo",
+    "jogo_id": 18,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "18-Sidney",
+    "jogo_id": 18,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 3
+  },
+  {
+    "id": "18-Silvio",
+    "jogo_id": 18,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "18-Daniel",
+    "jogo_id": 18,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 3
+  },
+  {
+    "id": "19-Aline",
+    "jogo_id": 19,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "19-Matheus",
+    "jogo_id": 19,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "19-Eduardo",
+    "jogo_id": 19,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "19-Sidney",
+    "jogo_id": 19,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "19-Silvio",
+    "jogo_id": 19,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "19-Daniel",
+    "jogo_id": 19,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "20-Aline",
+    "jogo_id": 20,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "pontos_excel": 0
+  },
+  {
+    "id": "20-Matheus",
+    "jogo_id": 20,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "pontos_excel": 0
+  },
+  {
+    "id": "20-Eduardo",
+    "jogo_id": 20,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 3
+  },
+  {
+    "id": "20-Sidney",
+    "jogo_id": 20,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "pontos_excel": 0
+  },
+  {
+    "id": "20-Silvio",
+    "jogo_id": 20,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "20-Daniel",
+    "jogo_id": 20,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "pontos_excel": 0
+  },
+  {
+    "id": "21-Aline",
+    "jogo_id": 21,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 3
+  },
+  {
+    "id": "21-Matheus",
+    "jogo_id": 21,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "pontos_excel": 3
+  },
+  {
+    "id": "21-Eduardo",
+    "jogo_id": 21,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "pontos_excel": 3
+  },
+  {
+    "id": "21-Sidney",
+    "jogo_id": 21,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 3
+  },
+  {
+    "id": "21-Silvio",
+    "jogo_id": 21,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "pontos_excel": 3
+  },
+  {
+    "id": "21-Daniel",
+    "jogo_id": 21,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "pontos_excel": 3
+  },
+  {
+    "id": "22-Aline",
+    "jogo_id": 22,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "22-Matheus",
+    "jogo_id": 22,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "22-Eduardo",
+    "jogo_id": 22,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "22-Sidney",
+    "jogo_id": 22,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "22-Silvio",
+    "jogo_id": 22,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "22-Daniel",
+    "jogo_id": 22,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 3
+  },
+  {
+    "id": "23-Aline",
+    "jogo_id": 23,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "23-Matheus",
+    "jogo_id": 23,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "23-Eduardo",
+    "jogo_id": 23,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "23-Sidney",
+    "jogo_id": 23,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "23-Silvio",
+    "jogo_id": 23,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "23-Daniel",
+    "jogo_id": 23,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "24-Aline",
+    "jogo_id": 24,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "24-Matheus",
+    "jogo_id": 24,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "24-Eduardo",
+    "jogo_id": 24,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "24-Sidney",
+    "jogo_id": 24,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "24-Silvio",
+    "jogo_id": 24,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "24-Daniel",
+    "jogo_id": 24,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "25-Aline",
+    "jogo_id": 25,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "25-Matheus",
+    "jogo_id": 25,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "25-Eduardo",
+    "jogo_id": 25,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "25-Sidney",
+    "jogo_id": 25,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "25-Silvio",
+    "jogo_id": 25,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "25-Daniel",
+    "jogo_id": 25,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "26-Aline",
+    "jogo_id": 26,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "26-Matheus",
+    "jogo_id": 26,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "26-Eduardo",
+    "jogo_id": 26,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "26-Sidney",
+    "jogo_id": 26,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "26-Silvio",
+    "jogo_id": 26,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "26-Daniel",
+    "jogo_id": 26,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "27-Aline",
+    "jogo_id": 27,
+    "jogador_nome": "Aline",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "27-Matheus",
+    "jogo_id": 27,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "27-Eduardo",
+    "jogo_id": 27,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 5,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "27-Sidney",
+    "jogo_id": 27,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "27-Silvio",
+    "jogo_id": 27,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "27-Daniel",
+    "jogo_id": 27,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "28-Aline",
+    "jogo_id": 28,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "28-Matheus",
+    "jogo_id": 28,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "28-Eduardo",
+    "jogo_id": 28,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "28-Sidney",
+    "jogo_id": 28,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "28-Silvio",
+    "jogo_id": 28,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "28-Daniel",
+    "jogo_id": 28,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "29-Aline",
+    "jogo_id": 29,
+    "jogador_nome": "Aline",
+    "palpite_casa": 4,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "29-Matheus",
+    "jogo_id": 29,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "29-Eduardo",
+    "jogo_id": 29,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 4,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "29-Sidney",
+    "jogo_id": 29,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "29-Silvio",
+    "jogo_id": 29,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 5,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "29-Daniel",
+    "jogo_id": 29,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "30-Aline",
+    "jogo_id": 30,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "30-Matheus",
+    "jogo_id": 30,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "30-Eduardo",
+    "jogo_id": 30,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "30-Sidney",
+    "jogo_id": 30,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "30-Silvio",
+    "jogo_id": 30,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "30-Daniel",
+    "jogo_id": 30,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "31-Aline",
+    "jogo_id": 31,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "31-Matheus",
+    "jogo_id": 31,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "31-Eduardo",
+    "jogo_id": 31,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "31-Sidney",
+    "jogo_id": 31,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "31-Silvio",
+    "jogo_id": 31,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "31-Daniel",
+    "jogo_id": 31,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "32-Aline",
+    "jogo_id": 32,
+    "jogador_nome": "Aline",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "32-Matheus",
+    "jogo_id": 32,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "32-Eduardo",
+    "jogo_id": 32,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "32-Sidney",
+    "jogo_id": 32,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "32-Silvio",
+    "jogo_id": 32,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "32-Daniel",
+    "jogo_id": 32,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "33-Aline",
+    "jogo_id": 33,
+    "jogador_nome": "Aline",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "33-Matheus",
+    "jogo_id": 33,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "33-Eduardo",
+    "jogo_id": 33,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 5,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "33-Sidney",
+    "jogo_id": 33,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "33-Silvio",
+    "jogo_id": 33,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "33-Daniel",
+    "jogo_id": 33,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "34-Aline",
+    "jogo_id": 34,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "34-Matheus",
+    "jogo_id": 34,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "34-Eduardo",
+    "jogo_id": 34,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "34-Sidney",
+    "jogo_id": 34,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "34-Silvio",
+    "jogo_id": 34,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 4,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "34-Daniel",
+    "jogo_id": 34,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "35-Aline",
+    "jogo_id": 35,
+    "jogador_nome": "Aline",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "35-Matheus",
+    "jogo_id": 35,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "35-Eduardo",
+    "jogo_id": 35,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "35-Sidney",
+    "jogo_id": 35,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "35-Silvio",
+    "jogo_id": 35,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "35-Daniel",
+    "jogo_id": 35,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "36-Aline",
+    "jogo_id": 36,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "36-Matheus",
+    "jogo_id": 36,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "36-Eduardo",
+    "jogo_id": 36,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "pontos_excel": 0
+  },
+  {
+    "id": "36-Sidney",
+    "jogo_id": 36,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "36-Silvio",
+    "jogo_id": 36,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "pontos_excel": 0
+  },
+  {
+    "id": "36-Daniel",
+    "jogo_id": 36,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "pontos_excel": 0
+  },
+  {
+    "id": "37-Aline",
+    "jogo_id": 37,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "37-Matheus",
+    "jogo_id": 37,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "37-Eduardo",
+    "jogo_id": 37,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "37-Sidney",
+    "jogo_id": 37,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "37-Silvio",
+    "jogo_id": 37,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "37-Daniel",
+    "jogo_id": 37,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "38-Aline",
+    "jogo_id": 38,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "38-Matheus",
+    "jogo_id": 38,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "pontos_excel": 5
+  },
+  {
+    "id": "38-Eduardo",
+    "jogo_id": 38,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "38-Sidney",
+    "jogo_id": 38,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "38-Silvio",
+    "jogo_id": 38,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "38-Daniel",
+    "jogo_id": 38,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "39-Aline",
+    "jogo_id": 39,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "39-Matheus",
+    "jogo_id": 39,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "39-Eduardo",
+    "jogo_id": 39,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "39-Sidney",
+    "jogo_id": 39,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "pontos_excel": 0
+  },
+  {
+    "id": "39-Silvio",
+    "jogo_id": 39,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "39-Daniel",
+    "jogo_id": 39,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "40-Aline",
+    "jogo_id": 40,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "40-Matheus",
+    "jogo_id": 40,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "40-Eduardo",
+    "jogo_id": 40,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "40-Sidney",
+    "jogo_id": 40,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "40-Silvio",
+    "jogo_id": 40,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "40-Daniel",
+    "jogo_id": 40,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "41-Aline",
+    "jogo_id": 41,
+    "jogador_nome": "Aline",
+    "palpite_casa": 4,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "41-Matheus",
+    "jogo_id": 41,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "41-Eduardo",
+    "jogo_id": 41,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 6,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "41-Sidney",
+    "jogo_id": 41,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "41-Silvio",
+    "jogo_id": 41,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "41-Daniel",
+    "jogo_id": 41,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "42-Aline",
+    "jogo_id": 42,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "pontos_excel": 0
+  },
+  {
+    "id": "42-Matheus",
+    "jogo_id": 42,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "42-Eduardo",
+    "jogo_id": 42,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "pontos_excel": 0
+  },
+  {
+    "id": "42-Sidney",
+    "jogo_id": 42,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "42-Silvio",
+    "jogo_id": 42,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "pontos_excel": 0
+  },
+  {
+    "id": "42-Daniel",
+    "jogo_id": 42,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "43-Aline",
+    "jogo_id": 43,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "43-Matheus",
+    "jogo_id": 43,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "43-Eduardo",
+    "jogo_id": 43,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "43-Sidney",
+    "jogo_id": 43,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "43-Silvio",
+    "jogo_id": 43,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 3,
+    "pontos_excel": 0
+  },
+  {
+    "id": "43-Daniel",
+    "jogo_id": 43,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "44-Aline",
+    "jogo_id": 44,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "44-Matheus",
+    "jogo_id": 44,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "44-Eduardo",
+    "jogo_id": 44,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "44-Sidney",
+    "jogo_id": 44,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "44-Silvio",
+    "jogo_id": 44,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "44-Daniel",
+    "jogo_id": 44,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "45-Aline",
+    "jogo_id": 45,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "45-Matheus",
+    "jogo_id": 45,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "45-Eduardo",
+    "jogo_id": 45,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "45-Sidney",
+    "jogo_id": 45,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "45-Silvio",
+    "jogo_id": 45,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "45-Daniel",
+    "jogo_id": 45,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "46-Aline",
+    "jogo_id": 46,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "46-Matheus",
+    "jogo_id": 46,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "46-Eduardo",
+    "jogo_id": 46,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "pontos_excel": 0
+  },
+  {
+    "id": "46-Sidney",
+    "jogo_id": 46,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "pontos_excel": 0
+  },
+  {
+    "id": "46-Silvio",
+    "jogo_id": 46,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "pontos_excel": 5
+  },
+  {
+    "id": "46-Daniel",
+    "jogo_id": 46,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "47-Aline",
+    "jogo_id": 47,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "47-Matheus",
+    "jogo_id": 47,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "47-Eduardo",
+    "jogo_id": 47,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 5,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "47-Sidney",
+    "jogo_id": 47,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "47-Silvio",
+    "jogo_id": 47,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "47-Daniel",
+    "jogo_id": 47,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "48-Aline",
+    "jogo_id": 48,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "48-Matheus",
+    "jogo_id": 48,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "48-Eduardo",
+    "jogo_id": 48,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "48-Sidney",
+    "jogo_id": 48,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "48-Silvio",
+    "jogo_id": 48,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "48-Daniel",
+    "jogo_id": 48,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "pontos_excel": 0
+  },
+  {
+    "id": "72-Aline",
+    "jogo_id": 72,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "72-Matheus",
+    "jogo_id": 72,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "72-Eduardo",
+    "jogo_id": 72,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "72-Sidney",
+    "jogo_id": 72,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "72-Silvio",
+    "jogo_id": 72,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  },
+  {
+    "id": "72-Daniel",
+    "jogo_id": 72,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "pontos_excel": 0
+  }
+]
