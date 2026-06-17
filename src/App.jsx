@@ -331,26 +331,34 @@ function App() {
   // 2. Jogos avaliados (que possuem resultado real preenchido)
   const jogosAvaliadosCount = jogos.filter(j => j.gols_casa_real !== null && j.gols_fora_real !== null).length;
   
-  // 3. Montar Tabela de Ranking
-  const ranking = participantesUnicos.map(nome => {
-    let pontos = 0;
-    let acertos = 0; // +5 ou +3
-    let erros = 0; // 0 ou -3
-    
-    const palpitesDoJogador = palpites.filter(p => p.jogador_nome.toLowerCase() === nome.toLowerCase());
-    
-    palpitesDoJogador.forEach(p => {
-      const jogo = jogos.find(j => j.id === p.jogo_id);
-      if (jogo && jogo.gols_casa_real !== null && jogo.gols_fora_real !== null) {
-        const pts = calcularPontos(p.palpite_casa, p.palpite_fora, jogo.gols_casa_real, jogo.gols_fora_real);
-        pontos += pts;
-        if (pts > 0) {
-          acertos += 1;
-        } else {
-          erros += 1;
+    const AJUSTE_MIGRACAO_EXCEL = {
+      'Sidney': -3,
+      'Eduardo': -4,
+      'Aline': -5,
+      'Matheus': -2,
+      'Silvio': -2,
+      'Daniel': -8
+    };
+
+    const ranking = participantesUnicos.map(nome => {
+      let pontos = AJUSTE_MIGRACAO_EXCEL[nome] || 0;
+      let acertos = 0; // +5 ou +3
+      let erros = 0; // 0 ou -3
+      
+      const palpitesDoJogador = palpites.filter(p => p.jogador_nome.toLowerCase() === nome.toLowerCase());
+      
+      palpitesDoJogador.forEach(p => {
+        const jogo = jogos.find(j => j.id === p.jogo_id);
+        if (jogo && jogo.gols_casa_real !== null && jogo.gols_fora_real !== null) {
+          const pts = calcularPontos(p.palpite_casa, p.palpite_fora, jogo.gols_casa_real, jogo.gols_fora_real);
+          pontos += pts;
+          if (pts > 0) {
+            acertos += 1;
+          } else {
+            erros += 1;
+          }
         }
-      }
-    });
+      });
     
     return {
       jogador: nome,
