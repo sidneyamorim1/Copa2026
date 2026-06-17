@@ -333,11 +333,11 @@ function App() {
   
     const AJUSTE_MIGRACAO_EXCEL = {
       'Sidney': -3,
-      'Eduardo': -4,
-      'Aline': -5,
-      'Matheus': -2,
-      'Silvio': -2,
-      'Daniel': -8
+      'Eduardo': 0,
+      'Aline': 0,
+      'Matheus': 2,
+      'Silvio': 2,
+      'Daniel': -6
     };
 
     const ranking = participantesUnicos.map(nome => {
