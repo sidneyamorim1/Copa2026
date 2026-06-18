@@ -259,19 +259,23 @@ export const dbService = {
     if (isSupabaseConfigured()) {
       const supabase = getSupabaseClient();
       try {
-        // Primeiro tentamos limpar tudo para esse jogo e usuário (ou usamos upsert)
-        // O mais simples para CSV é limpar a tabela palpites ou dar upsert, mas como
-        // não temos uma lógica de ID de palpite pronta, vamos só atualizar local storage
-        // para não complicar o código backend agora, a menos que o backend use
-        // constraints.
-        // A lógica do localStorage é o core deste sistema agora.
+        // Upsert no Supabase usando a constraint (jogo_id, jogador_nome)
+        const { error } = await supabase
+          .from('palpites')
+          .upsert(novosPalpites, { onConflict: 'jogo_id,jogador_nome' });
+          
+        if (error) throw error;
+        
+        // Puxa os dados consolidados da nuvem
+        const { data: todosPalpites } = await supabase.from('palpites').select('*');
+        if (todosPalpites) return todosPalpites;
+        
       } catch (err) {
-        console.error('Erro no supabase, usando local');
+        console.error('Erro no supabase ao importar palpites em lote:', err);
       }
     }
     
     // Fallback/Principal local
-    // Vamos substituir os palpites atuais se tivermos novos para o mesmo jogo+jogador
     let palpitesAtuais = JSON.parse(localStorage.getItem(LOCAL_PALPITES_KEY)) || [];
     
     novosPalpites.forEach(np => {
