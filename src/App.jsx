@@ -590,18 +590,22 @@ function App() {
         <p>Competição interna entre amigos, sem pagamentos, prêmios ou monetização</p>
         
         <div style={{ marginTop: '12px', display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
-          {isSupabaseConfigured() ? (
-            <span className="config-badge configured">Supabase Conectado</span>
-          ) : (
-            <span className="config-badge not-configured">Modo Offline (Local)</span>
+          {(isAdmin || !isSupabaseConfigured()) && (
+            <>
+              {isSupabaseConfigured() ? (
+                <span className="config-badge configured">Supabase Conectado</span>
+              ) : (
+                <span className="config-badge not-configured">Modo Offline (Local)</span>
+              )}
+              <button 
+                className="config-trigger-btn" 
+                style={{ marginLeft: '8px' }} 
+                onClick={() => setModalConfigAberto(true)}
+              >
+                Configurações
+              </button>
+            </>
           )}
-          <button 
-            className="config-trigger-btn" 
-            style={{ marginLeft: '8px' }} 
-            onClick={() => setModalConfigAberto(true)}
-          >
-            Configurações
-          </button>
           {isSupabaseConfigured() && usuario && (
             <>
               <span style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem' }}>
