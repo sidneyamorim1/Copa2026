@@ -979,11 +979,15 @@ function App() {
                     </p>
                     <button 
                       onClick={async () => {
-                        if (confirm("ATENÇÃO: Você tem certeza que deseja apagar TUDO (apostas e placares)? Isso não tem volta!")) {
-                          setLoading(true);
-                          await dbService.apagarTudo();
-                          window.location.reload();
+                        const resposta = prompt("ATENÇÃO MÁXIMA!\nIsso vai apagar todos os palpites de todos os usuários e todos os resultados oficiais.\nPara continuar, digite a palavra: APAGAR");
+                        if (resposta !== "APAGAR") {
+                          alert("Ação cancelada com segurança. Nada foi apagado.");
+                          return;
                         }
+                        
+                        setLoading(true);
+                        await dbService.apagarTudo();
+                        window.location.reload();
                       }}
                       className="btn-secondary"
                       style={{ width: '100%', borderColor: '#f56565', color: '#c53030', margin: 0 }}
