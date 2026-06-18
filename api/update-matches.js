@@ -19,46 +19,60 @@ export default async function handler(req, res) {
   // ATENÇÃO: Aqui usamos o service_role key, que ignora as regras do RLS e tem permissão de escrita de admin!
   const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-  // MOCK DE DADOS DA API DE ESPORTES (Simulação da Copa)
-  // Futuramente isso será substituído por: const response = await fetch('https://api-football-v1.p.rapidapi.com/v3/fixtures?league=1&season=2026')
-  const mockApiResults = [
-    {
-      teamHomeName: 'Czech Republic', // Nome que costuma vir em inglês
-      teamAwayName: 'Senegal',
-      goalsHome: 2,
-      goalsAway: 1,
-      status: 'Match Finished'
-    },
-    {
-      teamHomeName: 'Argentina',
-      teamAwayName: 'Cameroon',
-      goalsHome: 3,
-      goalsAway: 0,
-      status: 'Match Finished'
-    }
-  ];
+  // MOCK DE DADOS DA API DE ESPORTES SUBSTITUIDO PELO OFICIAL
+  // Fazemos o fetch do JSON público e em tempo real do OpenFootball (worldcup.json)
+  let data;
+  try {
+    const res = await fetch('https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json');
+    data = await res.json();
+  } catch (err) {
+    console.error('Erro ao buscar API externa', err);
+    return res.status(500).json({ error: 'Falha ao conectar com API de esportes' });
+  }
+
+  const apiMatches = data.matches;
 
   // Dicionário de tradução dos nomes das Seleções (API em inglês -> Nosso Banco em PT-BR)
   const nameTranslation = {
-    'Czech Republic': 'Tchéquia',
-    'Senegal': 'Senegal',
-    'Argentina': 'Argentina',
-    'Cameroon': 'Camarões',
-    'Brazil': 'Brasil',
-    'Switzerland': 'Suíça',
-    'Germany': 'Alemanha',
-    'Spain': 'Espanha'
+    "Mexico": "México",
+    "South Africa": "África do Sul",
+    "South Korea": "Coreia do Sul",
+    "Czech Republic": "Tchéquia",
+    "Canada": "Canadá",
+    "Bosnia & Herzegovina": "Bósnia e Herz.",
+    "Qatar": "Catar",
+    "Switzerland": "Suíça",
+    "Brazil": "Brasil",
+    "Morocco": "Marrocos",
+    "USA": "EUA",
+    "Germany": "Alemanha",
+    "Spain": "Espanha",
+    "France": "França",
+    "Argentina": "Argentina",
+    "Senegal": "Senegal",
+    "Japan": "Japão",
+    "England": "Inglaterra",
+    "Portugal": "Portugal",
+    "Netherlands": "Holanda",
+    "Belgium": "Bélgica",
+    "Uruguay": "Uruguai",
+    "Colombia": "Colômbia",
+    "Croatia": "Croácia"
   };
 
   try {
     const atualizacoes = [];
 
-    // Loop pelos jogos encerrados recebidos da API
-    for (const match of mockApiResults) {
-      if (match.status !== 'Match Finished') continue;
+    // Loop pelos jogos recebidos da API
+    for (const match of apiMatches) {
+      // O OpenFootball envia os placares apenas se o jogo aconteceu (score.ft existe)
+      if (!match.score || !match.score.ft) continue;
 
-      const homeTranslated = nameTranslation[match.teamHomeName] || match.teamHomeName;
-      const awayTranslated = nameTranslation[match.teamAwayName] || match.teamAwayName;
+      const goalsHome = match.score.ft[0];
+      const goalsAway = match.score.ft[1];
+
+      const homeTranslated = nameTranslation[match.team1] || match.team1;
+      const awayTranslated = nameTranslation[match.team2] || match.team2;
 
       // Busca no banco um jogo com esses dois times
       // O Supabase tem .ilike() para ignorar maiúsculas/minúsculas
@@ -75,24 +89,24 @@ export default async function handler(req, res) {
 
       if (jogos && jogos.length > 0) {
         // Encontrou o jogo! Vamos gravar o placar oficial nele
-        const jogo = jogos[0];
+        const dbMatch = jogos[0];
         const { error: updateError } = await supabase
           .from('jogos')
           .update({
-            gols_casa_real: match.goalsHome,
-            gols_fora_real: match.goalsAway
+            gols_casa_real: goalsHome,
+            gols_fora_real: goalsAway
           })
-          .eq('id', jogo.id);
+          .eq('id', dbMatch.id);
 
         if (updateError) {
-          console.error(`Erro ao atualizar jogo ${jogo.id}:`, updateError);
+          console.error(`Erro ao atualizar jogo ${dbMatch.id}:`, updateError);
         } else {
           atualizacoes.push({ 
-            id: jogo.id, 
+            id: dbMatch.id, 
             home: homeTranslated, 
             away: awayTranslated, 
-            gols_casa: match.goalsHome, 
-            gols_fora: match.goalsAway 
+            gols_casa: goalsHome, 
+            gols_fora: goalsAway 
           });
         }
       }
