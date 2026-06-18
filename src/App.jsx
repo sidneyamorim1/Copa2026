@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { dbService } from './services/db';
-import { isSupabaseConfigured, configSupabaseLocal } from './supabaseClient';
+import { isSupabaseConfigured, configSupabaseLocal, authService, getSupabaseClient } from './supabaseClient';
+import LoginScreen from './components/LoginScreen';
 
 // Função para calcular pontos de um palpite
 export function calcularPontos(palpiteCasa, palpiteFora, realCasa, realFora) {
@@ -48,6 +49,11 @@ function App() {
   const [jogos, setJogos] = useState([]);
   const [palpites, setPalpites] = useState([]);
   
+  // Auth
+  const [usuario, setUsuario] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [authChecked, setAuthChecked] = useState(!isSupabaseConfigured()); // se não tem supabase, já está "checado"
+
   // Estados da UI
   const [loading, setLoading] = useState(true);
   const [dataSelecionada, setDataSelecionada] = useState(obterDataHoje());
@@ -130,9 +136,44 @@ function App() {
     }
   };
 
+  // Escuta mudanças de autenticação
   useEffect(() => {
-    carregarDados();
+    if (!isSupabaseConfigured()) {
+      setAuthChecked(true);
+      carregarDados();
+      return;
+    }
+
+    // Verifica sessão inicial
+    authService.getUser().then(async (user) => {
+      if (user) {
+        setUsuario(user);
+        const admin = await authService.isAdmin(user.id);
+        setIsAdmin(admin);
+      }
+      setAuthChecked(true);
+    });
+
+    // Escuta login/logout
+    const { data: { subscription } } = authService.onAuthStateChange(async (event, session) => {
+      const user = session?.user || null;
+      setUsuario(user);
+      if (user) {
+        const admin = await authService.isAdmin(user.id);
+        setIsAdmin(admin);
+      } else {
+        setIsAdmin(false);
+      }
+    });
+
+    return () => subscription.unsubscribe();
   }, []);
+
+  useEffect(() => {
+    if (authChecked && (!isSupabaseConfigured() || usuario)) {
+      carregarDados();
+    }
+  }, [authChecked, usuario]);
 
   const jogoAtivo = jogos[jogoAtivoIdx] || null;
 
@@ -527,6 +568,20 @@ function App() {
   // Quantidade de jogos na data selecionada
   const jogosNaDataCount = jogos.filter(j => j.data === dataSelecionada).length;
 
+  // Gate de autenticação
+  if (isSupabaseConfigured()) {
+    if (!authChecked) {
+      return (
+        <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, #064e3b, #047857)' }}>
+          <div style={{ color: 'white', fontSize: '1.2rem', fontWeight: 600 }}>Carregando...</div>
+        </div>
+      );
+    }
+    if (!usuario) {
+      return <LoginScreen onLogin={(user) => setUsuario(user)} />;
+    }
+  }
+
   return (
     <div>
       {/* Header */}
@@ -534,7 +589,7 @@ function App() {
         <h1>Bolão Copa 2026</h1>
         <p>Competição interna entre amigos, sem pagamentos, prêmios ou monetização</p>
         
-        <div style={{ marginTop: '12px' }}>
+        <div style={{ marginTop: '12px', display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
           {isSupabaseConfigured() ? (
             <span className="config-badge configured">Supabase Conectado</span>
           ) : (
@@ -547,6 +602,20 @@ function App() {
           >
             Configurações
           </button>
+          {isSupabaseConfigured() && usuario && (
+            <>
+              <span style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem' }}>
+                ⚽ Olá, <strong>{usuario.user_metadata?.nome_display || usuario.email}</strong>
+              </span>
+              <button
+                onClick={() => { authService.signOut(); setUsuario(null); setIsAdmin(false); }}
+                className="config-trigger-btn"
+                style={{ background: 'rgba(220,38,38,0.2)', borderColor: '#f87171' }}
+              >
+                Sair
+              </button>
+            </>
+          )}
         </div>
       </header>
 
@@ -818,8 +887,8 @@ function App() {
               )}
             </div>
 
-            {/* Painéis de admin empilhados */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {/* Painéis de admin - só para admin */}
+            {(isAdmin || !isSupabaseConfigured()) && (<>
 
               {/* Painel 1: Importar CSV */}
               <div className="panel" style={{ flex: 1 }}>
@@ -946,6 +1015,7 @@ function App() {
                 )}
               </div>
             </div>
+            </>)}
           </div>
         </div>
       </div>

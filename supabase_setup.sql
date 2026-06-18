@@ -27,22 +27,82 @@ CREATE TABLE IF NOT EXISTS public.palpites (
     CONSTRAINT unique_jogador_jogo UNIQUE (jogo_id, jogador_nome)
 );
 
--- 3. Habilitar Row Level Security
+-- 3. Tabela de Perfis (vinculada ao Supabase Auth)
+CREATE TABLE IF NOT EXISTS public.perfis (
+    id UUID REFERENCES auth.users(id) ON DELETE CASCADE PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(255),
+    is_admin BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- 4. Habilitar Row Level Security
 ALTER TABLE public.jogos ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.palpites ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.perfis ENABLE ROW LEVEL SECURITY;
 
--- 4. Políticas de acesso público (bolão sem autenticação)
+-- 5. Políticas de acesso para jogos (leitura pública, escrita só admin)
 CREATE POLICY "Leitura pública de jogos"
     ON public.jogos FOR SELECT USING (true);
 
-CREATE POLICY "Escrita pública em jogos"
-    ON public.jogos FOR ALL USING (true);
+CREATE POLICY "Escrita de jogos só para admin"
+    ON public.jogos FOR ALL USING (
+      EXISTS (
+        SELECT 1 FROM public.perfis
+        WHERE perfis.id = auth.uid() AND perfis.is_admin = TRUE
+      )
+    );
 
+-- 6. Políticas de acesso para palpites
 CREATE POLICY "Leitura pública de palpites"
     ON public.palpites FOR SELECT USING (true);
 
-CREATE POLICY "Escrita pública em palpites"
-    ON public.palpites FOR ALL USING (true);
+CREATE POLICY "Usuário insere/atualiza seus próprios palpites"
+    ON public.palpites FOR INSERT WITH CHECK (auth.uid() IS NOT NULL);
+
+CREATE POLICY "Usuário atualiza seus próprios palpites"
+    ON public.palpites FOR UPDATE USING (auth.uid() IS NOT NULL);
+
+CREATE POLICY "Admin pode tudo nos palpites"
+    ON public.palpites FOR ALL USING (
+      EXISTS (
+        SELECT 1 FROM public.perfis
+        WHERE perfis.id = auth.uid() AND perfis.is_admin = TRUE
+      )
+    );
+
+-- 7. Políticas de acesso para perfis
+CREATE POLICY "Leitura pública de perfis"
+    ON public.perfis FOR SELECT USING (true);
+
+CREATE POLICY "Usuário gerencia seu próprio perfil"
+    ON public.perfis FOR ALL USING (auth.uid() = id);
+
+-- 8. Trigger para criar perfil automaticamente ao criar usuário
+CREATE OR REPLACE FUNCTION public.handle_new_user()
+RETURNS TRIGGER AS $$
+BEGIN
+  INSERT INTO public.perfis (id, nome, email, is_admin)
+  VALUES (
+    NEW.id,
+    COALESCE(NEW.raw_user_meta_data->>'nome_display', split_part(NEW.email, '@', 1)),
+    NEW.email,
+    FALSE
+  );
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
+CREATE TRIGGER on_auth_user_created
+  AFTER INSERT ON auth.users
+  FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
+
+-- ================================================
+-- APÓS CRIAR SEU USUÁRIO ADMIN, EXECUTE:
+-- UPDATE public.perfis SET is_admin = TRUE WHERE email = 'SEU_EMAIL_AQUI';
+-- ================================================
+
 
 -- ================================================
 -- SEED: Carga inicial dos 72 jogos
