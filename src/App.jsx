@@ -751,10 +751,6 @@ function App() {
                         placeholder="Ex: João"
                         value={nomeJogador}
                         onChange={(e) => setNomeJogador(e.target.value)}
-                        disabled={isSupabaseConfigured() && !!usuario}
-                        style={{
-                          ...(isSupabaseConfigured() && !!usuario ? { backgroundColor: 'var(--color-light)', cursor: 'not-allowed', color: 'var(--text-color)' } : {})
-                        }}
                         required
                       />
                     </div>
