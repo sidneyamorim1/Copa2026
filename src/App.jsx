@@ -903,7 +903,7 @@ function App() {
                 Resultados Oficiais Registrados
               </h2>
               
-              <div style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
+              <div style={{display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px'}}>
                 {jogos.filter(j => j.gols_casa_real !== null && j.gols_fora_real !== null).length === 0 ? (
                   <p style={{fontSize: '0.8rem', color: 'var(--text-muted)'}}>Nenhum resultado oficial registrado ainda.</p>
                 ) : (
@@ -932,6 +932,28 @@ function App() {
                     </div>
                   ))
                 )}
+              </div>
+
+              <hr style={{margin: '24px 0', border: 'none', borderTop: '1px solid var(--border-color)'}}/>
+              
+              <div style={{ padding: '16px', backgroundColor: '#fff5f5', border: '1px solid #fed7d7', borderRadius: '8px' }}>
+                <h3 style={{ fontSize: '1rem', color: '#c53030', marginBottom: '8px' }}>Zona de Perigo</h3>
+                <p style={{ fontSize: '0.8rem', color: '#742a2a', marginBottom: '12px' }}>
+                  Isso apagará todas as apostas e todos os resultados oficiais registrados. Apenas os 72 jogos em branco permanecerão.
+                </p>
+                <button 
+                  onClick={async () => {
+                    if (confirm("ATENÇÃO: Você tem certeza que deseja apagar TUDO (apostas e placares)? Isso não tem volta!")) {
+                      setLoading(true);
+                      await dbService.apagarTudo();
+                      window.location.reload();
+                    }
+                  }}
+                  className="btn-secondary"
+                  style={{ width: '100%', borderColor: '#f56565', color: '#c53030', margin: 0 }}
+                >
+                  Zerar Todo o Banco de Dados
+                </button>
               </div>
             </div>
           </div>
