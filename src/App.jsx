@@ -56,8 +56,8 @@ function App() {
 
   // Estados da UI
   const [loading, setLoading] = useState(true);
-  const [dataSelecionada, setDataSelecionada] = useState(obterDataHoje());
-  const [jogoAtivoIdx, setJogoAtivoIdx] = useState(0); // Index global do jogo ativado (0 a N-1)
+  const [dataSelecionada, setDataSelecionada] = useState('');
+  const [idxNaData, setIdxNaData] = useState(0); // Index global do jogo ativado (0 a N-1)
   
   // Calendário visual
   const hoje = new Date();
@@ -92,42 +92,40 @@ function App() {
         const hoje = obterDataHoje();
         
         // 1. Tenta achar jogo de HOJE
-        let idxEncontrado = dataJogos.findIndex(j => j.data === hoje);
+        let dataHoje = dataJogos.find(j => j.data === hoje)?.data;
         
-        if (idxEncontrado >= 0) {
-          // Encontrou jogo hoje
-          setJogoAtivoIdx(idxEncontrado);
-          setDataSelecionada(hoje);
+        if (dataHoje) {
+          setDataSelecionada(dataHoje);
+          setIdxNaData(0);
         } else {
           // 2. Não tem jogo hoje — busca a data futura mais próxima
           const hojeDate = parseDateBR(hoje);
           const datasUnicas = Array.from(new Set(dataJogos.map(j => j.data)));
           
-          let melhorData = null;
+          let diaMaisProximo = null;
           let menorDiff = Infinity;
           
           for (const d of datasUnicas) {
             const diff = parseDateBR(d) - hojeDate;
-            // Prioriza datas futuras (diff > 0), senão a mais recente passada
             if (diff >= 0 && diff < menorDiff) {
               menorDiff = diff;
-              melhorData = d;
+              diaMaisProximo = d;
             }
           }
           
-          // Se não achou nenhuma data futura, pega a última data passada
-          if (!melhorData) {
+          if (!diaMaisProximo) {
             datasUnicas.sort((a, b) => parseDateBR(b) - parseDateBR(a));
-            melhorData = datasUnicas[0];
+            diaMaisProximo = datasUnicas[0];
           }
           
-          idxEncontrado = dataJogos.findIndex(j => j.data === melhorData);
-          setJogoAtivoIdx(idxEncontrado >= 0 ? idxEncontrado : 0);
-          setDataSelecionada(melhorData || dataJogos[0].data);
+          // Encontra um dia válido se possível
+          const melhorData = dataHoje || diaMaisProximo || (dataJogos.length > 0 ? dataJogos[0].data : '');
+          setDataSelecionada(melhorData);
+          setIdxNaData(0);
         }
         
         // Inicializa o jogo do admin
-        setJogoSelecionadoAdmin(dataJogos[idxEncontrado >= 0 ? idxEncontrado : 0].id.toString());
+        setJogoSelecionadoAdmin(dataJogos[0].id.toString());
       }
     } catch (e) {
       console.error("Erro ao carregar os dados:", e);
@@ -177,9 +175,9 @@ function App() {
     }
   }, [authChecked, usuario]);
 
-  const jogoAtivo = jogos[jogoAtivoIdx] || null;
-  const jogosDaData = jogos.filter(j => j.data === dataSelecionada);
-  const idxNaData = jogosDaData.findIndex(j => j?.id === jogoAtivo?.id);
+  const dataSelecionadaStr = dataSelecionada || '';
+  const jogosDaData = jogos.filter(j => j.data === dataSelecionadaStr);
+  const jogoAtivo = jogosDaData[idxNaData] || null;
 
   // Atualiza os palpites exibidos nos inputs quando o jogo ativo ou o nome do jogador mudar
   useEffect(() => {
@@ -436,12 +434,7 @@ function App() {
   // Trata a seleção de uma data (via calendário)
   const selecionarData = (data) => {
     setDataSelecionada(data);
-    
-    // Acha o primeiro jogo dessa data e navega até ele
-    const idx = jogos.findIndex(j => j.data === data);
-    if (idx >= 0) {
-      setJogoAtivoIdx(idx);
-    }
+    setIdxNaData(0);
   };
 
   // Navegar mês do calendário
@@ -486,9 +479,7 @@ function App() {
   const navegarJogo = (direcao) => {
     let novoIdxNaData = idxNaData + direcao;
     if (novoIdxNaData >= 0 && novoIdxNaData < jogosDaData.length) {
-      const novoJogoId = jogosDaData[novoIdxNaData].id;
-      const globalIdx = jogos.findIndex(j => j.id === novoJogoId);
-      setJogoAtivoIdx(globalIdx);
+      setIdxNaData(novoIdxNaData);
     }
   };
 
