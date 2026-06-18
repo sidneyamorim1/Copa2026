@@ -255,9 +255,12 @@ function App() {
         const linhas = text.split('\n');
         
         let atualizacoes = [];
+        let novosPalpites = [];
+        const nomesValidos = ['Sidney', 'Eduardo', 'Aline', 'Matheus', 'Silvio', 'Daniel'];
         
-        for (let linha of linhas) {
-          if (!linha.trim()) continue;
+        for (let i = 0; i < linhas.length; i++) {
+          const linha = linhas[i];
+          if (!linha || !linha.trim()) continue;
           
           const partes = linha.split(';').map(p => p.trim());
           if (partes.length < 8) continue;
@@ -280,12 +283,36 @@ function App() {
                 );
                 
                 if (jogo) {
+                  // Placar oficial
                   if (golsCasa !== '' && golsFora !== '' && !isNaN(golsCasa) && !isNaN(golsFora)) {
                     atualizacoes.push({
                       jogoId: jogo.id,
                       golsCasa: parseInt(golsCasa, 10),
                       golsFora: parseInt(golsFora, 10)
                     });
+                  }
+                  
+                  // Palpites dos participantes nas próximas linhas
+                  let pRowIdx = i + 1;
+                  while (pRowIdx < linhas.length && pRowIdx <= i + 8) {
+                    const linhaAp = linhas[pRowIdx].split(';').map(p => p.trim());
+                    if (linhaAp.length > colIdx + 6) {
+                      const nome = linhaAp[colIdx+2];
+                      const palpCasaStr = linhaAp[colIdx+4];
+                      const palpForaStr = linhaAp[colIdx+6];
+                      
+                      if (nome && nomesValidos.includes(nome)) {
+                        if (palpCasaStr !== '' && palpForaStr !== '' && !isNaN(palpCasaStr) && !isNaN(palpForaStr)) {
+                          novosPalpites.push({
+                            jogo_id: jogo.id,
+                            jogador_nome: nome,
+                            palpite_casa: parseInt(palpCasaStr, 10),
+                            palpite_fora: parseInt(palpForaStr, 10)
+                          });
+                        }
+                      }
+                    }
+                    pRowIdx++;
                   }
                 }
               }
@@ -296,6 +323,11 @@ function App() {
           }
         }
         
+        if (novosPalpites.length > 0) {
+          const palpitesAtualizados = await dbService.atualizarPalpitesEmLote(novosPalpites);
+          setPalpites(palpitesAtualizados);
+        }
+
         if (atualizacoes.length > 0) {
           await dbService.atualizarResultadosEmLote(atualizacoes);
           
