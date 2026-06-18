@@ -708,7 +708,13 @@ function App() {
                       <div className="match-status-badge" style={{ backgroundColor: '#e2e8f0', color: '#475569' }}>
                         Placar oficial: {jogoAtivo.gols_casa_real} x {jogoAtivo.gols_fora_real}
                       </div>
-                    ) : new Date() > new Date(new Date(`${jogoAtivo.data}T${jogoAtivo.hora}`).getTime() - 3600000) ? (
+                    ) : (() => {
+                      const [dia, mes, ano] = jogoAtivo.data.split('/');
+                      const dataFormatada = `${ano}-${mes}-${dia}T${jogoAtivo.hora}`;
+                      const dataHoraJogo = new Date(dataFormatada);
+                      const limitePalpite = new Date(dataHoraJogo.getTime() - 3600000);
+                      return new Date() > limitePalpite;
+                    })() ? (
                       <div className="match-status-badge" style={{ backgroundColor: '#fee2e2', color: '#991b1b' }}>
                         Palpites Encerrados
                       </div>
@@ -758,7 +764,9 @@ function App() {
                     </div>
 
                     {(() => {
-                      const dataHoraJogo = new Date(`${jogoAtivo.data}T${jogoAtivo.hora}`);
+                      const [dia, mes, ano] = jogoAtivo.data.split('/');
+                      const dataFormatada = `${ano}-${mes}-${dia}T${jogoAtivo.hora}`;
+                      const dataHoraJogo = new Date(dataFormatada);
                       const limitePalpite = new Date(dataHoraJogo.getTime() - 3600000); // 1 hora antes
                       const palpitesEncerrados = new Date() > limitePalpite;
                       const jaTemPalpite = jogoAtivo && nomeJogador.trim() && palpites.some(p => p.jogo_id === jogoAtivo.id && p.jogador_nome.toLowerCase() === nomeJogador.trim().toLowerCase());
