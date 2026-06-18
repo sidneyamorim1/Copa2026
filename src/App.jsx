@@ -758,35 +758,53 @@ function App() {
                         required
                       />
                     </div>
-
-                    <div className="form-group">
-                      <label style={{ marginBottom: '12px' }}>Seu palpite</label>
-                      <div className="scores-input-grid">
-                        <input 
-                          type="number"
-                          className="score-input"
-                          min="0"
-                          max="99"
-                          value={palpiteCasa}
-                          onChange={(e) => setPalpiteCasa(e.target.value)}
-                          required
-                        />
-                        <span className="score-divider">x</span>
-                        <input 
-                          type="number"
-                          className="score-input"
-                          min="0"
-                          max="99"
-                          value={palpiteFora}
-                          onChange={(e) => setPalpiteFora(e.target.value)}
-                          required
-                        />
-                      </div>
                     </div>
 
-                    <button type="submit" className="btn-submit">
-                      Enviar palpite
-                    </button>
+                    {(() => {
+                      const jaTemPalpite = jogoAtivo && nomeJogador.trim() && palpites.some(p => p.jogo_id === jogoAtivo.id && p.jogador_nome.toLowerCase() === nomeJogador.trim().toLowerCase());
+                      
+                      return (
+                        <>
+                          <div className="form-group">
+                            <label style={{ marginBottom: '12px' }}>Seu palpite</label>
+                            <div className="scores-input-grid">
+                              <input 
+                                type="number"
+                                className="score-input"
+                                min="0"
+                                max="99"
+                                value={palpiteCasa}
+                                onChange={(e) => setPalpiteCasa(e.target.value)}
+                                disabled={jaTemPalpite}
+                                style={jaTemPalpite ? { backgroundColor: 'var(--color-light)', cursor: 'not-allowed', color: 'var(--text-color)' } : {}}
+                                required
+                              />
+                              <span className="score-divider">x</span>
+                              <input 
+                                type="number"
+                                className="score-input"
+                                min="0"
+                                max="99"
+                                value={palpiteFora}
+                                onChange={(e) => setPalpiteFora(e.target.value)}
+                                disabled={jaTemPalpite}
+                                style={jaTemPalpite ? { backgroundColor: 'var(--color-light)', cursor: 'not-allowed', color: 'var(--text-color)' } : {}}
+                                required
+                              />
+                            </div>
+                          </div>
+
+                          <button 
+                            type="submit" 
+                            className="btn-submit"
+                            disabled={jaTemPalpite}
+                            style={jaTemPalpite ? { backgroundColor: 'var(--text-muted)', cursor: 'not-allowed' } : {}}
+                          >
+                            {jaTemPalpite ? 'Palpite já enviado' : 'Enviar palpite'}
+                          </button>
+                        </>
+                      )
+                    })()}
                   </form>
                 </div>
               ) : (
