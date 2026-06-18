@@ -252,17 +252,19 @@ function App() {
       try {
         setLoading(true);
         const text = event.target.result;
-        const linhas = text.split('\n');
+        const linhas = text.split(/\r?\n|\r/);
         
         let atualizacoes = [];
         let novosPalpites = [];
         const nomesValidos = ['Sidney', 'Eduardo', 'Aline', 'Matheus', 'Silvio', 'Daniel'];
         
+        const removeAccents = (str) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
         for (let i = 0; i < linhas.length; i++) {
           const linha = linhas[i];
           if (!linha || !linha.trim()) continue;
           
-          const partes = linha.split(';').map(p => p.trim());
+          const partes = linha.split(/[,;]/).map(p => p.trim());
           if (partes.length < 8) continue;
           
           let colIdx = 0;
@@ -278,8 +280,8 @@ function App() {
               
               if (timeCasa && timeFora) {
                 const jogo = jogos.find(j => 
-                  j.time_casa.toLowerCase() === timeCasa.toLowerCase() && 
-                  j.time_fora.toLowerCase() === timeFora.toLowerCase()
+                  removeAccents(j.time_casa) === removeAccents(timeCasa) && 
+                  removeAccents(j.time_fora) === removeAccents(timeFora)
                 );
                 
                 if (jogo) {
@@ -295,7 +297,7 @@ function App() {
                   // Palpites dos participantes nas próximas linhas
                   let pRowIdx = i + 1;
                   while (pRowIdx < linhas.length && pRowIdx <= i + 8) {
-                    const linhaAp = linhas[pRowIdx].split(';').map(p => p.trim());
+                    const linhaAp = linhas[pRowIdx].split(/[,;]/).map(p => p.trim());
                     if (linhaAp.length > colIdx + 6) {
                       const nome = linhaAp[colIdx+2];
                       const palpCasaStr = linhaAp[colIdx+4];
@@ -346,10 +348,12 @@ function App() {
             }
             return j;
           }));
-          
-          alert(`${atualizacoes.length} resultados atualizados do CSV com sucesso!`);
+        }
+
+        if (novosPalpites.length > 0 || atualizacoes.length > 0) {
+          alert(`Importação concluída! ${atualizacoes.length} placares oficiais e ${novosPalpites.length} palpites atualizados do CSV.`);
         } else {
-          alert('Nenhum placar novo importado (jogos futuros com placar no CSV foram ignorados).');
+          alert('Nenhum dado importado. O arquivo pode não ser um CSV válido, estar sem placares/apostas numéricas, ou os nomes dos times contêm caracteres estranhos (Lembre-se de salvar como CSV UTF-8).');
         }
       } catch (err) {
         console.error(err);
