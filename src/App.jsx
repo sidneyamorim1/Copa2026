@@ -196,7 +196,7 @@ function App() {
       setPalpiteCasa('');
       setPalpiteFora('');
     }
-  }, [jogoAtivoIdx, nomeJogador, palpites]);
+  }, [idxNaData, dataSelecionada, nomeJogador, palpites]);
 
   // Atualiza o formulário de administração quando o jogo do admin mudar
   useEffect(() => {
