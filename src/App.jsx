@@ -1018,7 +1018,43 @@ function App() {
                   </div>
                 </div>
 
-                {/* Painel 2: Atualizar Manualmente */}
+                {/* Painel 2: Robô de Atualização Automática */}
+                <div className="panel">
+                  <h3 style={{fontSize: '1rem', marginBottom: '8px'}}>🤖 Acionar Robô de Resultados</h3>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
+                    Em vez de esperar a meia-noite, você pode clicar no botão abaixo para obrigar o site a bater na API oficial de esportes e atualizar todos os placares finalizados imediatamente!
+                    <br/><strong style={{color: 'var(--color-danger)'}}>(Atenção: Essa função bate no servidor da Vercel, então só deve ser testada na versão online oficial do site).</strong>
+                  </p>
+                  <button 
+                    onClick={async () => {
+                      if (!window.location.hostname.includes('vercel.app')) {
+                         alert("O robô mora nos servidores da Vercel! Por favor, abra o site online (link verdinho da Vercel) para usar esse botão.");
+                         return;
+                      }
+                      try {
+                        setLoading(true);
+                        const res = await fetch('/api/update-matches');
+                        const data = await res.json();
+                        if (res.ok) {
+                          alert(data.message + "\nQuantidade de jogos recém-atualizados: " + (data.jogosAtualizados ? data.jogosAtualizados.length : 0));
+                          window.location.reload();
+                        } else {
+                          alert("Erro do robô: " + (data.error || "Desconhecido"));
+                        }
+                      } catch (err) {
+                        alert("Erro de conexão ao chamar o robô. A API pode estar indisponível.");
+                      } finally {
+                        setLoading(false);
+                      }
+                    }}
+                    className="btn-primary"
+                    style={{ width: '100%', margin: 0, padding: '12px', backgroundColor: '#10b981', color: '#fff', fontWeight: 'bold' }}
+                  >
+                    🚀 Atualizar Placares com o Robô
+                  </button>
+                </div>
+
+                {/* Painel 3: Atualizar Manualmente */}
                 <div className="panel">
                   <h2 style={{fontSize: '1rem', marginBottom: '8px'}}>Atualizar Manualmente</h2>
                   <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
