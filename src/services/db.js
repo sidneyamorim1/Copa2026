@@ -338,22 +338,22 @@ export const dbService = {
       const { error: insertJogosErr } = await supabase.from('jogos').insert(jogosParaInserir);
       if (insertJogosErr) throw insertJogosErr;
       
-      // Inserir palpites
-      const palpitesParaInserir = seedPalpites.map(p => ({
-        jogo_id: p.jogo_id,
-        jogador_nome: p.jogador_nome,
-        palpite_casa: p.palpite_casa,
-        palpite_fora: p.palpite_fora
-      }));
-      
-      // Como tem quase 300 palpites, pode ser bom inserir em lotes se der erro, 
-      // mas 300 costuma passar num insert só.
-      const { error: insertPalpitesErr } = await supabase.from('palpites').insert(palpitesParaInserir);
-      if (insertPalpitesErr) throw insertPalpitesErr;
-      
       return true;
     } catch (err) {
       console.error('Erro ao forçar sincronização com Supabase:', err);
+      throw err;
+    }
+  },
+
+  async apagarTudo() {
+    if (!isSupabaseConfigured()) return false;
+    const supabase = getSupabaseClient();
+    try {
+      await supabase.from('palpites').delete().neq('id', '00000000-0000-0000-0000-000000000000');
+      await supabase.from('jogos').delete().neq('id', -1);
+      return true;
+    } catch (err) {
+      console.error('Erro ao apagar tudo:', err);
       throw err;
     }
   }
