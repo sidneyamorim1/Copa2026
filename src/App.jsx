@@ -273,10 +273,21 @@ function App() {
                 partes[colIdx] === 'Data' && 
                 partes[colIdx+1] === 'Hr') {
                 
-              const timeCasa = partes[colIdx+3];
-              const golsCasa = partes[colIdx+4];
-              const golsFora = partes[colIdx+6];
-              const timeFora = partes[colIdx+7];
+              // Encontrar a coluna do 'x' dinamicamente para lidar com variações do Excel
+              let xPos = colIdx + 3;
+              while(xPos < colIdx + 12 && partes[xPos] !== 'x' && partes[xPos] !== 'X') {
+                xPos++;
+              }
+              
+              if (partes[xPos] !== 'x' && partes[xPos] !== 'X') {
+                colIdx++;
+                continue;
+              }
+
+              const timeCasa = partes[xPos-2];
+              const golsCasa = partes[xPos-1];
+              const golsFora = partes[xPos+1];
+              const timeFora = partes[xPos+2];
               
               if (timeCasa && timeFora) {
                 const jogo = jogos.find(j => 
@@ -298,10 +309,10 @@ function App() {
                   let pRowIdx = i + 1;
                   while (pRowIdx < linhas.length && pRowIdx <= i + 8) {
                     const linhaAp = linhas[pRowIdx].split(/[,;]/).map(p => p.trim().replace(/^"|"$/g, ''));
-                    if (linhaAp.length > colIdx + 6) {
+                    if (linhaAp.length > xPos + 1) {
                       const nome = linhaAp[colIdx+2];
-                      const palpCasaStr = linhaAp[colIdx+4];
-                      const palpForaStr = linhaAp[colIdx+6];
+                      const palpCasaStr = linhaAp[xPos-1];
+                      const palpForaStr = linhaAp[xPos+1];
                       
                       if (nome && nomesValidos.includes(nome)) {
                         if (palpCasaStr !== '' && palpForaStr !== '' && !isNaN(palpCasaStr) && !isNaN(palpForaStr)) {
@@ -318,7 +329,7 @@ function App() {
                   }
                 }
               }
-              colIdx += 9;
+              colIdx = xPos + 2;
             } else {
               colIdx += 1;
             }
