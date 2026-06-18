@@ -265,73 +265,42 @@ function App() {
           if (!linha || !linha.trim()) continue;
           
           const partes = linha.split(/[,;]/).map(p => p.trim().replace(/^"|"$/g, ''));
-          if (partes.length < 8) continue;
+          if (partes.length < 5) continue;
           
-          let colIdx = 0;
-          while (colIdx < partes.length) {
-            if (colIdx + 7 < partes.length && 
-                partes[colIdx] === 'Data' && 
-                partes[colIdx+1] === 'Hr') {
-                
-              // Encontrar a coluna do 'x' dinamicamente para lidar com variações do Excel
-              let xPos = colIdx + 3;
-              while(xPos < colIdx + 12 && partes[xPos] !== 'x' && partes[xPos] !== 'X') {
-                xPos++;
-              }
-              
-              if (partes[xPos] !== 'x' && partes[xPos] !== 'X') {
-                colIdx++;
-                continue;
-              }
+          const nome = partes[0];
+          const timeCasa = partes[1];
+          const golsCasa = partes[2];
+          const timeFora = partes[3];
+          const golsFora = partes[4];
 
-              const timeCasa = partes[xPos-2];
-              const golsCasa = partes[xPos-1];
-              const golsFora = partes[xPos+1];
-              const timeFora = partes[xPos+2];
-              
-              if (timeCasa && timeFora) {
-                const jogo = jogos.find(j => 
-                  removeAccents(j.time_casa) === removeAccents(timeCasa) && 
-                  removeAccents(j.time_fora) === removeAccents(timeFora)
-                );
-                
-                if (jogo) {
+          // Pular linha de cabeçalho
+          if (nome.toLowerCase() === 'nome' || nome.toLowerCase() === 'apostador') continue;
+          
+          if (timeCasa && timeFora) {
+            const jogo = jogos.find(j => 
+              removeAccents(j.time_casa) === removeAccents(timeCasa) && 
+              removeAccents(j.time_fora) === removeAccents(timeFora)
+            );
+            
+            if (jogo) {
+              if (golsCasa !== '' && golsFora !== '' && !isNaN(golsCasa) && !isNaN(golsFora)) {
+                if (nome.toLowerCase() === 'oficial') {
                   // Placar oficial
-                  if (golsCasa !== '' && golsFora !== '' && !isNaN(golsCasa) && !isNaN(golsFora)) {
-                    atualizacoes.push({
-                      jogoId: jogo.id,
-                      golsCasa: parseInt(golsCasa, 10),
-                      golsFora: parseInt(golsFora, 10)
-                    });
-                  }
-                  
-                  // Palpites dos participantes nas próximas linhas
-                  let pRowIdx = i + 1;
-                  while (pRowIdx < linhas.length && pRowIdx <= i + 8) {
-                    const linhaAp = linhas[pRowIdx].split(/[,;]/).map(p => p.trim().replace(/^"|"$/g, ''));
-                    if (linhaAp.length > xPos + 1) {
-                      const nome = linhaAp[colIdx+2];
-                      const palpCasaStr = linhaAp[xPos-1];
-                      const palpForaStr = linhaAp[xPos+1];
-                      
-                      if (nome && nomesValidos.includes(nome)) {
-                        if (palpCasaStr !== '' && palpForaStr !== '' && !isNaN(palpCasaStr) && !isNaN(palpForaStr)) {
-                          novosPalpites.push({
-                            jogo_id: jogo.id,
-                            jogador_nome: nome,
-                            palpite_casa: parseInt(palpCasaStr, 10),
-                            palpite_fora: parseInt(palpForaStr, 10)
-                          });
-                        }
-                      }
-                    }
-                    pRowIdx++;
-                  }
+                  atualizacoes.push({
+                    jogoId: jogo.id,
+                    golsCasa: parseInt(golsCasa, 10),
+                    golsFora: parseInt(golsFora, 10)
+                  });
+                } else if (nomesValidos.includes(nome)) {
+                  // Palpite
+                  novosPalpites.push({
+                    jogo_id: jogo.id,
+                    jogador_nome: nome,
+                    palpite_casa: parseInt(golsCasa, 10),
+                    palpite_fora: parseInt(golsFora, 10)
+                  });
                 }
               }
-              colIdx = xPos + 2;
-            } else {
-              colIdx += 1;
             }
           }
         }
@@ -375,6 +344,29 @@ function App() {
     };
     reader.readAsText(file);
     e.target.value = '';
+  };
+
+  const handleDownloadTemplate = () => {
+    let csvContent = "Nome;Time Casa;Gols Casa;Time Fora;Gols Fora\n";
+    
+    // Para cada jogo, vamos gerar uma linha de 'Oficial' em branco
+    jogos.forEach(jogo => {
+      csvContent += `Oficial;${jogo.time_casa};;${jogo.time_fora};\n`;
+    });
+    
+    // Adicionar um bloco extra em branco no final de exemplo para palpites
+    csvContent += `\n`;
+    csvContent += `Sidney;Brasil;3;Marrocos;0\n`;
+    csvContent += `Eduardo;Brasil;2;Marrocos;1\n`;
+
+    const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", "Template_Bolao_Resultados.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   // Trata a seleção de uma data (via calendário)
@@ -865,8 +857,20 @@ function App() {
               
               <h3 style={{fontSize: '1rem', marginBottom: '8px'}}>Importar do Excel (CSV)</h3>
               <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
-                Selecione sua planilha em formato CSV para carregar todos os placares oficiais de uma vez.
+                O arquivo deve ter 5 colunas: Nome; Time Casa; Gols Casa; Time Fora; Gols Fora.
+                Use o nome "Oficial" para os resultados reais dos jogos.
               </p>
+              
+              <div style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
+                <button 
+                  onClick={handleDownloadTemplate}
+                  className="btn-submit"
+                  style={{ backgroundColor: 'var(--secondary-color)', flex: 1 }}
+                >
+                  Baixar Template CSV
+                </button>
+              </div>
+
               <input 
                 type="file" 
                 accept=".csv" 
