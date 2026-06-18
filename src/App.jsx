@@ -818,8 +818,8 @@ function App() {
               )}
             </div>
 
-            {/* Linha de cima: dois painéis lado a lado */}
-            <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+            {/* Painéis de admin empilhados */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
 
               {/* Painel 1: Importar CSV */}
               <div className="panel" style={{ flex: 1 }}>
