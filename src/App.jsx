@@ -150,6 +150,7 @@ function App() {
         setUsuario(user);
         const admin = await authService.isAdmin(user.id);
         setIsAdmin(admin);
+        setNomeJogador(user.user_metadata?.nome_display || user.email);
       }
       setAuthChecked(true);
     });
@@ -161,6 +162,7 @@ function App() {
       if (user) {
         const admin = await authService.isAdmin(user.id);
         setIsAdmin(admin);
+        setNomeJogador(user.user_metadata?.nome_display || user.email);
       } else {
         setIsAdmin(false);
       }
@@ -749,6 +751,10 @@ function App() {
                         placeholder="Ex: João"
                         value={nomeJogador}
                         onChange={(e) => setNomeJogador(e.target.value)}
+                        disabled={isSupabaseConfigured() && !!usuario}
+                        style={{
+                          ...(isSupabaseConfigured() && !!usuario ? { backgroundColor: 'var(--color-light)', cursor: 'not-allowed', color: 'var(--text-color)' } : {})
+                        }}
                         required
                       />
                     </div>
