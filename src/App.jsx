@@ -867,31 +867,6 @@ function App() {
                       ) : (
                         <span className="score missing" style={{ minWidth: '60px', textAlign: 'center' }}>- x -</span>
                       )}
-                      {(isAdmin || !isSupabaseConfigured()) && (
-                        <button 
-                          onClick={async () => {
-                            const gc = prompt(`ATUALIZAR RESULTADO\nGols do time da casa (${jogo.time_casa}):`, jogo.gols_casa_real ?? '');
-                            if (gc === null || gc === '') return;
-                            const gf = prompt(`ATUALIZAR RESULTADO\nGols do time de fora (${jogo.time_fora}):`, jogo.gols_fora_real ?? '');
-                            if (gf === null || gf === '') return;
-                            
-                            try {
-                              setLoading(true);
-                              const jogoAtualizado = await dbService.atualizarResultadoJogo(jogo.id, parseInt(gc), parseInt(gf));
-                              setJogos(jogos.map(j => j.id === jogo.id ? { ...j, gols_casa_real: jogoAtualizado.gols_casa_real, gols_fora_real: jogoAtualizado.gols_fora_real } : j));
-                            } catch (err) {
-                              console.error(err);
-                              alert('Erro ao atualizar o placar.');
-                            } finally {
-                              setLoading(false);
-                            }
-                          }}
-                          style={{ marginLeft: '8px', fontSize: '0.7rem', padding: '4px 8px', backgroundColor: 'var(--color-dark)', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
-                          title="Atualizar placar oficial"
-                        >
-                          ✏️ Atualizar
-                        </button>
-                      )}
                     </div>
                   );
                 })}
