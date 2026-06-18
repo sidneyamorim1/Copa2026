@@ -710,9 +710,9 @@ function App() {
                       <div className="match-status-badge" style={{ backgroundColor: '#e2e8f0', color: '#475569' }}>
                         Placar oficial: {jogoAtivo.gols_casa_real} x {jogoAtivo.gols_fora_real}
                       </div>
-                    ) : new Date() > new Date(`${jogoAtivo.data}T${jogoAtivo.hora}`) ? (
-                      <div className="match-status-badge" style={{ backgroundColor: '#e2e8f0', color: '#475569' }}>
-                        Palpites encerrados (Jogo em andamento)
+                    ) : new Date() > new Date(new Date(`${jogoAtivo.data}T${jogoAtivo.hora}`).getTime() - 3600000) ? (
+                      <div className="match-status-badge" style={{ backgroundColor: '#fee2e2', color: '#991b1b' }}>
+                        Palpites Encerrados
                       </div>
                     ) : (
                       <div className="match-status-badge">
@@ -761,9 +761,10 @@ function App() {
 
                     {(() => {
                       const dataHoraJogo = new Date(`${jogoAtivo.data}T${jogoAtivo.hora}`);
-                      const jogoJaComecou = new Date() > dataHoraJogo;
+                      const limitePalpite = new Date(dataHoraJogo.getTime() - 3600000); // 1 hora antes
+                      const palpitesEncerrados = new Date() > limitePalpite;
                       const jaTemPalpite = jogoAtivo && nomeJogador.trim() && palpites.some(p => p.jogo_id === jogoAtivo.id && p.jogador_nome.toLowerCase() === nomeJogador.trim().toLowerCase());
-                      const bloqueado = jaTemPalpite || jogoJaComecou;
+                      const bloqueado = jaTemPalpite || palpitesEncerrados;
                       
                       return (
                         <>
@@ -802,7 +803,7 @@ function App() {
                             style={{ width: '100%', marginTop: '12px', ...(bloqueado ? { backgroundColor: '#94a3b8', cursor: 'not-allowed' } : {}) }}
                             disabled={bloqueado}
                           >
-                            {jogoJaComecou ? 'Palpites Encerrados' : jaTemPalpite ? 'Palpite já enviado' : 'Enviar palpite'}
+                            {palpitesEncerrados ? 'Palpites Encerrados' : jaTemPalpite ? 'Palpite já enviado' : 'Enviar palpite'}
                           </button>
                         </>
                       )
