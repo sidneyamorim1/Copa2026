@@ -888,134 +888,136 @@ function App() {
             </div>
 
             {/* Painéis de admin - só para admin */}
-            {(isAdmin || !isSupabaseConfigured()) && (<>
+            {(isAdmin || !isSupabaseConfigured()) && (
+              <div style={{display: 'flex', flexDirection: 'column', gap: '16px'}}>
 
-              {/* Painel 1: Importar CSV */}
-              <div className="panel" style={{ flex: 1 }}>
-                <h3 style={{fontSize: '1rem', marginBottom: '8px'}}>Importar do Excel (CSV)</h3>
-                <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
-                  O arquivo deve ter 5 colunas: Nome; Time Casa; Gols Casa; Time Fora; Gols Fora.
-                  Use o nome "Oficial" para os resultados reais dos jogos.
-                </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                  <input 
-                    type="file" 
-                    accept=".csv" 
-                    onChange={handleUploadCSV} 
-                    className="input-control" 
-                    style={{padding: '8px', flex: 1, margin: 0}}
-                  />
-                  <button 
-                    onClick={handleDownloadTemplate}
-                    className="btn-submit"
-                    style={{ padding: '10px 16px', margin: 0, width: 'auto', backgroundColor: 'var(--color-accent)' }}
-                  >
-                    Baixar Template CSV
-                  </button>
-                </div>
-
-                <hr style={{margin: '20px 0', border: 'none', borderTop: '1px solid var(--border-color)'}}/>
-
-                <div style={{ padding: '16px', backgroundColor: '#fff5f5', border: '1px solid #fed7d7', borderRadius: '8px' }}>
-                  <h3 style={{ fontSize: '1rem', color: '#c53030', marginBottom: '8px' }}>Zona de Perigo</h3>
-                  <p style={{ fontSize: '0.8rem', color: '#742a2a', marginBottom: '12px' }}>
-                    Apagará todas as apostas e resultados. Apenas os 72 jogos em branco permanecerão.
+                {/* Painel 1: Importar CSV */}
+                <div className="panel">
+                  <h3 style={{fontSize: '1rem', marginBottom: '8px'}}>Importar do Excel (CSV)</h3>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
+                    O arquivo deve ter 5 colunas: Nome; Time Casa; Gols Casa; Time Fora; Gols Fora.
+                    Use o nome "Oficial" para os resultados reais dos jogos.
                   </p>
-                  <button 
-                    onClick={async () => {
-                      if (confirm("ATENÇÃO: Você tem certeza que deseja apagar TUDO (apostas e placares)? Isso não tem volta!")) {
-                        setLoading(true);
-                        await dbService.apagarTudo();
-                        window.location.reload();
-                      }
-                    }}
-                    className="btn-secondary"
-                    style={{ width: '100%', borderColor: '#f56565', color: '#c53030', margin: 0 }}
-                  >
-                    Zerar Todo o Banco de Dados
-                  </button>
-                </div>
-              </div>
-
-              {/* Painel 2: Atualizar Manualmente */}
-              <div className="panel" style={{ flex: 1 }}>
-                <h2 style={{fontSize: '1rem', marginBottom: '8px'}}>Atualizar Manualmente</h2>
-                <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
-                  Caso queira atualizar apenas um jogo manualmente sem usar a planilha.
-                </p>
-                <form onSubmit={handleAtualizarResultado}>
-                  <div className="form-group">
-                    <label htmlFor="admin-select-game">Jogo selecionado</label>
-                    <select 
-                      id="admin-select-game"
-                      className="input-control"
-                      value={jogoSelecionadoAdmin}
-                      onChange={(e) => setJogoSelecionadoAdmin(e.target.value)}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                    <input 
+                      type="file" 
+                      accept=".csv" 
+                      onChange={handleUploadCSV} 
+                      className="input-control" 
+                      style={{padding: '8px', flex: 1, margin: 0}}
+                    />
+                    <button 
+                      onClick={handleDownloadTemplate}
+                      className="btn-submit"
+                      style={{ padding: '10px 16px', margin: 0, width: 'auto', backgroundColor: 'var(--color-accent)' }}
                     >
-                      {jogos.map(j => (
-                        <option key={j.id} value={j.id.toString()}>
-                          {j.time_casa} x {j.time_fora} - {j.data} às {j.hora}
-                        </option>
-                      ))}
-                    </select>
+                      Baixar Template CSV
+                    </button>
                   </div>
-                  <div className="form-group">
-                    <label>Placar final</label>
-                    <div className="scores-input-grid">
-                      <input 
-                        type="number"
-                        className="score-input"
-                        min="0"
-                        max="99"
-                        value={adminGolsCasa}
-                        onChange={(e) => setAdminGolsCasa(e.target.value)}
-                        required
-                      />
-                      <span className="score-divider">x</span>
-                      <input 
-                        type="number"
-                        className="score-input"
-                        min="0"
-                        max="99"
-                        value={adminGolsFora}
-                        onChange={(e) => setAdminGolsFora(e.target.value)}
-                        required
-                      />
-                    </div>
-                  </div>
-                  <button type="submit" className="btn-submit" style={{backgroundColor: 'var(--color-info)', color: 'var(--color-dark)'}}>
-                    Atualizar jogo selecionado
-                  </button>
-                </form>
-              </div>
-            </div>
 
-            {/* Painel 3: Resultados Oficiais Registrados - largura total */}
-            <div className="panel">
-              <h2 style={{fontSize: '1rem', marginBottom: '12px', color: 'var(--color-primary)'}}>
-                Resultados Oficiais Registrados
-              </h2>
-              <div style={{display: 'flex', flexWrap: 'wrap', gap: '8px'}}>
-                {jogos.filter(j => j.gols_casa_real !== null && j.gols_fora_real !== null).length === 0 ? (
-                  <p style={{fontSize: '0.8rem', color: 'var(--text-muted)'}}>Nenhum resultado oficial registrado ainda.</p>
-                ) : (
-                  jogos.filter(j => j.gols_casa_real !== null && j.gols_fora_real !== null).map(j => (
-                    <div key={j.id} style={{
-                      padding: '8px 14px',
-                      backgroundColor: 'var(--color-light)',
-                      border: '1px solid var(--border-color)',
-                      borderRadius: '8px',
-                      fontSize: '0.85rem',
-                      minWidth: '180px'
-                    }}>
-                      <strong>{j.time_casa} {j.gols_casa_real} x {j.gols_fora_real} {j.time_fora}</strong>
-                      <div style={{fontSize: '0.72rem', color: 'var(--text-muted)'}}>{j.data} às {j.hora}</div>
+                  <hr style={{margin: '20px 0', border: 'none', borderTop: '1px solid var(--border-color)'}}/>
+
+                  <div style={{ padding: '16px', backgroundColor: '#fff5f5', border: '1px solid #fed7d7', borderRadius: '8px' }}>
+                    <h3 style={{ fontSize: '1rem', color: '#c53030', marginBottom: '8px' }}>Zona de Perigo</h3>
+                    <p style={{ fontSize: '0.8rem', color: '#742a2a', marginBottom: '12px' }}>
+                      Apagará todas as apostas e resultados. Apenas os 72 jogos em branco permanecerão.
+                    </p>
+                    <button 
+                      onClick={async () => {
+                        if (confirm("ATENÇÃO: Você tem certeza que deseja apagar TUDO (apostas e placares)? Isso não tem volta!")) {
+                          setLoading(true);
+                          await dbService.apagarTudo();
+                          window.location.reload();
+                        }
+                      }}
+                      className="btn-secondary"
+                      style={{ width: '100%', borderColor: '#f56565', color: '#c53030', margin: 0 }}
+                    >
+                      Zerar Todo o Banco de Dados
+                    </button>
+                  </div>
+                </div>
+
+                {/* Painel 2: Atualizar Manualmente */}
+                <div className="panel">
+                  <h2 style={{fontSize: '1rem', marginBottom: '8px'}}>Atualizar Manualmente</h2>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
+                    Caso queira atualizar apenas um jogo manualmente sem usar a planilha.
+                  </p>
+                  <form onSubmit={handleAtualizarResultado}>
+                    <div className="form-group">
+                      <label htmlFor="admin-select-game">Jogo selecionado</label>
+                      <select 
+                        id="admin-select-game"
+                        className="input-control"
+                        value={jogoSelecionadoAdmin}
+                        onChange={(e) => setJogoSelecionadoAdmin(e.target.value)}
+                      >
+                        {jogos.map(j => (
+                          <option key={j.id} value={j.id.toString()}>
+                            {j.time_casa} x {j.time_fora} - {j.data} às {j.hora}
+                          </option>
+                        ))}
+                      </select>
                     </div>
-                  ))
-                )}
+                    <div className="form-group">
+                      <label>Placar final</label>
+                      <div className="scores-input-grid">
+                        <input 
+                          type="number"
+                          className="score-input"
+                          min="0"
+                          max="99"
+                          value={adminGolsCasa}
+                          onChange={(e) => setAdminGolsCasa(e.target.value)}
+                          required
+                        />
+                        <span className="score-divider">x</span>
+                        <input 
+                          type="number"
+                          className="score-input"
+                          min="0"
+                          max="99"
+                          value={adminGolsFora}
+                          onChange={(e) => setAdminGolsFora(e.target.value)}
+                          required
+                        />
+                      </div>
+                    </div>
+                    <button type="submit" className="btn-submit" style={{backgroundColor: 'var(--color-info)', color: 'var(--color-dark)'}}>
+                      Atualizar jogo selecionado
+                    </button>
+                  </form>
+                </div>
+
+                {/* Painel 3: Resultados Oficiais */}
+                <div className="panel">
+                  <h2 style={{fontSize: '1rem', marginBottom: '12px', color: 'var(--color-primary)'}}>
+                    Resultados Oficiais Registrados
+                  </h2>
+                  <div style={{display: 'flex', flexWrap: 'wrap', gap: '8px'}}>
+                    {jogos.filter(j => j.gols_casa_real !== null && j.gols_fora_real !== null).length === 0 ? (
+                      <p style={{fontSize: '0.8rem', color: 'var(--text-muted)'}}>Nenhum resultado oficial registrado ainda.</p>
+                    ) : (
+                      jogos.filter(j => j.gols_casa_real !== null && j.gols_fora_real !== null).map(j => (
+                        <div key={j.id} style={{
+                          padding: '8px 14px',
+                          backgroundColor: 'var(--color-light)',
+                          border: '1px solid var(--border-color)',
+                          borderRadius: '8px',
+                          fontSize: '0.85rem',
+                          minWidth: '180px'
+                        }}>
+                          <strong>{j.time_casa} {j.gols_casa_real} x {j.gols_fora_real} {j.time_fora}</strong>
+                          <div style={{fontSize: '0.72rem', color: 'var(--text-muted)'}}>{j.data} às {j.hora}</div>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
+
               </div>
-            </div>
-            </>)}
+            )}
           </div>
         </div>
       </div>
