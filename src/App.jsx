@@ -710,6 +710,10 @@ function App() {
                       <div className="match-status-badge" style={{ backgroundColor: '#e2e8f0', color: '#475569' }}>
                         Placar oficial: {jogoAtivo.gols_casa_real} x {jogoAtivo.gols_fora_real}
                       </div>
+                    ) : new Date() > new Date(`${jogoAtivo.data}T${jogoAtivo.hora}`) ? (
+                      <div className="match-status-badge" style={{ backgroundColor: '#e2e8f0', color: '#475569' }}>
+                        Palpites encerrados (Jogo em andamento)
+                      </div>
                     ) : (
                       <div className="match-status-badge">
                         Palpites ainda abertos
@@ -756,7 +760,10 @@ function App() {
                     </div>
 
                     {(() => {
+                      const dataHoraJogo = new Date(`${jogoAtivo.data}T${jogoAtivo.hora}`);
+                      const jogoJaComecou = new Date() > dataHoraJogo;
                       const jaTemPalpite = jogoAtivo && nomeJogador.trim() && palpites.some(p => p.jogo_id === jogoAtivo.id && p.jogador_nome.toLowerCase() === nomeJogador.trim().toLowerCase());
+                      const bloqueado = jaTemPalpite || jogoJaComecou;
                       
                       return (
                         <>
@@ -770,8 +777,8 @@ function App() {
                                 max="99"
                                 value={palpiteCasa}
                                 onChange={(e) => setPalpiteCasa(e.target.value)}
-                                disabled={jaTemPalpite}
-                                style={jaTemPalpite ? { backgroundColor: 'var(--color-light)', cursor: 'not-allowed', color: 'var(--text-color)' } : {}}
+                                disabled={bloqueado}
+                                style={bloqueado ? { backgroundColor: 'var(--color-light)', cursor: 'not-allowed', color: 'var(--text-color)' } : {}}
                                 required
                               />
                               <span className="score-divider">x</span>
@@ -782,8 +789,8 @@ function App() {
                                 max="99"
                                 value={palpiteFora}
                                 onChange={(e) => setPalpiteFora(e.target.value)}
-                                disabled={jaTemPalpite}
-                                style={jaTemPalpite ? { backgroundColor: 'var(--color-light)', cursor: 'not-allowed', color: 'var(--text-color)' } : {}}
+                                disabled={bloqueado}
+                                style={bloqueado ? { backgroundColor: 'var(--color-light)', cursor: 'not-allowed', color: 'var(--text-color)' } : {}}
                                 required
                               />
                             </div>
@@ -791,11 +798,11 @@ function App() {
 
                           <button 
                             type="submit" 
-                            className="btn-submit"
-                            disabled={jaTemPalpite}
-                            style={jaTemPalpite ? { backgroundColor: 'var(--text-muted)', cursor: 'not-allowed' } : {}}
+                            className="btn-primary" 
+                            style={{ width: '100%', marginTop: '12px', ...(bloqueado ? { backgroundColor: '#94a3b8', cursor: 'not-allowed' } : {}) }}
+                            disabled={bloqueado}
                           >
-                            {jaTemPalpite ? 'Palpite já enviado' : 'Enviar palpite'}
+                            {jogoJaComecou ? 'Palpites Encerrados' : jaTemPalpite ? 'Palpite já enviado' : 'Enviar palpite'}
                           </button>
                         </>
                       )
