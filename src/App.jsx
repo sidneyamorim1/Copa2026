@@ -861,23 +861,22 @@ function App() {
                 Use o nome "Oficial" para os resultados reais dos jogos.
               </p>
               
-              <div style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                <input 
+                  type="file" 
+                  accept=".csv" 
+                  onChange={handleUploadCSV} 
+                  className="input-control" 
+                  style={{padding: '8px', flex: 1, margin: 0}}
+                />
                 <button 
                   onClick={handleDownloadTemplate}
                   className="btn-submit"
-                  style={{ backgroundColor: 'var(--secondary-color)', flex: 1 }}
+                  style={{ backgroundColor: 'var(--secondary-color)', padding: '10px 16px', margin: 0, width: 'auto' }}
                 >
                   Baixar Template CSV
                 </button>
               </div>
-
-              <input 
-                type="file" 
-                accept=".csv" 
-                onChange={handleUploadCSV} 
-                className="input-control" 
-                style={{padding: '8px'}}
-              />
             </div>
           </div>
         </div>
