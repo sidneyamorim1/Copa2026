@@ -909,26 +909,14 @@ function App() {
                 ) : (
                   jogos.filter(j => j.gols_casa_real !== null && j.gols_fora_real !== null).map(j => (
                     <div key={j.id} style={{
-                      display: 'flex', 
-                      justifyContent: 'space-between', 
-                      alignItems: 'center',
                       padding: '8px 12px',
                       backgroundColor: 'var(--color-light)',
                       border: '1px solid var(--border-color)',
                       borderRadius: '8px',
                       fontSize: '0.9rem'
                     }}>
-                      <div>
-                        <strong>{j.time_casa} {j.gols_casa_real} x {j.gols_fora_real} {j.time_fora}</strong>
-                        <div style={{fontSize: '0.75rem', color: 'var(--text-muted)'}}>{j.data} às {j.hora}</div>
-                      </div>
-                      <button 
-                        onClick={() => handleRemoverResultado(j.id)}
-                        className="btn-secondary"
-                        style={{padding: '6px 10px', fontSize: '0.8rem', margin: 0, width: 'auto'}}
-                      >
-                        Limpar
-                      </button>
+                      <strong>{j.time_casa} {j.gols_casa_real} x {j.gols_fora_real} {j.time_fora}</strong>
+                      <div style={{fontSize: '0.75rem', color: 'var(--text-muted)'}}>{j.data} às {j.hora}</div>
                     </div>
                   ))
                 )}
