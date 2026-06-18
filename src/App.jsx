@@ -243,6 +243,25 @@ function App() {
     }
   };
 
+  const handleRemoverResultado = async (jogoId) => {
+    if (!confirm("Remover este resultado oficial? A classificação será recalculada.")) return;
+    try {
+      setLoading(true);
+      await dbService.atualizarResultadoJogo(jogoId, null, null);
+      
+      setJogos(jogos.map(j => j.id === jogoId ? {
+        ...j,
+        gols_casa_real: null,
+        gols_fora_real: null
+      } : j));
+    } catch (err) {
+      console.error(err);
+      alert("Erro ao remover o resultado.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleUploadCSV = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -801,12 +820,37 @@ function App() {
 
             {/* Painel Resultados Oficiais (Admin) */}
             <div className="panel">
-              <h2>Resultados oficiais</h2>
+              <h3 style={{fontSize: '1rem', marginBottom: '8px'}}>Importar do Excel (CSV)</h3>
               <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
-                Preencha o placar final quando o jogo terminar. A classificação será recalculada automaticamente.
+                O arquivo deve ter 5 colunas: Nome; Time Casa; Gols Casa; Time Fora; Gols Fora.
+                Use o nome "Oficial" para os resultados reais dos jogos.
+              </p>
+              
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                <input 
+                  type="file" 
+                  accept=".csv" 
+                  onChange={handleUploadCSV} 
+                  className="input-control" 
+                  style={{padding: '8px', flex: 1, margin: 0}}
+                />
+                <button 
+                  onClick={handleDownloadTemplate}
+                  className="btn-submit"
+                  style={{ padding: '10px 16px', margin: 0, width: 'auto', backgroundColor: 'var(--color-accent)' }}
+                >
+                  Baixar Template CSV
+                </button>
+              </div>
+
+              <hr style={{margin: '24px 0', border: 'none', borderTop: '1px solid var(--border-color)'}}/>
+
+              <h2 style={{fontSize: '1rem', marginBottom: '8px'}}>Atualizar Manualmente</h2>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
+                Caso queira atualizar apenas um jogo manualmente sem usar a planilha.
               </p>
 
-              <form onSubmit={handleAtualizarResultado}>
+              <form onSubmit={handleAtualizarResultado} style={{marginBottom: '24px'}}>
                 <div className="form-group">
                   <label htmlFor="admin-select-game">Jogo selecionado</label>
                   <select 
@@ -848,34 +892,46 @@ function App() {
                   </div>
                 </div>
 
-                <button type="submit" className="btn-submit">
-                  Atualizar resultado
+                <button type="submit" className="btn-submit" style={{backgroundColor: 'var(--color-info)', color: 'var(--color-dark)'}}>
+                  Atualizar jogo selecionado
                 </button>
               </form>
 
               <hr style={{margin: '24px 0', border: 'none', borderTop: '1px solid var(--border-color)'}}/>
               
-              <h3 style={{fontSize: '1rem', marginBottom: '8px'}}>Importar do Excel (CSV)</h3>
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
-                O arquivo deve ter 5 colunas: Nome; Time Casa; Gols Casa; Time Fora; Gols Fora.
-                Use o nome "Oficial" para os resultados reais dos jogos.
-              </p>
+              <h2 style={{fontSize: '1rem', marginBottom: '12px', color: 'var(--color-primary)'}}>
+                Resultados Oficiais Registrados
+              </h2>
               
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                <input 
-                  type="file" 
-                  accept=".csv" 
-                  onChange={handleUploadCSV} 
-                  className="input-control" 
-                  style={{padding: '8px', flex: 1, margin: 0}}
-                />
-                <button 
-                  onClick={handleDownloadTemplate}
-                  className="btn-submit"
-                  style={{ padding: '10px 16px', margin: 0, width: 'auto', backgroundColor: 'var(--color-accent)' }}
-                >
-                  Baixar Template CSV
-                </button>
+              <div style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
+                {jogos.filter(j => j.gols_casa_real !== null && j.gols_fora_real !== null).length === 0 ? (
+                  <p style={{fontSize: '0.8rem', color: 'var(--text-muted)'}}>Nenhum resultado oficial registrado ainda.</p>
+                ) : (
+                  jogos.filter(j => j.gols_casa_real !== null && j.gols_fora_real !== null).map(j => (
+                    <div key={j.id} style={{
+                      display: 'flex', 
+                      justifyContent: 'space-between', 
+                      alignItems: 'center',
+                      padding: '8px 12px',
+                      backgroundColor: 'var(--color-light)',
+                      border: '1px solid var(--border-color)',
+                      borderRadius: '8px',
+                      fontSize: '0.9rem'
+                    }}>
+                      <div>
+                        <strong>{j.time_casa} {j.gols_casa_real} x {j.gols_fora_real} {j.time_fora}</strong>
+                        <div style={{fontSize: '0.75rem', color: 'var(--text-muted)'}}>{j.data} às {j.hora}</div>
+                      </div>
+                      <button 
+                        onClick={() => handleRemoverResultado(j.id)}
+                        className="btn-secondary"
+                        style={{padding: '6px 10px', fontSize: '0.8rem', margin: 0, width: 'auto'}}
+                      >
+                        Limpar
+                      </button>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
           </div>
