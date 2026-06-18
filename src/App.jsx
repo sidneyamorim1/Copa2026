@@ -178,6 +178,8 @@ function App() {
   }, [authChecked, usuario]);
 
   const jogoAtivo = jogos[jogoAtivoIdx] || null;
+  const jogosDaData = jogos.filter(j => j.data === dataSelecionada);
+  const idxNaData = jogosDaData.findIndex(j => j?.id === jogoAtivo?.id);
 
   // Atualiza os palpites exibidos nos inputs quando o jogo ativo ou o nome do jogador mudar
   useEffect(() => {
@@ -480,17 +482,13 @@ function App() {
   const diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
   const gridCalendario = gerarGridCalendario();
 
-  // Navegar entre jogos
+  // Navegar entre jogos apenas do dia selecionado
   const navegarJogo = (direcao) => {
-    let novoIdx = jogoAtivoIdx + direcao;
-    if (novoIdx >= 0 && novoIdx < jogos.length) {
-      setJogoAtivoIdx(novoIdx);
-      const novaData = jogos[novoIdx].data;
-      setDataSelecionada(novaData);
-      // Sincroniza o calendário com o mês do jogo
-      const parsed = parseDateBR(novaData);
-      setCalMes(parsed.getMonth());
-      setCalAno(parsed.getFullYear());
+    let novoIdxNaData = idxNaData + direcao;
+    if (novoIdxNaData >= 0 && novoIdxNaData < jogosDaData.length) {
+      const novoJogoId = jogosDaData[novoIdxNaData].id;
+      const globalIdx = jogos.findIndex(j => j.id === novoJogoId);
+      setJogoAtivoIdx(globalIdx);
     }
   };
 
@@ -726,18 +724,18 @@ function App() {
                     <button 
                       className="nav-btn" 
                       onClick={() => navegarJogo(-1)}
-                      disabled={jogoAtivoIdx === 0}
+                      disabled={idxNaData <= 0}
                       title="Jogo anterior"
                     >
                       &lsaquo;
                     </button>
                     <span className="nav-indicator">
-                      {jogoAtivoIdx + 1} de {jogos.length}
+                      {idxNaData + 1} de {jogosDaData.length}
                     </span>
                     <button 
                       className="nav-btn" 
                       onClick={() => navegarJogo(1)}
-                      disabled={jogoAtivoIdx === jogos.length - 1}
+                      disabled={idxNaData >= jogosDaData.length - 1}
                       title="Próximo jogo"
                     >
                       &rsaquo;
