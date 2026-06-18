@@ -418,17 +418,8 @@ function App() {
   // 2. Jogos avaliados (que possuem resultado real preenchido)
   const jogosAvaliadosCount = jogos.filter(j => j.gols_casa_real !== null && j.gols_fora_real !== null).length;
   
-    const AJUSTE_MIGRACAO_EXCEL = {
-      'Sidney': -3,
-      'Eduardo': 0,
-      'Aline': 0,
-      'Matheus': 2,
-      'Silvio': 2,
-      'Daniel': -6
-    };
-
     const ranking = participantesUnicos.map(nome => {
-      let pontos = AJUSTE_MIGRACAO_EXCEL[nome] || 0;
+      let pontos = 0;
       let acertos = 0; // +5 ou +3
       let erros = 0; // 0 ou -3
       

@@ -5,8 +5,8 @@
     "hora": "16:00",
     "time_casa": "México",
     "time_fora": "Africa",
-    "gols_casa_real": 2,
-    "gols_fora_real": 0,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          GRUPO A"
   },
   {
@@ -15,8 +15,8 @@
     "hora": "16:00",
     "time_casa": "Canadá",
     "time_fora": "Bósnia",
-    "gols_casa_real": 1,
-    "gols_fora_real": 1,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          GRUPO B"
   },
   {
@@ -25,8 +25,8 @@
     "hora": "19:00",
     "time_casa": "Brasil",
     "time_fora": "Marrocos",
-    "gols_casa_real": 1,
-    "gols_fora_real": 1,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          GRUPO C"
   },
   {
@@ -35,8 +35,8 @@
     "hora": "22:00",
     "time_casa": "EUA",
     "time_fora": "Paraguai",
-    "gols_casa_real": 4,
-    "gols_fora_real": 1,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          GRUPO D"
   },
   {
@@ -45,8 +45,8 @@
     "hora": "14:00",
     "time_casa": "Alemanha",
     "time_fora": "Curaçao",
-    "gols_casa_real": 7,
-    "gols_fora_real": 1,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          GRUPO E"
   },
   {
@@ -55,8 +55,8 @@
     "hora": "17:00",
     "time_casa": "Holanda",
     "time_fora": "Japão",
-    "gols_casa_real": 2,
-    "gols_fora_real": 2,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          GRUPO F"
   },
   {
@@ -65,8 +65,8 @@
     "hora": "16:00",
     "time_casa": "Bélgica",
     "time_fora": "Egito",
-    "gols_casa_real": 1,
-    "gols_fora_real": 1,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          Grupo G"
   },
   {
@@ -75,8 +75,8 @@
     "hora": "13:00",
     "time_casa": "Espanha",
     "time_fora": "Cabo Verde",
-    "gols_casa_real": 0,
-    "gols_fora_real": 0,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          Grupo G"
   },
   {
@@ -85,8 +85,8 @@
     "hora": "16:00",
     "time_casa": "França",
     "time_fora": "Senegal",
-    "gols_casa_real": 3,
-    "gols_fora_real": 1,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          Grupo G"
   },
   {
@@ -95,8 +95,8 @@
     "hora": "22:00",
     "time_casa": "Argentina",
     "time_fora": "Argélia",
-    "gols_casa_real": 3,
-    "gols_fora_real": 0,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          Grupo G"
   },
   {
@@ -105,8 +105,8 @@
     "hora": "14:00",
     "time_casa": "Portugal",
     "time_fora": "RD Congo",
-    "gols_casa_real": 1,
-    "gols_fora_real": 1,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          Grupo G"
   },
   {
@@ -125,8 +125,8 @@
     "hora": "16:00",
     "time_casa": "Coréa",
     "time_fora": "Tchéquia",
-    "gols_casa_real": 2,
-    "gols_fora_real": 1,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          GRUPO A"
   },
   {
@@ -135,8 +135,8 @@
     "hora": "16:00",
     "time_casa": "Catar",
     "time_fora": "Suíça",
-    "gols_casa_real": 1,
-    "gols_fora_real": 1,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          GRUPO B"
   },
   {
@@ -145,8 +145,8 @@
     "hora": "22:00",
     "time_casa": "Haití",
     "time_fora": "Escócia",
-    "gols_casa_real": 0,
-    "gols_fora_real": 1,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          GRUPO C"
   },
   {
@@ -155,8 +155,8 @@
     "hora": "01:00",
     "time_casa": "Austrália",
     "time_fora": "Turquia",
-    "gols_casa_real": 2,
-    "gols_fora_real": 0,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          GRUPO D"
   },
   {
@@ -165,8 +165,8 @@
     "hora": "20:00",
     "time_casa": "Cost Marfim",
     "time_fora": "Equador",
-    "gols_casa_real": 1,
-    "gols_fora_real": 0,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          GRUPO E"
   },
   {
@@ -175,8 +175,8 @@
     "hora": "23:00",
     "time_casa": "Suécia",
     "time_fora": "Tunisia",
-    "gols_casa_real": 5,
-    "gols_fora_real": 1,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          GRUPO F"
   },
   {
@@ -185,8 +185,8 @@
     "hora": "22:00",
     "time_casa": "Irã",
     "time_fora": "Nova Zelandia",
-    "gols_casa_real": 2,
-    "gols_fora_real": 2,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          Grupo G"
   },
   {
@@ -195,8 +195,8 @@
     "hora": "19:00",
     "time_casa": "Arab Saudita",
     "time_fora": "Uruguai",
-    "gols_casa_real": 1,
-    "gols_fora_real": 1,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          Grupo G"
   },
   {
@@ -205,8 +205,8 @@
     "hora": "19:00",
     "time_casa": "Iraque",
     "time_fora": "Noruega",
-    "gols_casa_real": 1,
-    "gols_fora_real": 4,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          Grupo G"
   },
   {
@@ -215,8 +215,8 @@
     "hora": "01:00",
     "time_casa": "Austria",
     "time_fora": "Jordania",
-    "gols_casa_real": 3,
-    "gols_fora_real": 1,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          Grupo G"
   },
   {
@@ -235,8 +235,8 @@
     "hora": "17:00",
     "time_casa": "Inglaterra",
     "time_fora": "Croácia",
-    "gols_casa_real": 0,
-    "gols_fora_real": 0,
+    "gols_casa_real": null,
+    "gols_fora_real": null,
     "grupo": "Primeira fase          Grupo G"
   },
   {
