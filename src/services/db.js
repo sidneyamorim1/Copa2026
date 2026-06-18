@@ -210,6 +210,50 @@ export const dbService = {
     }
   },
 
+  // Atualizar vários jogos de uma vez (para upload de CSV)
+  async atualizarResultadosEmLote(atualizacoes) {
+    if (isSupabaseConfigured()) {
+      const supabase = getSupabaseClient();
+      try {
+        // Como o Supabase não suporta upsert fácil sem PK completo nesse caso simples,
+        // vamos fazer um update para cada jogo ou Promise.all
+        const promises = atualizacoes.map(upd => 
+          supabase
+            .from('jogos')
+            .update({
+              gols_casa_real: upd.golsCasa,
+              gols_fora_real: upd.golsFora
+            })
+            .eq('id', upd.jogoId)
+        );
+        await Promise.all(promises);
+        
+        // Atualiza localStorage também para consistência rápida
+        return this.atualizarResultadosEmLoteLocal(atualizacoes);
+      } catch (err) {
+        console.error('Erro no update em lote do Supabase, usando local:', err);
+        return this.atualizarResultadosEmLoteLocal(atualizacoes);
+      }
+    } else {
+      return this.atualizarResultadosEmLoteLocal(atualizacoes);
+    }
+  },
+
+  atualizarResultadosEmLoteLocal(atualizacoes) {
+    const jogos = JSON.parse(localStorage.getItem(LOCAL_JOGOS_KEY)) || [];
+    
+    atualizacoes.forEach(upd => {
+      const idx = jogos.findIndex(j => j.id === upd.jogoId);
+      if (idx >= 0) {
+        jogos[idx].gols_casa_real = upd.golsCasa;
+        jogos[idx].gols_fora_real = upd.golsFora;
+      }
+    });
+    
+    localStorage.setItem(LOCAL_JOGOS_KEY, JSON.stringify(jogos));
+    return jogos;
+  },
+
   atualizarResultadoLocal(jogoId, golsCasa, golsFora) {
     const jogos = JSON.parse(localStorage.getItem(LOCAL_JOGOS_KEY)) || [];
     const idx = jogos.findIndex(j => j.id === jogoId);

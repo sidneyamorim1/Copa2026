@@ -243,6 +243,93 @@ function App() {
     }
   };
 
+  const handleUploadCSV = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = async (event) => {
+      try {
+        setLoading(true);
+        const text = event.target.result;
+        const linhas = text.split('\n');
+        
+        let atualizacoes = [];
+        
+        for (let linha of linhas) {
+          if (!linha.trim()) continue;
+          
+          const partes = linha.split(';').map(p => p.trim());
+          if (partes.length < 8) continue;
+          
+          let colIdx = 0;
+          while (colIdx < partes.length) {
+            if (colIdx + 7 < partes.length && 
+                partes[colIdx] === 'Data' && 
+                partes[colIdx+1] === 'Hr') {
+                
+              const timeCasa = partes[colIdx+3];
+              const golsCasa = partes[colIdx+4];
+              const golsFora = partes[colIdx+6];
+              const timeFora = partes[colIdx+7];
+              
+              if (timeCasa && timeFora) {
+                const jogo = jogos.find(j => 
+                  j.time_casa.toLowerCase() === timeCasa.toLowerCase() && 
+                  j.time_fora.toLowerCase() === timeFora.toLowerCase()
+                );
+                
+                if (jogo) {
+                  if (golsCasa !== '' && golsFora !== '' && !isNaN(golsCasa) && !isNaN(golsFora)) {
+                    atualizacoes.push({
+                      jogoId: jogo.id,
+                      golsCasa: parseInt(golsCasa, 10),
+                      golsFora: parseInt(golsFora, 10)
+                    });
+                  }
+                }
+              }
+              colIdx += 9;
+            } else {
+              colIdx += 1;
+            }
+          }
+        }
+        
+        if (atualizacoes.length > 0) {
+          await dbService.atualizarResultadosEmLote(atualizacoes);
+          
+          const jogosAtualizadosMap = {};
+          atualizacoes.forEach(a => {
+            jogosAtualizadosMap[a.jogoId] = a;
+          });
+          
+          setJogos(jogos.map(j => {
+            if (jogosAtualizadosMap[j.id]) {
+              return {
+                ...j,
+                gols_casa_real: jogosAtualizadosMap[j.id].golsCasa,
+                gols_fora_real: jogosAtualizadosMap[j.id].golsFora
+              };
+            }
+            return j;
+          }));
+          
+          alert(`${atualizacoes.length} resultados atualizados do CSV com sucesso!`);
+        } else {
+          alert('Nenhum placar novo importado (jogos futuros com placar no CSV foram ignorados).');
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Erro ao importar o CSV.');
+      } finally {
+        setLoading(false);
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  };
+
   // Trata a seleção de uma data (via calendário)
   const selecionarData = (data) => {
     setDataSelecionada(data);
@@ -735,6 +822,20 @@ function App() {
                   Atualizar resultado
                 </button>
               </form>
+
+              <hr style={{margin: '24px 0', border: 'none', borderTop: '1px solid var(--border-color)'}}/>
+              
+              <h3 style={{fontSize: '1rem', marginBottom: '8px'}}>Importar do Excel (CSV)</h3>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
+                Selecione sua planilha em formato CSV para carregar todos os placares oficiais de uma vez.
+              </p>
+              <input 
+                type="file" 
+                accept=".csv" 
+                onChange={handleUploadCSV} 
+                className="input-control" 
+                style={{padding: '8px'}}
+              />
             </div>
           </div>
         </div>
