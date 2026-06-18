@@ -872,7 +872,7 @@ function App() {
                 <button 
                   onClick={handleDownloadTemplate}
                   className="btn-submit"
-                  style={{ backgroundColor: 'var(--secondary-color)', padding: '10px 16px', margin: 0, width: 'auto' }}
+                  style={{ padding: '10px 16px', margin: 0, width: 'auto', backgroundColor: 'var(--color-accent)' }}
                 >
                   Baixar Template CSV
                 </button>
