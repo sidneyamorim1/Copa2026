@@ -754,7 +754,6 @@ function App() {
                         required
                       />
                     </div>
-                    </div>
 
                     {(() => {
                       const jaTemPalpite = jogoAtivo && nomeJogador.trim() && palpites.some(p => p.jogo_id === jogoAtivo.id && p.jogador_nome.toLowerCase() === nomeJogador.trim().toLowerCase());
