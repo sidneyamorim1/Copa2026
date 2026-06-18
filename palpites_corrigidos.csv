@@ -1,0 +1,295 @@
+Nome,Time Casa,Gols Casa,Time Fora,Gols Fora
+Aline,México,3,África do Sul,1
+Matheus,México,2,África do Sul,0
+Eduardo,México,2,África do Sul,1
+Sidney,México,2,África do Sul,1
+Silvio,México,2,África do Sul,1
+Daniel,México,2,África do Sul,1
+Aline,Canadá,1,Bósnia e Herz.,1
+Matheus,Canadá,2,Bósnia e Herz.,1
+Eduardo,Canadá,1,Bósnia e Herz.,1
+Sidney,Canadá,2,Bósnia e Herz.,1
+Silvio,Canadá,0,Bósnia e Herz.,0
+Daniel,Canadá,2,Bósnia e Herz.,0
+Aline,Brasil,2,Marrocos,0
+Matheus,Brasil,2,Marrocos,1
+Eduardo,Brasil,3,Marrocos,1
+Sidney,Brasil,3,Marrocos,1
+Silvio,Brasil,2,Marrocos,1
+Daniel,Brasil,2,Marrocos,2
+Aline,EUA,2,Paraguai,1
+Matheus,EUA,0,Paraguai,1
+Eduardo,EUA,1,Paraguai,0
+Sidney,EUA,2,Paraguai,2
+Silvio,EUA,2,Paraguai,0
+Daniel,EUA,1,Paraguai,2
+Aline,Alemanha,4,Curaçao,0
+Matheus,Alemanha,3,Curaçao,0
+Eduardo,Alemanha,6,Curaçao,0
+Sidney,Alemanha,3,Curaçao,1
+Silvio,Alemanha,5,Curaçao,0
+Daniel,Alemanha,4,Curaçao,0
+Aline,Holanda,2,Japão,1
+Matheus,Holanda,1,Japão,0
+Eduardo,Holanda,2,Japão,1
+Sidney,Holanda,2,Japão,2
+Silvio,Holanda,0,Japão,1
+Daniel,Holanda,2,Japão,1
+Aline,Bélgica,2,Egito,1
+Matheus,Bélgica,2,Egito,0
+Eduardo,Bélgica,3,Egito,1
+Sidney,Bélgica,2,Egito,1
+Silvio,Bélgica,2,Egito,1
+Daniel,Bélgica,3,Egito,2
+Aline,Espanha,4,Cabo Verde,0
+Matheus,Espanha,2,Cabo Verde,0
+Eduardo,Espanha,7,Cabo Verde,0
+Sidney,Espanha,3,Cabo Verde,1
+Silvio,Espanha,3,Cabo Verde,0
+Daniel,Espanha,4,Cabo Verde,0
+Aline,França,5,Senegal,0
+Matheus,França,4,Senegal,0
+Eduardo,França,2,Senegal,2
+Sidney,França,3,Senegal,1
+Silvio,França,3,Senegal,2
+Daniel,França,2,Senegal,1
+Aline,Argentina,3,Argélia,0
+Matheus,Argentina,2,Argélia,0
+Eduardo,Argentina,3,Argélia,1
+Sidney,Argentina,2,Argélia,0
+Silvio,Argentina,4,Argélia,0
+Daniel,Argentina,3,Argélia,1
+Aline,Portugal,3,RD Congo,1
+Matheus,Portugal,3,RD Congo,0
+Eduardo,Portugal,4,RD Congo,1
+Sidney,Portugal,3,RD Congo,1
+Silvio,Portugal,4,RD Congo,0
+Daniel,Portugal,3,RD Congo,0
+Aline,Gana,1,Panama,0
+Matheus,Gana,1,Panama,0
+Eduardo,Gana,2,Panama,0
+Sidney,Gana,2,Panama,1
+Silvio,Gana,2,Panama,0
+Daniel,Gana,3,Panama,1
+Aline,Coreia do Sul,0,Tchéquia,0
+Matheus,Coreia do Sul,1,Tchéquia,1
+Eduardo,Coreia do Sul,2,Tchéquia,2
+Sidney,Coreia do Sul,2,Tchéquia,2
+Silvio,Coreia do Sul,2,Tchéquia,0
+Daniel,Coreia do Sul,1,Tchéquia,0
+Aline,Catar,1,Suíça,2
+Matheus,Catar,0,Suíça,2
+Eduardo,Catar,1,Suíça,3
+Sidney,Catar,1,Suíça,3
+Silvio,Catar,0,Suíça,1
+Daniel,Catar,0,Suíça,2
+Aline,Haiti,0,Escócia,3
+Matheus,Haiti,0,Escócia,1
+Eduardo,Haiti,0,Escócia,2
+Sidney,Haiti,0,Escócia,1
+Silvio,Haiti,0,Escócia,3
+Daniel,Haiti,0,Escócia,3
+Aline,Australia,0,Turquia,2
+Matheus,Australia,0,Turquia,1
+Eduardo,Australia,0,Turquia,2
+Sidney,Australia,1,Turquia,2
+Silvio,Australia,0,Turquia,2
+Daniel,Australia,1,Turquia,2
+Aline,Costa do Marfim,0,Equador,0
+Matheus,Costa do Marfim,0,Equador,1
+Eduardo,Costa do Marfim,1,Equador,0
+Sidney,Costa do Marfim,1,Equador,2
+Silvio,Costa do Marfim,0,Equador,3
+Daniel,Costa do Marfim,2,Equador,2
+Aline,Suécia,2,Tunísia,0
+Matheus,Suécia,2,Tunísia,0
+Eduardo,Suécia,1,Tunísia,1
+Sidney,Suécia,2,Tunísia,1
+Silvio,Suécia,2,Tunísia,2
+Daniel,Suécia,3,Tunísia,1
+Aline,Irã,2,Nova Zelândia,0
+Matheus,Irã,1,Nova Zelândia,0
+Eduardo,Irã,1,Nova Zelândia,1
+Sidney,Irã,1,Nova Zelândia,1
+Silvio,Irã,2,Nova Zelândia,0
+Daniel,Irã,2,Nova Zelândia,1
+Aline,Arábia Saudita,0,Uruguai,3
+Matheus,Arábia Saudita,1,Uruguai,3
+Eduardo,Arábia Saudita,2,Uruguai,2
+Sidney,Arábia Saudita,1,Uruguai,3
+Silvio,Arábia Saudita,1,Uruguai,2
+Daniel,Arábia Saudita,1,Uruguai,3
+Aline,Iraque,1,Noruega,2
+Matheus,Iraque,0,Noruega,2
+Eduardo,Iraque,0,Noruega,2
+Sidney,Iraque,1,Noruega,2
+Silvio,Iraque,0,Noruega,1
+Daniel,Iraque,0,Noruega,2
+Aline,Austria,2,Jordânia,0
+Matheus,Austria,2,Jordânia,0
+Eduardo,Austria,3,Jordânia,0
+Sidney,Austria,1,Jordânia,0
+Silvio,Austria,2,Jordânia,0
+Daniel,Austria,2,Jordânia,0
+Aline,Uzbequistão,1,Colômbia,2
+Matheus,Uzbequistão,0,Colômbia,2
+Eduardo,Uzbequistão,2,Colômbia,1
+Sidney,Uzbequistão,1,Colômbia,3
+Silvio,Uzbequistão,0,Colômbia,2
+Daniel,Uzbequistão,0,Colômbia,3
+Aline,Inglaterra,2,Croácia,1
+Matheus,Inglaterra,1,Croácia,1
+Eduardo,Inglaterra,2,Croácia,1
+Sidney,Inglaterra,2,Croácia,2
+Silvio,Inglaterra,3,Croácia,1
+Daniel,Inglaterra,2,Croácia,2
+Aline,Tchéquia,1,África do Sul,0
+Matheus,Tchéquia,1,África do Sul,2
+Eduardo,Tchéquia,2,África do Sul,0
+Sidney,Tchéquia,3,África do Sul,1
+Silvio,Tchéquia,2,África do Sul,0
+Daniel,Tchéquia,2,África do Sul,1
+Aline,Canadá,2,Catar,1
+Matheus,Canadá,2,Catar,0
+Eduardo,Canadá,1,Catar,1
+Sidney,Canadá,1,Catar,1
+Silvio,Canadá,0,Catar,1
+Daniel,Canadá,1,Catar,1
+Aline,Brasil,4,Haiti,0
+Matheus,Brasil,3,Haiti,0
+Eduardo,Brasil,5,Haiti,0
+Sidney,Brasil,4,Haiti,0
+Silvio,Brasil,4,Haiti,0
+Daniel,Brasil,3,Haiti,0
+Aline,EUA,2,Australia,0
+Matheus,EUA,2,Australia,1
+Eduardo,EUA,2,Australia,1
+Sidney,EUA,2,Australia,2
+Silvio,EUA,4,Australia,0
+Daniel,EUA,3,Australia,2
+Aline,Alemanha,4,Costa do Marfim,1
+Matheus,Alemanha,2,Costa do Marfim,0
+Eduardo,Alemanha,4,Costa do Marfim,2
+Sidney,Alemanha,3,Costa do Marfim,1
+Silvio,Alemanha,5,Costa do Marfim,0
+Daniel,Alemanha,1,Costa do Marfim,1
+Aline,Holanda,2,Suécia,1
+Matheus,Holanda,2,Suécia,1
+Eduardo,Holanda,2,Suécia,1
+Sidney,Holanda,2,Suécia,0
+Silvio,Holanda,3,Suécia,2
+Daniel,Holanda,2,Suécia,2
+Aline,Bélgica,1,Irã,0
+Matheus,Bélgica,2,Irã,1
+Eduardo,Bélgica,4,Irã,0
+Sidney,Bélgica,2,Irã,1
+Silvio,Bélgica,2,Irã,0
+Daniel,Bélgica,3,Irã,1
+Aline,Espanha,3,Arábia Saudita,0
+Matheus,Espanha,2,Arábia Saudita,0
+Eduardo,Espanha,3,Arábia Saudita,1
+Sidney,Espanha,2,Arábia Saudita,0
+Silvio,Espanha,4,Arábia Saudita,0
+Daniel,Espanha,3,Arábia Saudita,1
+Aline,França,4,Iraque,0
+Matheus,França,3,Iraque,0
+Eduardo,França,5,Iraque,0
+Sidney,França,3,Iraque,0
+Silvio,França,3,Iraque,1
+Daniel,França,3,Iraque,0
+Aline,Argentina,2,Austria,0
+Matheus,Argentina,2,Austria,0
+Eduardo,Argentina,3,Austria,0
+Sidney,Argentina,3,Austria,1
+Silvio,Argentina,4,Austria,1
+Daniel,Argentina,3,Austria,1
+Aline,Portugal,3,Uzbequistão,1
+Matheus,Portugal,3,Uzbequistão,0
+Eduardo,Portugal,4,Uzbequistão,0
+Sidney,Portugal,2,Uzbequistão,0
+Silvio,Portugal,3,Uzbequistão,0
+Daniel,Portugal,4,Uzbequistão,0
+Aline,Panama,0,Croácia,2
+Matheus,Panama,0,Croácia,2
+Eduardo,Panama,1,Croácia,3
+Sidney,Panama,1,Croácia,2
+Silvio,Panama,1,Croácia,3
+Daniel,Panama,1,Croácia,3
+Aline,México,2,Coreia do Sul,1
+Matheus,México,2,Coreia do Sul,1
+Eduardo,México,2,Coreia do Sul,2
+Sidney,México,2,Coreia do Sul,1
+Silvio,México,2,Coreia do Sul,2
+Daniel,México,2,Coreia do Sul,1
+Aline,Suíça,2,Bósnia e Herz.,0
+Matheus,Suíça,0,Bósnia e Herz.,0
+Eduardo,Suíça,2,Bósnia e Herz.,0
+Sidney,Suíça,2,Bósnia e Herz.,1
+Silvio,Suíça,2,Bósnia e Herz.,1
+Daniel,Suíça,1,Bósnia e Herz.,1
+Aline,Escócia,1,Marrocos,2
+Matheus,Escócia,1,Marrocos,2
+Eduardo,Escócia,0,Marrocos,2
+Sidney,Escócia,1,Marrocos,3
+Silvio,Escócia,2,Marrocos,1
+Daniel,Escócia,2,Marrocos,1
+Aline,Turquia,2,Paraguai,1
+Matheus,Turquia,1,Paraguai,1
+Eduardo,Turquia,1,Paraguai,1
+Sidney,Turquia,1,Paraguai,2
+Silvio,Turquia,1,Paraguai,2
+Daniel,Turquia,1,Paraguai,2
+Aline,Equador,4,Curaçao,1
+Matheus,Equador,3,Curaçao,0
+Eduardo,Equador,6,Curaçao,0
+Sidney,Equador,3,Curaçao,1
+Silvio,Equador,3,Curaçao,2
+Daniel,Equador,3,Curaçao,1
+Aline,Tunísia,0,Japão,3
+Matheus,Tunísia,0,Japão,2
+Eduardo,Tunísia,1,Japão,3
+Sidney,Tunísia,1,Japão,2
+Silvio,Tunísia,0,Japão,3
+Daniel,Tunísia,1,Japão,2
+Aline,Nova Zelândia,0,Egito,2
+Matheus,Nova Zelândia,1,Egito,1
+Eduardo,Nova Zelândia,0,Egito,2
+Sidney,Nova Zelândia,1,Egito,1
+Silvio,Nova Zelândia,3,Egito,3
+Daniel,Nova Zelândia,1,Egito,2
+Aline,Uruguai,1,Cabo Verde,0
+Matheus,Uruguai,2,Cabo Verde,0
+Eduardo,Uruguai,4,Cabo Verde,0
+Sidney,Uruguai,3,Cabo Verde,1
+Silvio,Uruguai,2,Cabo Verde,0
+Daniel,Uruguai,2,Cabo Verde,0
+Aline,Noruega,2,Senegal,0
+Matheus,Noruega,2,Senegal,2
+Eduardo,Noruega,2,Senegal,2
+Sidney,Noruega,1,Senegal,2
+Silvio,Noruega,3,Senegal,0
+Daniel,Noruega,1,Senegal,2
+Aline,Jordânia,0,Argélia,1
+Matheus,Jordânia,1,Argélia,2
+Eduardo,Jordânia,1,Argélia,3
+Sidney,Jordânia,2,Argélia,2
+Silvio,Jordânia,0,Argélia,0
+Daniel,Jordânia,0,Argélia,1
+Aline,Colômbia,2,RD Congo,1
+Matheus,Colômbia,3,RD Congo,0
+Eduardo,Colômbia,5,RD Congo,1
+Sidney,Colômbia,2,RD Congo,0
+Silvio,Colômbia,4,RD Congo,0
+Daniel,Colômbia,3,RD Congo,0
+Aline,Inglaterra,2,Gana,1
+Matheus,Inglaterra,3,Gana,1
+Eduardo,Inglaterra,3,Gana,1
+Sidney,Inglaterra,3,Gana,1
+Silvio,Inglaterra,2,Gana,0
+Daniel,Inglaterra,1,Gana,1
+Aline,Panama,0,Inglaterra,0
+Matheus,Panama,0,Inglaterra,0
+Eduardo,Panama,0,Inglaterra,0
+Sidney,Panama,0,Inglaterra,0
+Silvio,Panama,0,Inglaterra,0
+Daniel,Panama,0,Inglaterra,0
