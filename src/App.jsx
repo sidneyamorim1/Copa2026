@@ -264,7 +264,7 @@ function App() {
           const linha = linhas[i];
           if (!linha || !linha.trim()) continue;
           
-          const partes = linha.split(/[,;]/).map(p => p.trim());
+          const partes = linha.split(/[,;]/).map(p => p.trim().replace(/^"|"$/g, ''));
           if (partes.length < 8) continue;
           
           let colIdx = 0;
@@ -297,7 +297,7 @@ function App() {
                   // Palpites dos participantes nas próximas linhas
                   let pRowIdx = i + 1;
                   while (pRowIdx < linhas.length && pRowIdx <= i + 8) {
-                    const linhaAp = linhas[pRowIdx].split(/[,;]/).map(p => p.trim());
+                    const linhaAp = linhas[pRowIdx].split(/[,;]/).map(p => p.trim().replace(/^"|"$/g, ''));
                     if (linhaAp.length > colIdx + 6) {
                       const nome = linhaAp[colIdx+2];
                       const palpCasaStr = linhaAp[colIdx+4];
