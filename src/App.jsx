@@ -8,19 +8,25 @@ export function calcularPontos(palpiteCasa, palpiteFora, realCasa, realFora) {
   if (realCasa === null || realFora === null) return 0;
   if (palpiteCasa === null || palpiteFora === null) return 0;
   
+  // Conversão segura para inteiros para evitar erros entre "2" (texto) e 2 (número)
+  const pc = parseInt(palpiteCasa, 10);
+  const pf = parseInt(palpiteFora, 10);
+  const rc = parseInt(realCasa, 10);
+  const rf = parseInt(realFora, 10);
+  
   // 1. Placar Exato: +5 pontos
-  if (palpiteCasa === realCasa && palpiteFora === realFora) {
+  if (pc === rc && pf === rf) {
     return 5;
   }
   
   // 2. Placar Invertido Exato: -3 pontos (ex: real 2x0, palpite 0x2)
-  if (palpiteCasa === realFora && palpiteFora === realCasa && realCasa !== realFora) {
+  if (pc === rf && pf === rc && rc !== rf) {
     return -3;
   }
   
   // 3. Acertou Vencedor ou Empate: +3 pontos
-  const vencedorReal = realCasa > realFora ? 'casa' : (realCasa < realFora ? 'fora' : 'empate');
-  const vencedorPalpite = palpiteCasa > palpiteFora ? 'casa' : (palpiteCasa < palpiteFora ? 'fora' : 'empate');
+  const vencedorReal = rc > rf ? 'casa' : (rc < rf ? 'fora' : 'empate');
+  const vencedorPalpite = pc > pf ? 'casa' : (pc < pf ? 'fora' : 'empate');
   
   if (vencedorReal === vencedorPalpite) {
     return 3;
