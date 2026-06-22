@@ -25,8 +25,8 @@
     "hora": "12:00",
     "time_casa": "Tchéquia",
     "time_fora": "África do Sul",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 1,
+    "gols_fora_real": 1,
     "grupo": "Grupo A"
   },
   {
@@ -35,8 +35,8 @@
     "hora": "19:00",
     "time_casa": "México",
     "time_fora": "Coreia do Sul",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 1,
+    "gols_fora_real": 0,
     "grupo": "Grupo A"
   },
   {
@@ -85,8 +85,8 @@
     "hora": "12:00",
     "time_casa": "Suíça",
     "time_fora": "Bósnia e Herz.",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 4,
+    "gols_fora_real": 1,
     "grupo": "Grupo B"
   },
   {
@@ -95,8 +95,8 @@
     "hora": "15:00",
     "time_casa": "Canadá",
     "time_fora": "Catar",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 6,
+    "gols_fora_real": 0,
     "grupo": "Grupo B"
   },
   {
@@ -145,8 +145,8 @@
     "hora": "18:00",
     "time_casa": "Escócia",
     "time_fora": "Marrocos",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 0,
+    "gols_fora_real": 1,
     "grupo": "Grupo C"
   },
   {
@@ -155,8 +155,8 @@
     "hora": "20:30",
     "time_casa": "Brasil",
     "time_fora": "Haiti",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 3,
+    "gols_fora_real": 0,
     "grupo": "Grupo C"
   },
   {
@@ -205,8 +205,8 @@
     "hora": "12:00",
     "time_casa": "EUA",
     "time_fora": "Australia",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 2,
+    "gols_fora_real": 0,
     "grupo": "Grupo D"
   },
   {
@@ -215,8 +215,8 @@
     "hora": "20:00",
     "time_casa": "Turquia",
     "time_fora": "Paraguai",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 0,
+    "gols_fora_real": 1,
     "grupo": "Grupo D"
   },
   {
@@ -265,8 +265,8 @@
     "hora": "16:00",
     "time_casa": "Alemanha",
     "time_fora": "Costa do Marfim",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 2,
+    "gols_fora_real": 1,
     "grupo": "Grupo E"
   },
   {
@@ -275,8 +275,8 @@
     "hora": "19:00",
     "time_casa": "Equador",
     "time_fora": "Curaçao",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 0,
+    "gols_fora_real": 0,
     "grupo": "Grupo E"
   },
   {
@@ -325,8 +325,8 @@
     "hora": "12:00",
     "time_casa": "Holanda",
     "time_fora": "Suécia",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 5,
+    "gols_fora_real": 1,
     "grupo": "Grupo F"
   },
   {
@@ -335,8 +335,8 @@
     "hora": "22:00",
     "time_casa": "Tunísia",
     "time_fora": "Japão",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 0,
+    "gols_fora_real": 4,
     "grupo": "Grupo F"
   },
   {
@@ -385,8 +385,8 @@
     "hora": "12:00",
     "time_casa": "Bélgica",
     "time_fora": "Irã",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 0,
+    "gols_fora_real": 0,
     "grupo": "Grupo G"
   },
   {
@@ -395,8 +395,8 @@
     "hora": "18:00",
     "time_casa": "Nova Zelândia",
     "time_fora": "Egito",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 1,
+    "gols_fora_real": 3,
     "grupo": "Grupo G"
   },
   {
@@ -445,8 +445,8 @@
     "hora": "12:00",
     "time_casa": "Espanha",
     "time_fora": "Arábia Saudita",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 4,
+    "gols_fora_real": 0,
     "grupo": "Grupo H"
   },
   {
@@ -455,8 +455,8 @@
     "hora": "18:00",
     "time_casa": "Uruguai",
     "time_fora": "Cabo Verde",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 2,
+    "gols_fora_real": 2,
     "grupo": "Grupo H"
   },
   {
