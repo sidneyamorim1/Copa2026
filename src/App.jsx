@@ -181,6 +181,54 @@ function App() {
     }
   }, [authChecked, usuario]);
 
+  // Realtime + polling: mantém todos os usuários sincronizados automaticamente
+  useEffect(() => {
+    if (!authChecked) return;
+    if (isSupabaseConfigured() && !usuario) return;
+
+    let realtimeChannel = null;
+    let pollingInterval = null;
+
+    const recarregarSilencioso = async () => {
+      try {
+        const [dataJogos, dataPalpites] = await Promise.all([
+          dbService.obterJogos(),
+          dbService.obterPalpites()
+        ]);
+        setJogos(dataJogos);
+        setPalpites(dataPalpites);
+      } catch (err) {
+        console.warn('Erro na atualização silenciosa:', err);
+      }
+    };
+
+    if (isSupabaseConfigured()) {
+      const supabase = getSupabaseClient();
+      if (supabase) {
+        realtimeChannel = supabase
+          .channel('bolao-mudancas-globais')
+          .on('postgres_changes', { event: '*', schema: 'public', table: 'jogos' }, () => {
+            recarregarSilencioso();
+          })
+          .on('postgres_changes', { event: '*', schema: 'public', table: 'palpites' }, () => {
+            recarregarSilencioso();
+          })
+          .subscribe();
+      }
+    }
+
+    // Polling a cada 60 segundos como fallback (funciona em modo local e no Supabase)
+    pollingInterval = setInterval(recarregarSilencioso, 60000);
+
+    return () => {
+      if (realtimeChannel) {
+        const supabase = getSupabaseClient();
+        if (supabase) supabase.removeChannel(realtimeChannel);
+      }
+      if (pollingInterval) clearInterval(pollingInterval);
+    };
+  }, [authChecked, usuario]);
+
   const dataSelecionadaStr = dataSelecionada || '';
   const jogosDaData = jogos.filter(j => j.data === dataSelecionadaStr);
   const jogoAtivo = jogosDaData[idxNaData] || null;
