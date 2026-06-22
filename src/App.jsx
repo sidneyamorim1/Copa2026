@@ -140,6 +140,21 @@ function App() {
     }
   };
 
+  // Busca o nome do jogador da tabela perfis (fonte de verdade para bater com os palpites)
+  const buscarNomeDoPerfil = async (user) => {
+    try {
+      const supabase = getSupabaseClient();
+      const { data: perfil } = await supabase
+        .from('perfis')
+        .select('nome')
+        .eq('id', user.id)
+        .maybeSingle();
+      if (perfil?.nome) return perfil.nome;
+    } catch (_) {}
+    // Fallback: user_metadata ou email
+    return user.user_metadata?.nome_display || user.email;
+  };
+
   // Escuta mudanças de autenticação
   useEffect(() => {
     if (!isSupabaseConfigured()) {
@@ -154,7 +169,8 @@ function App() {
         setUsuario(user);
         const admin = await authService.isAdmin(user.id);
         setIsAdmin(admin);
-        setNomeJogador(user.user_metadata?.nome_display || user.email);
+        const nome = await buscarNomeDoPerfil(user);
+        setNomeJogador(nome);
       }
       setAuthChecked(true);
     });
@@ -166,7 +182,8 @@ function App() {
       if (user) {
         const admin = await authService.isAdmin(user.id);
         setIsAdmin(admin);
-        setNomeJogador(user.user_metadata?.nome_display || user.email);
+        const nome = await buscarNomeDoPerfil(user);
+        setNomeJogador(nome);
       } else {
         setIsAdmin(false);
       }
