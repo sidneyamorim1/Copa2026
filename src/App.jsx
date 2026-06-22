@@ -163,27 +163,36 @@ function App() {
       return;
     }
 
-    // Verifica sessão inicial
-    authService.getUser().then(async (user) => {
-      if (user) {
-        setUsuario(user);
-        const admin = await authService.isAdmin(user.id);
-        setIsAdmin(admin);
-        const nome = await buscarNomeDoPerfil(user);
-        setNomeJogador(nome);
-      }
+    // Verifica sessão inicial — libera o app IMEDIATAMENTE ao confirmar o usuário
+    authService.getUser().then((user) => {
+      if (user) setUsuario(user);
+      // Marca authChecked já: não espera isAdmin nem nome do perfil para carregar o app
       setAuthChecked(true);
+
+      // Busca isAdmin e nome em paralelo, sem bloquear o carregamento principal
+      if (user) {
+        Promise.all([
+          authService.isAdmin(user.id),
+          buscarNomeDoPerfil(user)
+        ]).then(([admin, nome]) => {
+          setIsAdmin(admin);
+          setNomeJogador(nome);
+        });
+      }
     });
 
     // Escuta login/logout
-    const { data: { subscription } } = authService.onAuthStateChange(async (event, session) => {
+    const { data: { subscription } } = authService.onAuthStateChange((event, session) => {
       const user = session?.user || null;
       setUsuario(user);
       if (user) {
-        const admin = await authService.isAdmin(user.id);
-        setIsAdmin(admin);
-        const nome = await buscarNomeDoPerfil(user);
-        setNomeJogador(nome);
+        Promise.all([
+          authService.isAdmin(user.id),
+          buscarNomeDoPerfil(user)
+        ]).then(([admin, nome]) => {
+          setIsAdmin(admin);
+          setNomeJogador(nome);
+        });
       } else {
         setIsAdmin(false);
       }
