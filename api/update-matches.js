@@ -34,30 +34,66 @@ export default async function handler(req, res) {
 
   // Dicionário de tradução dos nomes das Seleções (API em inglês -> Nosso Banco em PT-BR)
   const nameTranslation = {
+    // Grupo A
     "Mexico": "México",
     "South Africa": "África do Sul",
     "South Korea": "Coreia do Sul",
     "Czech Republic": "Tchéquia",
+    // Grupo B
     "Canada": "Canadá",
     "Bosnia & Herzegovina": "Bósnia e Herz.",
     "Qatar": "Catar",
     "Switzerland": "Suíça",
+    // Grupo C
     "Brazil": "Brasil",
     "Morocco": "Marrocos",
+    "Haiti": "Haiti",
+    "Scotland": "Escócia",
+    // Grupo D
     "USA": "EUA",
+    "Paraguay": "Paraguai",
+    "Australia": "Australia",
+    "Turkey": "Turquia",
+    // Grupo E
     "Germany": "Alemanha",
-    "Spain": "Espanha",
-    "France": "França",
-    "Argentina": "Argentina",
-    "Senegal": "Senegal",
-    "Japan": "Japão",
-    "England": "Inglaterra",
-    "Portugal": "Portugal",
+    "Curaçao": "Curaçao",
+    "Ivory Coast": "Costa do Marfim",
+    "Ecuador": "Equador",
+    // Grupo F
     "Netherlands": "Holanda",
+    "Japan": "Japão",
+    "Sweden": "Suécia",
+    "Tunisia": "Tunísia",
+    // Grupo G
     "Belgium": "Bélgica",
+    "Egypt": "Egito",
+    "Iran": "Irã",
+    "New Zealand": "Nova Zelândia",
+    // Grupo H
+    "Spain": "Espanha",
+    "Cape Verde": "Cabo Verde",
+    "Saudi Arabia": "Arábia Saudita",
     "Uruguay": "Uruguai",
+    // Grupo I
+    "France": "França",
+    "Senegal": "Senegal",
+    "Iraq": "Iraque",
+    "Norway": "Noruega",
+    // Grupo J
+    "Argentina": "Argentina",
+    "Algeria": "Argélia",
+    "Austria": "Austria",
+    "Jordan": "Jordânia",
+    // Grupo K
+    "Portugal": "Portugal",
+    "DR Congo": "RD Congo",
+    "Uzbekistan": "Uzbequistão",
     "Colombia": "Colômbia",
-    "Croatia": "Croácia"
+    // Grupo L
+    "England": "Inglaterra",
+    "Croatia": "Croácia",
+    "Ghana": "Gana",
+    "Panama": "Panama"
   };
 
   try {

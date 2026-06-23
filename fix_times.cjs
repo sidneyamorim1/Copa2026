@@ -20,35 +20,66 @@ if (!supabaseKey) {
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const nameTranslation = {
+  // Grupo A
   "Mexico": "México",
   "South Africa": "África do Sul",
   "South Korea": "Coreia do Sul",
   "Czech Republic": "Tchéquia",
+  // Grupo B
   "Canada": "Canadá",
   "Bosnia & Herzegovina": "Bósnia e Herz.",
   "Qatar": "Catar",
   "Switzerland": "Suíça",
+  // Grupo C
   "Brazil": "Brasil",
   "Morocco": "Marrocos",
+  "Haiti": "Haiti",
+  "Scotland": "Escócia",
+  // Grupo D
   "USA": "EUA",
-  "Germany": "Alemanha",
-  "Spain": "Espanha",
-  "France": "França",
-  "Argentina": "Argentina",
-  "Senegal": "Senegal",
-  "Japan": "Japão",
-  "England": "Inglaterra",
-  "Portugal": "Portugal",
-  "Netherlands": "Holanda",
-  "Belgium": "Bélgica",
-  "Uruguay": "Uruguai",
-  "Colombia": "Colômbia",
-  "Croatia": "Croácia",
+  "Paraguay": "Paraguai",
   "Australia": "Australia",
   "Turkey": "Turquia",
-  "Paraguay": "Paraguai",
-  "Scotland": "Escócia",
-  "Haiti": "Haiti"
+  // Grupo E
+  "Germany": "Alemanha",
+  "Curaçao": "Curaçao",
+  "Ivory Coast": "Costa do Marfim",
+  "Ecuador": "Equador",
+  // Grupo F
+  "Netherlands": "Holanda",
+  "Japan": "Japão",
+  "Sweden": "Suécia",
+  "Tunisia": "Tunísia",
+  // Grupo G
+  "Belgium": "Bélgica",
+  "Egypt": "Egito",
+  "Iran": "Irã",
+  "New Zealand": "Nova Zelândia",
+  // Grupo H
+  "Spain": "Espanha",
+  "Cape Verde": "Cabo Verde",
+  "Saudi Arabia": "Arábia Saudita",
+  "Uruguay": "Uruguai",
+  // Grupo I
+  "France": "França",
+  "Senegal": "Senegal",
+  "Iraq": "Iraque",
+  "Norway": "Noruega",
+  // Grupo J
+  "Argentina": "Argentina",
+  "Algeria": "Argélia",
+  "Austria": "Austria",
+  "Jordan": "Jordânia",
+  // Grupo K
+  "Portugal": "Portugal",
+  "DR Congo": "RD Congo",
+  "Uzbekistan": "Uzbequistão",
+  "Colombia": "Colômbia",
+  // Grupo L
+  "England": "Inglaterra",
+  "Croatia": "Croácia",
+  "Ghana": "Gana",
+  "Panama": "Panama"
 };
 
 async function fixTimes() {
