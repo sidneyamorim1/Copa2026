@@ -812,7 +812,7 @@ function App() {
                 <div>
                   <div className="match-card">
                     <div className="match-meta">
-                      {jogoAtivo.grupo} - {jogoAtivo.data} às {jogoAtivo.hora}
+                      {jogoAtivo.grupo} - {jogoAtivo.data} às {jogoAtivo.hora ? jogoAtivo.hora.substring(0,5) : 'A definir'}
                     </div>
                     <div className="match-teams">
                       {jogoAtivo.time_casa} x {jogoAtivo.time_fora}
@@ -824,7 +824,7 @@ function App() {
                       </div>
                     ) : (() => {
                       const [dia, mes, ano] = jogoAtivo.data.split('/');
-                      const dataFormatada = `${ano}-${mes}-${dia}T${jogoAtivo.hora}`;
+                      const dataFormatada = `${ano}-${mes}-${dia}T${jogoAtivo.hora || '23:59:59'}`;
                       const dataHoraJogo = new Date(dataFormatada);
                       const limitePalpite = new Date(dataHoraJogo.getTime() - 3600000);
                       return new Date() > limitePalpite;
@@ -879,7 +879,7 @@ function App() {
 
                     {(() => {
                       const [dia, mes, ano] = jogoAtivo.data.split('/');
-                      const dataFormatada = `${ano}-${mes}-${dia}T${jogoAtivo.hora}`;
+                      const dataFormatada = `${ano}-${mes}-${dia}T${jogoAtivo.hora || '23:59:59'}`;
                       const dataHoraJogo = new Date(dataFormatada);
                       const limitePalpite = new Date(dataHoraJogo.getTime() - 3600000); // 1 hora antes
                       const palpitesEncerrados = new Date() > limitePalpite;
@@ -1173,7 +1173,7 @@ function App() {
                       >
                         {jogos.map(j => (
                           <option key={j.id} value={j.id.toString()}>
-                            {j.time_casa} x {j.time_fora} - {j.data} às {j.hora}
+                            {j.time_casa} x {j.time_fora} - {j.data} às {j.hora ? j.hora.substring(0,5) : 'A definir'}
                           </option>
                         ))}
                       </select>
@@ -1243,7 +1243,7 @@ function App() {
                           minWidth: '180px'
                         }}>
                           <strong>{j.time_casa} {j.gols_casa_real} x {j.gols_fora_real} {j.time_fora}</strong>
-                          <div style={{fontSize: '0.72rem', color: 'var(--text-muted)'}}>{j.data} às {j.hora}</div>
+                          <div style={{fontSize: '0.72rem', color: 'var(--text-muted)'}}>{j.data} às {j.hora ? j.hora.substring(0,5) : 'A definir'}</div>
                         </div>
                       ))
                     )}
