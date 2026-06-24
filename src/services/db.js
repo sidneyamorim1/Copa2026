@@ -122,7 +122,7 @@ export const dbService = {
           .from('palpites')
           .select('id')
           .eq('jogo_id', jogoId)
-          .eq('jogador_nome', nomeLimpo)
+          .ilike('jogador_nome', nomeLimpo)
           .maybeSingle();
           
         if (existente) {
