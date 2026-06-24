@@ -4,7 +4,10 @@ import { isSupabaseConfigured, configSupabaseLocal, authService, getSupabaseClie
 import LoginScreen from './components/LoginScreen';
 
 // Função para calcular pontos de um palpite
-export function calcularPontos(palpiteCasa, palpiteFora, realCasa, realFora) {
+export function calcularPontos(palpiteCasa, palpiteFora, jogo) {
+  const realCasa = jogo.gols_casa_real;
+  const realFora = jogo.gols_fora_real;
+
   if (realCasa === null || realFora === null) return 0;
   if (palpiteCasa === null || palpiteFora === null) return 0;
   
@@ -25,10 +28,16 @@ export function calcularPontos(palpiteCasa, palpiteFora, realCasa, realFora) {
   }
   
   // 3. Acertou Vencedor ou Empate: +3 pontos
-  const vencedorReal = rc > rf ? 'casa' : (rc < rf ? 'fora' : 'empate');
+  let vencedorReal = rc > rf ? 'casa' : (rc < rf ? 'fora' : 'empate');
+  if (jogo.fase === 'Mata-Mata' && vencedorReal === 'empate' && jogo.vencedor_penaltis) {
+    vencedorReal = jogo.vencedor_penaltis;
+  }
   const vencedorPalpite = pc > pf ? 'casa' : (pc < pf ? 'fora' : 'empate');
   
-  if (vencedorReal === vencedorPalpite) {
+  if (vencedorReal === vencedorPalpite && vencedorReal !== 'empate') {
+    return 3;
+  }
+  if (vencedorReal === 'empate' && vencedorPalpite === 'empate') {
     return 3;
   }
   
@@ -79,6 +88,7 @@ function App() {
   const [jogoSelecionadoAdmin, setJogoSelecionadoAdmin] = useState('');
   const [adminGolsCasa, setAdminGolsCasa] = useState('');
   const [adminGolsFora, setAdminGolsFora] = useState('');
+  const [adminVencedorPenaltis, setAdminVencedorPenaltis] = useState('');
   
   // Modal de configurações do Supabase
   const [modalConfigAberto, setModalConfigAberto] = useState(false);
@@ -302,6 +312,11 @@ function App() {
     }
     if (!jogoAtivo) return;
     
+    if (jogoAtivo.fase === 'Mata-Mata' && parseInt(palpiteCasa) === parseInt(palpiteFora)) {
+      alert("Nas fases de mata-mata, não é permitido apostar em empate!");
+      return;
+    }
+    
     // Persiste o nome do jogador localmente
     localStorage.setItem('bolao_nome_jogador', nomeJogador.trim());
     
@@ -341,23 +356,33 @@ function App() {
       return;
     }
     
+    const jogoId = parseInt(jogoSelecionadoAdmin);
+    const jogoSelecionado = jogos.find(j => j.id === jogoId);
+    
+    if (jogoSelecionado && jogoSelecionado.fase === 'Mata-Mata' && parseInt(adminGolsCasa) === parseInt(adminGolsFora) && !adminVencedorPenaltis) {
+      alert("Para jogos do mata-mata empatados, é obrigatório informar quem venceu nos pênaltis!");
+      return;
+    }
+    
     try {
       setLoading(true);
-      const jogoId = parseInt(jogoSelecionadoAdmin);
       const jogoAtualizado = await dbService.atualizarResultadoJogo(
         jogoId,
         parseInt(adminGolsCasa),
-        parseInt(adminGolsFora)
+        parseInt(adminGolsFora),
+        adminVencedorPenaltis || null
       );
       
       // Atualiza jogos em memória
       setJogos(jogos.map(j => j.id === jogoId ? {
         ...j,
         gols_casa_real: jogoAtualizado.gols_casa_real,
-        gols_fora_real: jogoAtualizado.gols_fora_real
+        gols_fora_real: jogoAtualizado.gols_fora_real,
+        vencedor_penaltis: jogoAtualizado.vencedor_penaltis
       } : j));
       
       alert("Resultado oficial atualizado!");
+      setAdminVencedorPenaltis('');
     } catch (err) {
       console.error(err);
       alert("Erro ao atualizar o resultado.");
@@ -598,7 +623,7 @@ function App() {
       palpitesDoJogador.forEach(p => {
         const jogo = jogos.find(j => j.id === p.jogo_id);
         if (jogo && jogo.gols_casa_real !== null && jogo.gols_fora_real !== null) {
-          const pts = calcularPontos(p.palpite_casa, p.palpite_fora, jogo.gols_casa_real, jogo.gols_fora_real);
+          const pts = calcularPontos(p.palpite_casa, p.palpite_fora, jogo);
           pontos += pts;
           if (pts > 0) {
             acertos += 1;
@@ -717,7 +742,25 @@ function App() {
           <div className="left-column">
             {/* Painel Calendário */}
             <div className="panel">
-              <h2>Calendário</h2>
+              <div style={{ display: 'flex', gap: '10px', marginBottom: '16px', alignItems: 'center', justifyContent: 'space-between' }}>
+                <h2 style={{ margin: 0 }}>Calendário</h2>
+                <div style={{ display: 'flex', gap: '8px' }}>
+                  <button 
+                    className="btn-submit" 
+                    style={{ padding: '6px 12px', margin: 0, width: 'auto', fontSize: '0.85rem', backgroundColor: calMes === 5 ? 'var(--color-primary)' : 'var(--bg-page)', color: calMes === 5 ? '#fff' : 'var(--text-color)' }}
+                    onClick={() => { setCalMes(5); setCalAno(2026); setDataSelecionada('12/06/2026'); setIdxNaData(0); }}
+                  >
+                    Fase de Grupos
+                  </button>
+                  <button 
+                    className="btn-submit" 
+                    style={{ padding: '6px 12px', margin: 0, width: 'auto', fontSize: '0.85rem', backgroundColor: calMes === 6 ? 'var(--color-primary)' : 'var(--bg-page)', color: calMes === 6 ? '#fff' : 'var(--text-color)' }}
+                    onClick={() => { setCalMes(6); setCalAno(2026); setDataSelecionada('28/06/2026'); setIdxNaData(0); }}
+                  >
+                    Mata-Mata
+                  </button>
+                </div>
+              </div>
               
               <div className="calendar-widget">
                 {/* Cabeçalho do mês */}
@@ -1159,6 +1202,22 @@ function App() {
                         />
                       </div>
                     </div>
+                    
+                    {jogos.find(j => j.id === parseInt(jogoSelecionadoAdmin))?.fase === 'Mata-Mata' && parseInt(adminGolsCasa || 0) === parseInt(adminGolsFora || 0) && adminGolsCasa !== '' && (
+                      <div className="form-group" style={{marginTop: '12px'}}>
+                        <label>Vencedor nos Pênaltis</label>
+                        <select 
+                          className="input-control" 
+                          value={adminVencedorPenaltis}
+                          onChange={(e) => setAdminVencedorPenaltis(e.target.value)}
+                          required
+                        >
+                          <option value="">Selecione o time que avançou</option>
+                          <option value="casa">Time Casa ({jogos.find(j => j.id === parseInt(jogoSelecionadoAdmin))?.time_casa})</option>
+                          <option value="fora">Time Fora ({jogos.find(j => j.id === parseInt(jogoSelecionadoAdmin))?.time_fora})</option>
+                        </select>
+                      </div>
+                    )}
                     <button type="submit" className="btn-submit" style={{backgroundColor: 'var(--color-info)', color: 'var(--color-dark)'}}>
                       Atualizar jogo selecionado
                     </button>

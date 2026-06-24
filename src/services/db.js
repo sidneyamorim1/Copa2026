@@ -186,7 +186,7 @@ export const dbService = {
   },
 
   // Atualizar resultado oficial de um jogo
-  async atualizarResultadoJogo(jogoId, golsCasa, golsFora) {
+  async atualizarResultadoJogo(jogoId, golsCasa, golsFora, vencedorPenaltis = null) {
     if (isSupabaseConfigured()) {
       const supabase = getSupabaseClient();
       try {
@@ -194,7 +194,8 @@ export const dbService = {
           .from('jogos')
           .update({
             gols_casa_real: golsCasa,
-            gols_fora_real: golsFora
+            gols_fora_real: golsFora,
+            vencedor_penaltis: vencedorPenaltis
           })
           .eq('id', jogoId)
           .select();
@@ -203,10 +204,10 @@ export const dbService = {
         return data[0];
       } catch (err) {
         console.error('Erro ao atualizar resultado no Supabase, utilizando fallback local:', err);
-        return this.atualizarResultadoLocal(jogoId, golsCasa, golsFora);
+        return this.atualizarResultadoLocal(jogoId, golsCasa, golsFora, vencedorPenaltis);
       }
     } else {
-      return this.atualizarResultadoLocal(jogoId, golsCasa, golsFora);
+      return this.atualizarResultadoLocal(jogoId, golsCasa, golsFora, vencedorPenaltis);
     }
   },
 
@@ -291,15 +292,21 @@ export const dbService = {
     return palpitesAtuais;
   },
 
-  atualizarResultadoLocal(jogoId, golsCasa, golsFora) {
-    const jogos = JSON.parse(localStorage.getItem(LOCAL_JOGOS_KEY)) || [];
-    const idx = jogos.findIndex(j => j.id === jogoId);
+  atualizarResultadoLocal(jogoId, golsCasa, golsFora, vencedorPenaltis = null) {
+    let jogos = JSON.parse(localStorage.getItem(LOCAL_JOGOS_KEY) || '[]');
+    let jogoAtualizado = null;
     
-    if (idx >= 0) {
-      jogos[idx].gols_casa_real = golsCasa;
-      jogos[idx].gols_fora_real = golsFora;
+    jogos = jogos.map(j => {
+      if (j.id === jogoId) {
+        jogoAtualizado = { ...j, gols_casa_real: golsCasa, gols_fora_real: golsFora, vencedor_penaltis: vencedorPenaltis };
+        return jogoAtualizado;
+      }
+      return j;
+    });
+
+    if (jogoAtualizado) {
       localStorage.setItem(LOCAL_JOGOS_KEY, JSON.stringify(jogos));
-      return jogos[idx];
+      return jogoAtualizado;
     }
     throw new Error('Jogo não encontrado no banco de dados local');
   },
