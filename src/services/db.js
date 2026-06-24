@@ -72,7 +72,7 @@ export const dbService = {
         return jogos.map(j => ({
           id: j.id,
           data: formatarDataParaBR(j.data),
-          hora: j.hora.slice(0, 5),
+          hora: j.hora ? j.hora.slice(0, 5) : null,
           time_casa: j.time_casa,
           time_fora: j.time_fora,
           gols_casa_real: j.gols_casa_real,
