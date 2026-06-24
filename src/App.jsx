@@ -754,8 +754,8 @@ function App() {
                   </button>
                   <button 
                     className="btn-submit" 
-                    style={{ padding: '6px 12px', margin: 0, width: 'auto', fontSize: '0.85rem', backgroundColor: calMes === 6 ? 'var(--color-primary)' : 'var(--bg-page)', color: calMes === 6 ? '#fff' : 'var(--text-color)' }}
-                    onClick={() => { setCalMes(6); setCalAno(2026); setDataSelecionada('28/06/2026'); setIdxNaData(0); }}
+                    style={{ padding: '6px 12px', margin: 0, width: 'auto', fontSize: '0.85rem', backgroundColor: (calMes === 5 && dataSelecionada === '28/06/2026') ? 'var(--color-primary)' : 'var(--bg-page)', color: (calMes === 5 && dataSelecionada === '28/06/2026') ? '#fff' : 'var(--text-color)' }}
+                    onClick={() => { setCalMes(5); setCalAno(2026); setDataSelecionada('28/06/2026'); setIdxNaData(0); }}
                   >
                     Mata-Mata
                   </button>
