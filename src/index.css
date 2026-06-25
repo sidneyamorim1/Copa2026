@@ -4,14 +4,15 @@
   --font-title: 'Outfit', 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
   
-  /* Cores do Tema */
-  --color-primary: #0c6648;
-  --color-primary-hover: #084933;
-  --color-primary-light: #e6f3ef;
-  --color-accent: #f5b041;
-  --color-dark: #111a24;
-  --color-light: #f8fafc;
+  /* Cores do Tema (Tobii Dynavox Style) */
+  --color-primary: #00a859;
+  --color-primary-hover: #008f4c;
+  --color-primary-light: #e8edf3;
+  --color-accent: #f5d6d1;
+  --color-dark: #001233;
+  --color-light: #ffffff;
   --color-white: #ffffff;
+  --color-background: #f4f6f8;
   
   /* Estados e Alertas */
   --bg-warning: #fff9e6;
@@ -22,13 +23,13 @@
   --border-info: #c2dbfe;
   --text-info: #084298;
   
-  --border-color: #e2e8f0;
-  --text-muted: #64748b;
+  --border-color: #d1d9e2;
+  --text-muted: #5c6c7e;
   
   --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.02);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  --shadow-lg: 0 10px 15px -3px rgba(12, 102, 72, 0.05), 0 4px 6px -2px rgba(12, 102, 72, 0.02);
+  --shadow-sm: 0 2px 4px rgba(0, 18, 51, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 18, 51, 0.08);
+  --shadow-lg: 0 12px 24px rgba(0, 18, 51, 0.1);
 }
 
 * {
@@ -39,7 +40,7 @@
 
 body {
   font-family: var(--font-body);
-  background-color: #f1f5f9;
+  background-color: var(--color-background);
   color: var(--color-dark);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -47,12 +48,12 @@ body {
 
 /* Header principal */
 .main-header {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #063f2b 100%);
-  color: var(--color-white);
+  background: var(--color-white);
+  color: var(--color-dark);
   padding: 24px 16px;
   text-align: center;
-  border-bottom: 5px solid var(--color-accent);
-  box-shadow: var(--shadow-md);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
 }
 
 .main-header h1 {
@@ -61,7 +62,6 @@ body {
   font-weight: 700;
   letter-spacing: -0.5px;
   margin-bottom: 6px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .main-header p {
@@ -412,7 +412,7 @@ body {
 }
 
 .nav-btn {
-  background-color: #0d3226;
+  background-color: var(--color-dark);
   color: var(--color-white);
   border: none;
   width: 36px;

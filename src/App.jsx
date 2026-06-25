@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { dbService } from './services/db';
 import { isSupabaseConfigured, configSupabaseLocal, authService, getSupabaseClient } from './supabaseClient';
 import LoginScreen from './components/LoginScreen';
+import { resolverNomeParticipante, isNomeParticipanteValido } from './utils/nomeUtils';
 
 // Função para calcular pontos de um palpite
 export function calcularPontos(palpiteCasa, palpiteFora, jogo) {
@@ -469,52 +470,71 @@ function App() {
         
         let atualizacoes = [];
         let novosPalpites = [];
-        const nomesValidos = ['Sidney', 'Eduardo', 'Aline', 'Matheus', 'Silvio', 'Daniel'];
-        
+
         const removeAccents = (str) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+        const encontrarNomeParticipante = (partes) => {
+          for (const parte of partes) {
+            const nomeResolvido = resolverNomeParticipante(parte);
+            if (isNomeParticipanteValido(nomeResolvido)) {
+              return nomeResolvido;
+            }
+          }
+          return null;
+        };
+
+        const encontrarJogo = (partes) => {
+          for (const jogo of jogos) {
+            const casa = removeAccents(jogo.time_casa);
+            const fora = removeAccents(jogo.time_fora);
+            const casaPresente = partes.some(p => removeAccents(p) === casa);
+            const foraPresente = partes.some(p => removeAccents(p) === fora);
+            if (casaPresente && foraPresente) return jogo;
+          }
+          return null;
+        };
+
+        const encontrarPlacares = (partes) => {
+          const candidatos = partes
+            .map(p => p.trim())
+            .filter(p => /^\d{1,2}$/.test(p))
+            .map(p => parseInt(p, 10));
+
+          if (candidatos.length >= 2) {
+            return [candidatos[0], candidatos[1]];
+          }
+          return null;
+        };
 
         for (let i = 0; i < linhas.length; i++) {
           const linha = linhas[i];
           if (!linha || !linha.trim()) continue;
           
           const partes = linha.split(/[,;]/).map(p => p.trim().replace(/^"|"$/g, ''));
-          if (partes.length < 5) continue;
-          
-          const nome = partes[0];
-          const timeCasa = partes[1];
-          const golsCasa = partes[2];
-          const timeFora = partes[3];
-          const golsFora = partes[4];
+          if (partes.length < 3) continue;
 
-          // Pular linha de cabeçalho
-          if (nome.toLowerCase() === 'nome' || nome.toLowerCase() === 'apostador') continue;
-          
-          if (timeCasa && timeFora) {
-            const jogo = jogos.find(j => 
-              removeAccents(j.time_casa) === removeAccents(timeCasa) && 
-              removeAccents(j.time_fora) === removeAccents(timeFora)
-            );
-            
-            if (jogo) {
-              if (golsCasa !== '' && golsFora !== '' && !isNaN(golsCasa) && !isNaN(golsFora)) {
-                if (nome.toLowerCase() === 'oficial') {
-                  // Placar oficial
-                  atualizacoes.push({
-                    jogoId: jogo.id,
-                    golsCasa: parseInt(golsCasa, 10),
-                    golsFora: parseInt(golsFora, 10)
-                  });
-                } else if (nomesValidos.includes(nome)) {
-                  // Palpite
-                  novosPalpites.push({
-                    jogo_id: jogo.id,
-                    jogador_nome: nome,
-                    palpite_casa: parseInt(golsCasa, 10),
-                    palpite_fora: parseInt(golsFora, 10)
-                  });
-                }
-              }
-            }
+          const nome = encontrarNomeParticipante(partes);
+          const jogo = encontrarJogo(partes);
+          const placares = encontrarPlacares(partes);
+
+          if (!nome || !jogo || !placares) continue;
+
+          const [golsCasa, golsFora] = placares;
+          const nomeNormalizado = resolverNomeParticipante(nome);
+
+          if (nomeNormalizado.toLowerCase() === 'oficial') {
+            atualizacoes.push({
+              jogoId: jogo.id,
+              golsCasa,
+              golsFora
+            });
+          } else if (isNomeParticipanteValido(nomeNormalizado)) {
+            novosPalpites.push({
+              jogo_id: jogo.id,
+              jogador_nome: nomeNormalizado,
+              palpite_casa: golsCasa,
+              palpite_fora: golsFora
+            });
           }
         }
         
