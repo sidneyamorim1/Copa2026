@@ -59,6 +59,37 @@ function parseDateBR(dataStr) {
   return new Date(ano, mes - 1, dia);
 }
 
+// Componente leve para animação de confetes em CSS/React
+const Confetes = () => {
+  const pieces = Array.from({ length: 80 });
+  return (
+    <div className="confetti-container">
+      {pieces.map((_, idx) => {
+        const left = Math.random() * 100; // %
+        const delay = Math.random() * 5; // s
+        const duration = Math.random() * 3 + 2.5; // s
+        const color = ['#ffd700', '#ff8c00', '#00e5ff', '#ff007f', '#39ff14', '#ffffff'][Math.floor(Math.random() * 6)];
+        const width = Math.random() * 6 + 6; // px
+        const height = Math.random() * 10 + 12; // px
+        return (
+          <div 
+            key={idx}
+            className="confetti-piece"
+            style={{
+              left: `${left}%`,
+              animationDelay: `${delay}s`,
+              animationDuration: `${duration}s`,
+              backgroundColor: color,
+              width: `${width}px`,
+              height: `${height}px`
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
 function App() {
   // Dados do banco
   const [jogos, setJogos] = useState([]);
@@ -78,6 +109,10 @@ function App() {
   const hoje = new Date();
   const [calMes, setCalMes] = useState(hoje.getMonth()); // 0-11
   const [calAno, setCalAno] = useState(hoje.getFullYear());
+  
+  // Comemoração final da copa
+  const [forcarComemora, setForcarComemora] = useState(false);
+  const [modalComemoraFechado, setModalComemoraFechado] = useState(false);
   
   // Formulário de palpites
   const [nomeJogador, setNomeJogador] = useState(localStorage.getItem('bolao_nome_jogador') || '');
@@ -216,6 +251,17 @@ function App() {
       carregarDados();
     }
   }, [authChecked, usuario]);
+
+  // Sincroniza o mês e ano do calendário com a data selecionada para evitar dessincronização visual
+  useEffect(() => {
+    if (dataSelecionada) {
+      const [dia, mes, ano] = dataSelecionada.split('/').map(Number);
+      if (mes && ano) {
+        setCalMes(mes - 1);
+        setCalAno(ano);
+      }
+    }
+  }, [dataSelecionada]);
 
   // Realtime + polling: mantém todos os usuários sincronizados automaticamente
   useEffect(() => {
@@ -652,6 +698,11 @@ function App() {
   // 4. Pontos somados de todos
   const pontosSomadosTotal = ranking.reduce((acc, curr) => acc + curr.pontos, 0);
 
+  // Verifica se a copa acabou (se o jogo da final de ID 104 tem placar oficial preenchido)
+  const finalJogo = jogos.find(j => j.id === 104);
+  const copaFinalizada = !!(finalJogo && finalJogo.gols_casa_real !== null && finalJogo.gols_fora_real !== null);
+  const exibirComemora = !!((copaFinalizada || forcarComemora) && !modalComemoraFechado);
+
   // Palpites enviados pelo jogador ativo HOJE (na data selecionada)
   const palpitesHoje = jogoAtivo ? palpites.filter(p => {
     const jogo = jogos.find(j => j.id === p.jogo_id);
@@ -686,6 +737,15 @@ function App() {
         <p>Competição interna entre amigos, sem pagamentos, prêmios ou monetização</p>
         
         <div style={{ marginTop: '12px', display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
+          {(copaFinalizada || forcarComemora) && (
+            <button
+              onClick={() => setModalComemoraFechado(false)}
+              className="config-trigger-btn"
+              style={{ background: 'linear-gradient(135deg, #ffd700, #ff8c00)', color: '#000', borderColor: '#ffd700', fontWeight: 'bold' }}
+            >
+              🏆 Ver Pódio Final
+            </button>
+          )}
           {(isAdmin || !isSupabaseConfigured()) && (
             <>
               {isSupabaseConfigured() ? (
@@ -747,15 +807,29 @@ function App() {
                 <div style={{ display: 'flex', gap: '8px' }}>
                   <button 
                     className="btn-submit" 
-                    style={{ padding: '6px 12px', margin: 0, width: 'auto', fontSize: '0.85rem', backgroundColor: calMes === 5 ? 'var(--color-primary)' : 'var(--bg-page)', color: calMes === 5 ? '#fff' : 'var(--text-color)' }}
-                    onClick={() => { setCalMes(5); setCalAno(2026); setDataSelecionada('12/06/2026'); setIdxNaData(0); }}
+                    style={{ 
+                      padding: '6px 12px', 
+                      margin: 0, 
+                      width: 'auto', 
+                      fontSize: '0.85rem', 
+                      backgroundColor: (!jogoAtivo || jogoAtivo.fase !== 'Mata-Mata') ? 'var(--color-primary)' : 'var(--bg-page)', 
+                      color: (!jogoAtivo || jogoAtivo.fase !== 'Mata-Mata') ? '#fff' : 'var(--text-color)' 
+                    }}
+                    onClick={() => { setDataSelecionada('12/06/2026'); setIdxNaData(0); }}
                   >
                     Fase de Grupos
                   </button>
                   <button 
                     className="btn-submit" 
-                    style={{ padding: '6px 12px', margin: 0, width: 'auto', fontSize: '0.85rem', backgroundColor: (calMes === 5 && dataSelecionada === '28/06/2026') ? 'var(--color-primary)' : 'var(--bg-page)', color: (calMes === 5 && dataSelecionada === '28/06/2026') ? '#fff' : 'var(--text-color)' }}
-                    onClick={() => { setCalMes(5); setCalAno(2026); setDataSelecionada('28/06/2026'); setIdxNaData(0); }}
+                    style={{ 
+                      padding: '6px 12px', 
+                      margin: 0, 
+                      width: 'auto', 
+                      fontSize: '0.85rem', 
+                      backgroundColor: (jogoAtivo && jogoAtivo.fase === 'Mata-Mata') ? 'var(--color-primary)' : 'var(--bg-page)', 
+                      color: (jogoAtivo && jogoAtivo.fase === 'Mata-Mata') ? '#fff' : 'var(--text-color)' 
+                    }}
+                    onClick={() => { setDataSelecionada('28/06/2026'); setIdxNaData(0); }}
                   >
                     Mata-Mata
                   </button>
@@ -1156,6 +1230,24 @@ function App() {
                   </button>
                 </div>
 
+                {/* Painel: Comemoração Final */}
+                <div className="panel">
+                  <h3 style={{fontSize: '1rem', marginBottom: '8px'}}>🏆 Comemoração Final</h3>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
+                    Permite simular ou visualizar a tela de encerramento do bolão com o pódio dos 3 melhores e chuva de confetes.
+                  </p>
+                  <button 
+                    onClick={() => {
+                      setForcarComemora(prev => !prev);
+                      setModalComemoraFechado(false);
+                    }}
+                    className="btn-primary"
+                    style={{ width: '100%', margin: 0, padding: '12px', backgroundColor: forcarComemora ? '#ef4444' : '#f59e0b', color: '#fff', fontWeight: 'bold' }}
+                  >
+                    {forcarComemora ? '🛑 Parar Simulação de Campeão' : '🏆 Simular Tela de Campeão'}
+                  </button>
+                </div>
+
                 {/* Painel 3: Atualizar Manualmente */}
                 <div className="panel">
                   <h2 style={{fontSize: '1rem', marginBottom: '8px'}}>Atualizar Manualmente</h2>
@@ -1359,6 +1451,71 @@ function App() {
                 )}
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Modal de Comemoração Final */}
+      {exibirComemora && (
+        <div className="celebration-overlay">
+          <Confetes />
+          <div className="celebration-container">
+            <div className="celebration-header">
+              <h1>🏆 Campeão da Copa 2026! 🏆</h1>
+              <p>A Copa do Mundo de 2026 chegou ao fim e nosso bolão tem um vencedor!</p>
+            </div>
+
+            <div className="podium-wrapper">
+              {/* Segundo Lugar */}
+              {ranking[1] && (
+                <div className="podium-place podium-second">
+                  <span className="podium-player" title={ranking[1].jogador}>{ranking[1].jogador}</span>
+                  <span className="podium-score">{ranking[1].pontos} pts</span>
+                  <span className="podium-badge">🥈</span>
+                  <div className="podium-column">2</div>
+                </div>
+              )}
+
+              {/* Primeiro Lugar */}
+              {ranking[0] && (
+                <div className="podium-place podium-first">
+                  <span className="podium-player" title={ranking[0].jogador}>{ranking[0].jogador}</span>
+                  <span className="podium-score">{ranking[0].pontos} pts</span>
+                  <span className="podium-badge">👑</span>
+                  <div className="podium-column">1</div>
+                </div>
+              )}
+
+              {/* Terceiro Lugar */}
+              {ranking[2] && (
+                <div className="podium-place podium-third">
+                  <span className="podium-player" title={ranking[2].jogador}>{ranking[2].jogador}</span>
+                  <span className="podium-score">{ranking[2].pontos} pts</span>
+                  <span className="podium-badge">🥉</span>
+                  <div className="podium-column">3</div>
+                </div>
+              )}
+            </div>
+
+            {ranking[0] && (
+              <div className="champ-card">
+                <span style={{ fontSize: '3rem' }}>🏆</span>
+                <div className="champ-card-meta">
+                  <h3>Parabéns, {ranking[0].jogador}!</h3>
+                  <p>Você é o grande campeão do Bolão Copa 2026 com {ranking[0].pontos} pontos ({ranking[0].acertos} acertos)!</p>
+                </div>
+              </div>
+            )}
+
+            <div style={{ marginTop: '30px' }}>
+              <button 
+                onClick={() => setModalComemoraFechado(true)} 
+                className="btn-submit"
+                style={{ width: 'auto', padding: '12px 30px', fontSize: '1.05rem', background: 'linear-gradient(135deg, #10b981, #059669)', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold' }}
+              >
+                Ver Detalhes do Ranking / Fechar
+              </button>
+            </div>
           </div>
         </div>
       )}

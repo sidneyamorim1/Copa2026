@@ -25,7 +25,7 @@ async function run() {
   const { error: err2 } = await supabase.from('jogos').delete().neq('id', -1);
   if (err2) console.error("Error deleting jogos:", err2);
 
-  console.log("Inserindo 72 jogos...");
+  console.log("Inserindo 104 jogos...");
   const seedFile = fs.readFileSync('src/seed.json', 'utf8');
   const seedGames = JSON.parse(seedFile);
 

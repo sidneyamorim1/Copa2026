@@ -51,12 +51,13 @@ export const dbService = {
           const jogosParaInserir = seedGames.map(j => ({
             id: j.id,
             data: formatarDataParaSQL(j.data),
-            hora: j.hora.length === 5 ? `${j.hora}:00` : j.hora,
+            hora: j.hora ? (j.hora.length === 5 ? `${j.hora}:00` : j.hora) : null,
             time_casa: j.time_casa,
             time_fora: j.time_fora,
             gols_casa_real: j.gols_casa_real,
             gols_fora_real: j.gols_fora_real,
-            grupo: j.grupo
+            grupo: j.grupo,
+            fase: j.fase || 'Grupos'
           }));
           
           const { data: insertedData, error: insertError } = await supabase
@@ -77,7 +78,8 @@ export const dbService = {
           time_fora: j.time_fora,
           gols_casa_real: j.gols_casa_real,
           gols_fora_real: j.gols_fora_real,
-          grupo: j.grupo
+          grupo: j.grupo,
+          fase: j.fase
         }));
       } catch (err) {
         console.error('Erro ao ler jogos do Supabase, utilizando fallback local:', err);
