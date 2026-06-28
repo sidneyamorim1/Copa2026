@@ -25,3 +25,8 @@ dist-ssr
 .env
 .vercel
 .env*
+
+# Palpites (Predictions)
+src/palpites_seed.json
+palpites_corrigidos.csv
+
