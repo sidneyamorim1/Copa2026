@@ -95,6 +95,7 @@ function App() {
   // Dados do banco
   const [jogos, setJogos] = useState([]);
   const [palpites, setPalpites] = useState([]);
+  const [perfis, setPerfis] = useState([]);
   
   // Auth
   const [usuario, setUsuario] = useState(null);
@@ -139,6 +140,33 @@ function App() {
       const dataPalpites = await dbService.obterPalpites();
       setJogos(dataJogos);
       setPalpites(dataPalpites);
+      
+      // Carregar perfis (com pontos_bonus)
+      let dataPerfis = [];
+      if (isSupabaseConfigured()) {
+        const supabase = getSupabaseClient();
+        const { data: dbPerfis } = await supabase
+          .from('perfis')
+          .select('id, nome, email, is_admin, pontos_bonus')
+          .order('nome', { ascending: true });
+        dataPerfis = dbPerfis || [];
+      } else {
+        const localPerfis = localStorage.getItem('bolao_perfis_local');
+        if (localPerfis) {
+          dataPerfis = JSON.parse(localPerfis);
+        } else {
+          dataPerfis = [
+            { id: '1', nome: 'Aline', pontos_bonus: 0 },
+            { id: '2', nome: 'Sidney', pontos_bonus: 0, is_admin: true },
+            { id: '3', nome: 'Eduardo', pontos_bonus: 0 },
+            { id: '4', nome: 'Silvio', pontos_bonus: 0 },
+            { id: '5', nome: 'Matheus', pontos_bonus: 0 },
+            { id: '6', nome: 'Daniel', pontos_bonus: 0 }
+          ];
+          localStorage.setItem('bolao_perfis_local', JSON.stringify(dataPerfis));
+        }
+      }
+      setPerfis(dataPerfis);
       
       if (dataJogos.length > 0) {
         const hoje = obterDataHoje();
@@ -457,6 +485,42 @@ function App() {
     }
   };
 
+  const handleSalvarBonus = async (perfilId, nomeJogador, novoBonus) => {
+    try {
+      setLoading(true);
+      const bonusInt = parseInt(novoBonus, 10) || 0;
+      
+      if (isSupabaseConfigured()) {
+        const supabase = getSupabaseClient();
+        const { error } = await supabase
+          .from('perfis')
+          .update({ pontos_bonus: bonusInt })
+          .eq('id', perfilId);
+          
+        if (error) throw error;
+      } else {
+        // Fallback local
+        const localPerfis = JSON.parse(localStorage.getItem('bolao_perfis_local') || '[]');
+        const updatedPerfis = localPerfis.map(p => 
+          p.id === perfilId ? { ...p, pontos_bonus: bonusInt } : p
+        );
+        localStorage.setItem('bolao_perfis_local', JSON.stringify(updatedPerfis));
+      }
+      
+      // Atualiza o estado na memória
+      setPerfis(prev => prev.map(p => 
+        p.id === perfilId ? { ...p, pontos_bonus: bonusInt } : p
+      ));
+      
+      alert(`Bônus de ${nomeJogador} atualizado para +${bonusInt} pontos!`);
+    } catch (err) {
+      console.error(err);
+      alert("Erro ao salvar bônus: " + err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleUploadCSV = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -698,12 +762,18 @@ function App() {
           }
         }
       });
+
+      // Busca pontos de bônus do perfil do participante
+      const perfilUser = perfis.find(pf => pf.nome.toLowerCase() === nome.toLowerCase());
+      const bonus = perfilUser ? (perfilUser.pontos_bonus || 0) : 0;
+      pontos += bonus;
     
     return {
       jogador: nome,
       pontos,
       acertos,
-      erros
+      erros,
+      bonus
     };
   });
   
@@ -1132,6 +1202,7 @@ function App() {
                         <th style={{ width: '50px' }}>#</th>
                         <th>Jogador</th>
                         <th>Pontos</th>
+                        <th>Bônus</th>
                         <th>Acertos</th>
                         <th>Erros</th>
                       </tr>
@@ -1145,6 +1216,7 @@ function App() {
                           <td className="pos">{idx + 1}</td>
                           <td className="player-name">{row.jogador}</td>
                           <td className="points">{row.pontos}</td>
+                          <td style={{ color: '#d97706', fontWeight: '600' }}>+{row.bonus || 0}</td>
                           <td style={{ color: 'var(--color-primary)', fontWeight: '600' }}>{row.acertos}</td>
                           <td style={{ color: '#ef4444', fontWeight: '600' }}>{row.erros}</td>
                         </tr>
@@ -1359,6 +1431,56 @@ function App() {
                         </div>
                       ))
                     )}
+                  </div>
+                </div>
+
+                {/* Painel 4: Gerenciar Bônus de Participantes */}
+                <div className="panel">
+                  <h2 style={{fontSize: '1rem', marginBottom: '8px'}}>Gerenciar Bônus de Participantes</h2>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
+                    Defina pontos adicionais manuais para cada participante (por acertos em cravadas de times, etc).
+                  </p>
+                  
+                  <div className="table-wrapper">
+                    <table className="ranking-table" style={{ marginTop: '8px' }}>
+                      <thead>
+                        <tr>
+                          <th>Jogador</th>
+                          <th>Bônus Atual</th>
+                          <th>Ação</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {perfis.map(p => (
+                          <tr key={p.id}>
+                            <td className="player-name">{p.nome}</td>
+                            <td>
+                              <input 
+                                type="number" 
+                                className="input-control"
+                                style={{ margin: 0, padding: '4px 8px', width: '80px', textAlign: 'center' }}
+                                defaultValue={p.pontos_bonus || 0}
+                                id={`bonus-input-${p.id}`}
+                              />
+                            </td>
+                            <td>
+                              <button 
+                                onClick={async () => {
+                                  const inputEl = document.getElementById(`bonus-input-${p.id}`);
+                                  if (inputEl) {
+                                    await handleSalvarBonus(p.id, p.nome, inputEl.value);
+                                  }
+                                }}
+                                className="btn-submit"
+                                style={{ padding: '6px 12px', margin: 0, width: 'auto', fontSize: '0.8rem' }}
+                              >
+                                Salvar
+                              </button>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
                   </div>
                 </div>
 
