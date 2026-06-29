@@ -1,0 +1,433 @@
+Nome;TimeCasa;GolsCasa;TimeFora;GolsFora
+Aline;México;3;Africa;1
+Aline;Canadá;1;Bósnia;1
+Aline;Brasil;2;Marrocos;0
+Aline;EUA;2;Paraguai;1
+Aline;Alemanha;4;Curaçao;0
+Aline;Holanda;2;Japão;1
+Aline;Bélgica;2;Egito;1
+Aline;Espanha;4;Cabo Verde;0
+Aline;França;5;Senegal;0
+Aline;Argentina;3;Argélia;0
+Aline;Portugal;3;RD Congo;1
+Aline;Gana;1;Panamá;0
+Matheus;México;2;Africa;0
+Matheus;Canadá;2;Bósnia;1
+Matheus;Brasil;2;Marrocos;1
+Matheus;EUA;0;Paraguai;1
+Matheus;Alemanha;3;Curaçao;0
+Matheus;Holanda;1;Japão;0
+Matheus;Bélgica;2;Egito;0
+Matheus;Espanha;2;Cabo Verde;0
+Matheus;França;4;Senegal;0
+Matheus;Argentina;2;Argélia;0
+Matheus;Portugal;3;RD Congo;0
+Matheus;Gana;1;Panamá;0
+Eduardo;México;2;Africa;1
+Eduardo;Canadá;1;Bósnia;1
+Eduardo;Brasil;3;Marrocos;1
+Eduardo;EUA;1;Paraguai;0
+Eduardo;Alemanha;6;Curaçao;0
+Eduardo;Holanda;2;Japão;1
+Eduardo;Bélgica;3;Egito;1
+Eduardo;Espanha;7;Cabo Verde;0
+Eduardo;França;2;Senegal;2
+Eduardo;Argentina;3;Argélia;1
+Eduardo;Portugal;4;RD Congo;1
+Eduardo;Gana;2;Panamá;0
+Sidney;México;2;Africa;1
+Sidney;Canadá;2;Bósnia;1
+Sidney;Brasil;3;Marrocos;1
+Sidney;EUA;2;Paraguai;2
+Sidney;Alemanha;3;Curaçao;1
+Sidney;Holanda;2;Japão;2
+Sidney;Bélgica;2;Egito;1
+Sidney;Espanha;3;Cabo Verde;1
+Sidney;França;3;Senegal;1
+Sidney;Argentina;2;Argélia;0
+Sidney;Portugal;3;RD Congo;1
+Sidney;Gana;2;Panamá;1
+Silvio;México;2;Africa;1
+Silvio;Canadá;0;Bósnia;0
+Silvio;Brasil;2;Marrocos;1
+Silvio;EUA;2;Paraguai;0
+Silvio;Alemanha;5;Curaçao;0
+Silvio;Holanda;0;Japão;1
+Silvio;Bélgica;2;Egito;1
+Silvio;Espanha;3;Cabo Verde;0
+Silvio;França;3;Senegal;2
+Silvio;Argentina;4;Argélia;0
+Silvio;Portugal;4;RD Congo;0
+Silvio;Gana;2;Panamá;0
+Daniel;México;2;Africa;1
+Daniel;Canadá;2;Bósnia;0
+Daniel;Brasil;2;Marrocos;2
+Daniel;EUA;1;Paraguai;2
+Daniel;Alemanha;4;Curaçao;0
+Daniel;Holanda;2;Japão;1
+Daniel;Bélgica;3;Egito;2
+Daniel;Espanha;4;Cabo Verde;0
+Daniel;França;2;Senegal;1
+Daniel;Argentina;3;Argélia;1
+Daniel;Portugal;3;RD Congo;0
+Daniel;Gana;3;Panamá;1
+Aline;Coréa;0;Tchéquia;0
+Aline;Catar;1;Suíça;2
+Aline;Haití;0;Escócia;3
+Aline;Austrália;0;Turquia;2
+Aline;Cost Marfim;0;Equador;0
+Aline;Suécia;2;Tunisia;0
+Aline;Irã;2;Nova Zelandia;0
+Aline;Arab Saudita;0;Uruguai;3
+Aline;Iraque;1;Noruega;2
+Aline;Austria;2;Jordania;0
+Aline;Colômbia;2;Uzbequistão;1
+Aline;Inglaterra;2;Croácia;1
+Matheus;Coréa;1;Tchéquia;1
+Matheus;Catar;0;Suíça;2
+Matheus;Haití;0;Escócia;1
+Matheus;Austrália;0;Turquia;1
+Matheus;Cost Marfim;0;Equador;1
+Matheus;Suécia;2;Tunisia;0
+Matheus;Irã;1;Nova Zelandia;0
+Matheus;Arab Saudita;1;Uruguai;3
+Matheus;Iraque;0;Noruega;2
+Matheus;Austria;2;Jordania;0
+Matheus;Colômbia;2;Uzbequistão;0
+Matheus;Inglaterra;1;Croácia;1
+Eduardo;Coréa;2;Tchéquia;2
+Eduardo;Catar;1;Suíça;3
+Eduardo;Haití;0;Escócia;2
+Eduardo;Austrália;0;Turquia;2
+Eduardo;Cost Marfim;1;Equador;0
+Eduardo;Suécia;1;Tunisia;1
+Eduardo;Irã;1;Nova Zelandia;1
+Eduardo;Arab Saudita;2;Uruguai;2
+Eduardo;Iraque;0;Noruega;2
+Eduardo;Austria;3;Jordania;0
+Eduardo;Colômbia;1;Uzbequistão;2
+Eduardo;Inglaterra;2;Croácia;1
+Sidney;Coréa;2;Tchéquia;2
+Sidney;Catar;1;Suíça;3
+Sidney;Haití;0;Escócia;1
+Sidney;Austrália;1;Turquia;2
+Sidney;Cost Marfim;1;Equador;2
+Sidney;Suécia;2;Tunisia;1
+Sidney;Irã;1;Nova Zelandia;1
+Sidney;Arab Saudita;1;Uruguai;3
+Sidney;Iraque;1;Noruega;2
+Sidney;Austria;1;Jordania;0
+Sidney;Colômbia;3;Uzbequistão;1
+Sidney;Inglaterra;2;Croácia;2
+Silvio;Coréa;2;Tchéquia;0
+Silvio;Catar;0;Suíça;1
+Silvio;Haití;0;Escócia;3
+Silvio;Austrália;0;Turquia;2
+Silvio;Cost Marfim;0;Equador;3
+Silvio;Suécia;2;Tunisia;2
+Silvio;Irã;2;Nova Zelandia;0
+Silvio;Arab Saudita;1;Uruguai;2
+Silvio;Iraque;0;Noruega;1
+Silvio;Austria;2;Jordania;0
+Silvio;Colômbia;2;Uzbequistão;0
+Silvio;Inglaterra;3;Croácia;1
+Daniel;Coréa;1;Tchéquia;0
+Daniel;Catar;0;Suíça;2
+Daniel;Haití;0;Escócia;3
+Daniel;Austrália;1;Turquia;2
+Daniel;Cost Marfim;2;Equador;2
+Daniel;Suécia;3;Tunisia;1
+Daniel;Irã;2;Nova Zelandia;1
+Daniel;Arab Saudita;1;Uruguai;3
+Daniel;Iraque;0;Noruega;2
+Daniel;Austria;2;Jordania;0
+Daniel;Colômbia;3;Uzbequistão;0
+Daniel;Inglaterra;2;Croácia;2
+Aline;Tchéquia;1;Africa;0
+Aline;Canadá;2;Catar;1
+Aline;Brasil;4;Haití;0
+Aline;EUA;2;Austrália;0
+Aline;Alemanha;4;Cost Marfim;1
+Aline;Holanda;2;Suécia;1
+Aline;Bélgica;1;Irã;0
+Aline;Espanha;3;Arábia;0
+Aline;França;4;Iraque;0
+Aline;Argentina;2;Aústria;0
+Aline;Portugal;3;Uzbequistão;1
+Aline;Panamá;0;Croácia;2
+Matheus;Tchéquia;1;Africa;2
+Matheus;Canadá;2;Catar;0
+Matheus;Brasil;3;Haití;0
+Matheus;EUA;2;Austrália;1
+Matheus;Alemanha;2;Cost Marfim;0
+Matheus;Holanda;2;Suécia;1
+Matheus;Bélgica;2;Irã;1
+Matheus;Espanha;2;Arábia;0
+Matheus;França;3;Iraque;0
+Matheus;Argentina;2;Aústria;0
+Matheus;Portugal;3;Uzbequistão;0
+Matheus;Panamá;0;Croácia;2
+Eduardo;Tchéquia;2;Africa;0
+Eduardo;Canadá;1;Catar;1
+Eduardo;Brasil;5;Haití;0
+Eduardo;EUA;2;Austrália;1
+Eduardo;Alemanha;4;Cost Marfim;2
+Eduardo;Holanda;2;Suécia;1
+Eduardo;Bélgica;4;Irã;0
+Eduardo;Espanha;3;Arábia;1
+Eduardo;França;5;Iraque;0
+Eduardo;Argentina;3;Aústria;0
+Eduardo;Portugal;4;Uzbequistão;0
+Eduardo;Panamá;1;Croácia;3
+Sidney;Tchéquia;3;Africa;1
+Sidney;Canadá;1;Catar;1
+Sidney;Brasil;4;Haití;0
+Sidney;EUA;2;Austrália;2
+Sidney;Alemanha;3;Cost Marfim;1
+Sidney;Holanda;2;Suécia;0
+Sidney;Bélgica;2;Irã;1
+Sidney;Espanha;2;Arábia;0
+Sidney;França;3;Iraque;0
+Sidney;Argentina;3;Aústria;1
+Sidney;Portugal;2;Uzbequistão;0
+Sidney;Panamá;1;Croácia;2
+Silvio;Tchéquia;2;Africa;0
+Silvio;Canadá;0;Catar;1
+Silvio;Brasil;4;Haití;0
+Silvio;EUA;4;Austrália;0
+Silvio;Alemanha;5;Cost Marfim;0
+Silvio;Holanda;3;Suécia;2
+Silvio;Bélgica;2;Irã;0
+Silvio;Espanha;4;Arábia;0
+Silvio;França;3;Iraque;1
+Silvio;Argentina;4;Aústria;1
+Silvio;Portugal;3;Uzbequistão;0
+Silvio;Panamá;1;Croácia;3
+Daniel;Tchéquia;2;Africa;1
+Daniel;Canadá;1;Catar;1
+Daniel;Brasil;3;Haití;0
+Daniel;EUA;3;Austrália;2
+Daniel;Alemanha;1;Cost Marfim;1
+Daniel;Holanda;2;Suécia;2
+Daniel;Bélgica;3;Irã;1
+Daniel;Espanha;3;Arábia;1
+Daniel;França;3;Iraque;0
+Daniel;Argentina;3;Aústria;1
+Daniel;Portugal;4;Uzbequistão;0
+Daniel;Panamá;1;Croácia;3
+Aline;México;2;Coréa;1
+Aline;Suíça;2;Bósnia;0
+Aline;Escócia;1;Marrocos;2
+Aline;Turquia;2;Paraguai;1
+Aline;Equador;4;Curaçao;1
+Aline;Tunisia;0;Japão;3
+Aline;Nova Zelandia;0;Egito;2
+Aline;Uruguai;1;Cabo verde;0
+Aline;Noroega;2;Senegal;0
+Aline;Jordania;0;Argélia;1
+Aline;Colômbia;2;RD Congo;1
+Aline;Inglaterra;2;Gana;1
+Matheus;México;2;Coréa;1
+Matheus;Suíça;0;Bósnia;0
+Matheus;Escócia;1;Marrocos;2
+Matheus;Turquia;1;Paraguai;1
+Matheus;Equador;3;Curaçao;0
+Matheus;Tunisia;0;Japão;2
+Matheus;Nova Zelandia;1;Egito;1
+Matheus;Uruguai;2;Cabo verde;0
+Matheus;Noroega;2;Senegal;2
+Matheus;Jordania;1;Argélia;2
+Matheus;Colômbia;3;RD Congo;0
+Matheus;Inglaterra;3;Gana;1
+Eduardo;México;2;Coréa;2
+Eduardo;Suíça;2;Bósnia;0
+Eduardo;Escócia;0;Marrocos;2
+Eduardo;Turquia;1;Paraguai;1
+Eduardo;Equador;6;Curaçao;0
+Eduardo;Tunisia;1;Japão;3
+Eduardo;Nova Zelandia;0;Egito;2
+Eduardo;Uruguai;4;Cabo verde;0
+Eduardo;Noroega;2;Senegal;2
+Eduardo;Jordania;1;Argélia;3
+Eduardo;Colômbia;5;RD Congo;1
+Eduardo;Inglaterra;3;Gana;1
+Sidney;México;2;Coréa;1
+Sidney;Suíça;2;Bósnia;1
+Sidney;Escócia;1;Marrocos;3
+Sidney;Turquia;1;Paraguai;2
+Sidney;Equador;3;Curaçao;1
+Sidney;Tunisia;1;Japão;2
+Sidney;Nova Zelandia;1;Egito;1
+Sidney;Uruguai;3;Cabo verde;1
+Sidney;Noroega;1;Senegal;2
+Sidney;Jordania;2;Argélia;2
+Sidney;Colômbia;2;RD Congo;0
+Sidney;Inglaterra;3;Gana;1
+Silvio;México;2;Coréa;2
+Silvio;Suíça;2;Bósnia;1
+Silvio;Escócia;2;Marrocos;1
+Silvio;Turquia;1;Paraguai;2
+Silvio;Equador;3;Curaçao;2
+Silvio;Tunisia;0;Japão;3
+Silvio;Nova Zelandia;3;Egito;3
+Silvio;Uruguai;2;Cabo verde;0
+Silvio;Noroega;3;Senegal;0
+Silvio;Jordania;0;Argélia;0
+Silvio;Colômbia;4;RD Congo;0
+Silvio;Inglaterra;2;Gana;0
+Daniel;México;2;Coréa;1
+Daniel;Suíça;1;Bósnia;1
+Daniel;Escócia;2;Marrocos;1
+Daniel;Turquia;1;Paraguai;2
+Daniel;Equador;3;Curaçao;1
+Daniel;Tunisia;1;Japão;2
+Daniel;Nova Zelandia;1;Egito;2
+Daniel;Uruguai;2;Cabo verde;0
+Daniel;Noroega;1;Senegal;2
+Daniel;Jordania;0;Argélia;1
+Daniel;Colômbia;3;RD Congo;0
+Daniel;Inglaterra;1;Gana;1
+Aline;Tchéquia;1;México;3
+Aline;Suíça;1;Canadá;1
+Aline;Marrocos;3;Haití;0
+Aline;Turquia;0;EUA;2
+Aline;Curaçao;0;Cost Marfim;1
+Aline;Japão;2;Suécia;1
+Aline;Egito;1;Irã;1
+Aline;Uruguai;2;Espanha;3
+Aline;Noruega;1;França;2
+Aline;Argélia;1;Aústria;2
+Aline;Colômbia;1;Portugal;3
+Aline;Croácia;2;Gana;0
+Matheus;Tchéquia;1;México;1
+Matheus;Suíça;2;Canadá;1
+Matheus;Marrocos;3;Haití;0
+Matheus;Turquia;1;EUA;2
+Matheus;Curaçao;0;Cost Marfim;3
+Matheus;Japão;2;Suécia;1
+Matheus;Egito;1;Irã;0
+Matheus;Uruguai;1;Espanha;3
+Matheus;Noruega;1;França;2
+Matheus;Argélia;1;Aústria;2
+Matheus;Colômbia;1;Portugal;2
+Matheus;Croácia;2;Gana;0
+Eduardo;Tchéquia;1;México;2
+Eduardo;Suíça;1;Canadá;1
+Eduardo;Marrocos;3;Haití;0
+Eduardo;Turquia;0;EUA;2
+Eduardo;Curaçao;0;Cost Marfim;3
+Eduardo;Japão;2;Suécia;1
+Eduardo;Egito;2;Irã;1
+Eduardo;Uruguai;0;Espanha;2
+Eduardo;Noruega;1;França;2
+Eduardo;Argélia;1;Aústria;1
+Eduardo;Colômbia;1;Portugal;2
+Eduardo;Croácia;3;Gana;1
+Sidney;Tchéquia;1;México;2
+Sidney;Suíça;2;Canadá;1
+Sidney;Marrocos;1;Haití;1
+Sidney;Turquia;2;EUA;2
+Sidney;Curaçao;1;Cost Marfim;2
+Sidney;Japão;2;Suécia;2
+Sidney;Egito;2;Irã;2
+Sidney;Uruguai;1;Espanha;2
+Sidney;Noruega;1;França;3
+Sidney;Argélia;1;Aústria;1
+Sidney;Colômbia;1;Portugal;2
+Sidney;Croácia;2;Gana;0
+Silvio;Tchéquia;0;México;2
+Silvio;Suíça;1;Canadá;2
+Silvio;Marrocos;4;Haití;1
+Silvio;Turquia;0;EUA;3
+Silvio;Curaçao;2;Cost Marfim;0
+Silvio;Japão;2;Suécia;0
+Silvio;Egito;0;Irã;0
+Silvio;Uruguai;3;Espanha;0
+Silvio;Noruega;4;França;3
+Silvio;Argélia;1;Aústria;3
+Silvio;Colômbia;2;Portugal;2
+Silvio;Croácia;2;Gana;2
+Daniel;Tchéquia;1;México;3
+Daniel;Suíça;2;Canadá;1
+Daniel;Marrocos;4;Haití;1
+Daniel;Turquia;0;EUA;3
+Daniel;Curaçao;1;Cost Marfim;2
+Daniel;Japão;2;Suécia;1
+Daniel;Egito;2;Irã;1
+Daniel;Uruguai;1;Espanha;2
+Daniel;Noruega;2;França;3
+Daniel;Argélia;1;Aústria;2
+Daniel;Colômbia;1;Portugal;1
+Daniel;Croácia;2;Gana;1
+Aline;Africa;0;Corea;2
+Aline;Bósnia;1;Catar;0
+Aline;Escócia;0;Brasil;3
+Aline;Paraguai;1;Austrália;1
+Aline;Equador;1;Alemanha;3
+Aline;Tunisia;0;Holanda;3
+Aline;Bélgica;2;Nova Zelandia;0
+Aline;Cabo;1;Arábia;0
+Aline;Senegal;2;Iraque;0
+Aline;Jordania;0;Argentina;4
+Aline;RD Congo;0;Uzbequistão;0
+Aline;Panamá;0;Inglaterra;3
+Matheus;Africa;0;Corea;2
+Matheus;Bósnia;2;Catar;0
+Matheus;Escócia;0;Brasil;2
+Matheus;Paraguai;1;Austrália;1
+Matheus;Equador;0;Alemanha;2
+Matheus;Tunisia;0;Holanda;2
+Matheus;Bélgica;2;Nova Zelandia;0
+Matheus;Cabo;1;Arábia;1
+Matheus;Senegal;2;Iraque;0
+Matheus;Jordania;0;Argentina;4
+Matheus;RD Congo;1;Uzbequistão;1
+Matheus;Panamá;0;Inglaterra;4
+Eduardo;Africa;1;Corea;3
+Eduardo;Bósnia;0;Catar;2
+Eduardo;Escócia;0;Brasil;2
+Eduardo;Paraguai;2;Austrália;1
+Eduardo;Equador;1;Alemanha;3
+Eduardo;Tunisia;0;Holanda;4
+Eduardo;Bélgica;3;Nova Zelandia;0
+Eduardo;Cabo;0;Arábia;1
+Eduardo;Senegal;4;Iraque;0
+Eduardo;Jordania;0;Argentina;4
+Eduardo;RD Congo;2;Uzbequistão;1
+Eduardo;Panamá;0;Inglaterra;4
+Sidney;Africa;2;Corea;1
+Sidney;Bósnia;1;Catar;2
+Sidney;Escócia;1;Brasil;3
+Sidney;Paraguai;2;Austrália;1
+Sidney;Equador;1;Alemanha;3
+Sidney;Tunisia;1;Holanda;3
+Sidney;Bélgica;2;Nova Zelandia;2
+Sidney;Cabo;1;Arábia;2
+Sidney;Senegal;1;Iraque;0
+Sidney;Jordania;0;Argentina;3
+Sidney;RD Congo;1;Uzbequistão;1
+Sidney;Panamá;1;Inglaterra;2
+Silvio;Africa;1;Corea;0
+Silvio;Bósnia;0;Catar;1
+Silvio;Escócia;1;Brasil;2
+Silvio;Paraguai;2;Austrália;0
+Silvio;Equador;0;Alemanha;4
+Silvio;Tunisia;1;Holanda;4
+Silvio;Bélgica;2;Nova Zelandia;0
+Silvio;Cabo;2;Arábia;1
+Silvio;Senegal;1;Iraque;1
+Silvio;Jordania;0;Argentina;5
+Silvio;RD Congo;0;Uzbequistão;0
+Silvio;Panamá;0;Inglaterra;3
+Daniel;Africa;1;Corea;2
+Daniel;Bósnia;2;Catar;2
+Daniel;Escócia;0;Brasil;2
+Daniel;Paraguai;1;Austrália;0
+Daniel;Equador;0;Alemanha;2
+Daniel;Tunisia;0;Holanda;4
+Daniel;Bélgica;2;Nova Zelandia;0
+Daniel;Cabo;2;Arábia;1
+Daniel;Senegal;3;Iraque;1
+Daniel;Jordania;0;Argentina;3
+Daniel;RD Congo;2;Uzbequistão;0
+Daniel;Panamá;0;Inglaterra;3
