@@ -6,13 +6,13 @@ Eduardo,México,2,África do Sul,1
 Sidney,México,2,África do Sul,1
 Silvio,México,2,África do Sul,1
 Daniel,México,2,África do Sul,1
-Oficial,Canadá,1,Bósnia,1
-Aline,Canadá,1,Bósnia,1
-Matheus,Canadá,2,Bósnia,1
-Eduardo,Canadá,1,Bósnia,1
-Sidney,Canadá,2,Bósnia,1
-Silvio,Canadá,0,Bósnia,0
-Daniel,Canadá,2,Bósnia,0
+Oficial,Canadá,1,Bósnia e Herz.,1
+Aline,Canadá,1,Bósnia e Herz.,1
+Matheus,Canadá,2,Bósnia e Herz.,1
+Eduardo,Canadá,1,Bósnia e Herz.,1
+Sidney,Canadá,2,Bósnia e Herz.,1
+Silvio,Canadá,0,Bósnia e Herz.,0
+Daniel,Canadá,2,Bósnia e Herz.,0
 Oficial,Brasil,1,Marrocos,1
 Aline,Brasil,2,Marrocos,0
 Matheus,Brasil,2,Marrocos,1
@@ -76,13 +76,13 @@ Eduardo,Portugal,4,RD Congo,1
 Sidney,Portugal,3,RD Congo,1
 Silvio,Portugal,4,RD Congo,0
 Daniel,Portugal,3,RD Congo,0
-Oficial,Gana,1,Panamá,0
-Aline,Gana,1,Panamá,0
-Matheus,Gana,1,Panamá,0
-Eduardo,Gana,2,Panamá,0
-Sidney,Gana,2,Panamá,1
-Silvio,Gana,2,Panamá,0
-Daniel,Gana,3,Panamá,1
+Oficial,Gana,1,Panama,0
+Aline,Gana,1,Panama,0
+Matheus,Gana,1,Panama,0
+Eduardo,Gana,2,Panama,0
+Sidney,Gana,2,Panama,1
+Silvio,Gana,2,Panama,0
+Daniel,Gana,3,Panama,1
 Oficial,Coreia do Sul,2,Tchéquia,1
 Aline,Coreia do Sul,0,Tchéquia,0
 Matheus,Coreia do Sul,1,Tchéquia,1
@@ -104,13 +104,13 @@ Eduardo,Haiti,0,Escócia,2
 Sidney,Haiti,0,Escócia,1
 Silvio,Haiti,0,Escócia,3
 Daniel,Haiti,0,Escócia,3
-Oficial,Austrália,2,Turquia,0
-Aline,Austrália,0,Turquia,2
-Matheus,Austrália,0,Turquia,1
-Eduardo,Austrália,0,Turquia,2
-Sidney,Austrália,1,Turquia,2
-Silvio,Austrália,0,Turquia,2
-Daniel,Austrália,1,Turquia,2
+Oficial,Australia,2,Turquia,0
+Aline,Australia,0,Turquia,2
+Matheus,Australia,0,Turquia,1
+Eduardo,Australia,0,Turquia,2
+Sidney,Australia,1,Turquia,2
+Silvio,Australia,0,Turquia,2
+Daniel,Australia,1,Turquia,2
 Oficial,Costa do Marfim,1,Equador,0
 Aline,Costa do Marfim,0,Equador,0
 Matheus,Costa do Marfim,0,Equador,1
@@ -146,20 +146,20 @@ Eduardo,Iraque,0,Noruega,2
 Sidney,Iraque,1,Noruega,2
 Silvio,Iraque,0,Noruega,1
 Daniel,Iraque,0,Noruega,2
-Oficial,Áustria,3,Jordânia,1
-Aline,Áustria,2,Jordânia,0
-Matheus,Áustria,2,Jordânia,0
-Eduardo,Áustria,3,Jordânia,0
-Sidney,Áustria,1,Jordânia,0
-Silvio,Áustria,2,Jordânia,0
-Daniel,Áustria,2,Jordânia,0
-Oficial,Colômbia,3,Uzbequistão,1
-Aline,Colômbia,2,Uzbequistão,1
-Matheus,Colômbia,2,Uzbequistão,0
-Eduardo,Colômbia,1,Uzbequistão,2
-Sidney,Colômbia,3,Uzbequistão,1
-Silvio,Colômbia,2,Uzbequistão,0
-Daniel,Colômbia,3,Uzbequistão,0
+Oficial,Austria,3,Jordânia,1
+Aline,Austria,2,Jordânia,0
+Matheus,Austria,2,Jordânia,0
+Eduardo,Austria,3,Jordânia,0
+Sidney,Austria,1,Jordânia,0
+Silvio,Austria,2,Jordânia,0
+Daniel,Austria,2,Jordânia,0
+Oficial,Uzbequistão,1,Colômbia,3
+Aline,Uzbequistão,1,Colômbia,2
+Matheus,Uzbequistão,0,Colômbia,2
+Eduardo,Uzbequistão,2,Colômbia,1
+Sidney,Uzbequistão,1,Colômbia,3
+Silvio,Uzbequistão,0,Colômbia,2
+Daniel,Uzbequistão,0,Colômbia,3
 Oficial,Inglaterra,4,Croácia,2
 Aline,Inglaterra,2,Croácia,1
 Matheus,Inglaterra,1,Croácia,1
@@ -188,13 +188,13 @@ Eduardo,Brasil,5,Haiti,0
 Sidney,Brasil,4,Haiti,0
 Silvio,Brasil,4,Haiti,0
 Daniel,Brasil,3,Haiti,0
-Oficial,EUA,2,Austrália,0
-Aline,EUA,2,Austrália,0
-Matheus,EUA,2,Austrália,1
-Eduardo,EUA,2,Austrália,1
-Sidney,EUA,2,Austrália,2
-Silvio,EUA,4,Austrália,0
-Daniel,EUA,3,Austrália,2
+Oficial,EUA,2,Australia,0
+Aline,EUA,2,Australia,0
+Matheus,EUA,2,Australia,1
+Eduardo,EUA,2,Australia,1
+Sidney,EUA,2,Australia,2
+Silvio,EUA,4,Australia,0
+Daniel,EUA,3,Australia,2
 Oficial,Alemanha,2,Costa do Marfim,1
 Aline,Alemanha,4,Costa do Marfim,1
 Matheus,Alemanha,2,Costa do Marfim,0
@@ -230,13 +230,13 @@ Eduardo,França,5,Iraque,0
 Sidney,França,3,Iraque,0
 Silvio,França,3,Iraque,1
 Daniel,França,3,Iraque,0
-Oficial,Argentina,2,Áustria,0
-Aline,Argentina,2,Áustria,0
-Matheus,Argentina,2,Áustria,0
-Eduardo,Argentina,3,Áustria,0
-Sidney,Argentina,3,Áustria,1
-Silvio,Argentina,4,Áustria,1
-Daniel,Argentina,3,Áustria,1
+Oficial,Argentina,2,Austria,0
+Aline,Argentina,2,Austria,0
+Matheus,Argentina,2,Austria,0
+Eduardo,Argentina,3,Austria,0
+Sidney,Argentina,3,Austria,1
+Silvio,Argentina,4,Austria,1
+Daniel,Argentina,3,Austria,1
 Oficial,Portugal,5,Uzbequistão,0
 Aline,Portugal,3,Uzbequistão,1
 Matheus,Portugal,3,Uzbequistão,0
@@ -244,13 +244,13 @@ Eduardo,Portugal,4,Uzbequistão,0
 Sidney,Portugal,2,Uzbequistão,0
 Silvio,Portugal,3,Uzbequistão,0
 Daniel,Portugal,4,Uzbequistão,0
-Oficial,Panamá,0,Croácia,1
-Aline,Panamá,0,Croácia,2
-Matheus,Panamá,0,Croácia,2
-Eduardo,Panamá,1,Croácia,3
-Sidney,Panamá,1,Croácia,2
-Silvio,Panamá,1,Croácia,3
-Daniel,Panamá,1,Croácia,3
+Oficial,Panama,0,Croácia,1
+Aline,Panama,0,Croácia,2
+Matheus,Panama,0,Croácia,2
+Eduardo,Panama,1,Croácia,3
+Sidney,Panama,1,Croácia,2
+Silvio,Panama,1,Croácia,3
+Daniel,Panama,1,Croácia,3
 Oficial,México,1,Coreia do Sul,0
 Aline,México,2,Coreia do Sul,1
 Matheus,México,2,Coreia do Sul,1
@@ -258,13 +258,13 @@ Eduardo,México,2,Coreia do Sul,2
 Sidney,México,2,Coreia do Sul,1
 Silvio,México,2,Coreia do Sul,2
 Daniel,México,2,Coreia do Sul,1
-Oficial,Suíça,4,Bósnia,1
-Aline,Suíça,2,Bósnia,0
-Matheus,Suíça,0,Bósnia,0
-Eduardo,Suíça,2,Bósnia,0
-Sidney,Suíça,2,Bósnia,1
-Silvio,Suíça,2,Bósnia,1
-Daniel,Suíça,1,Bósnia,1
+Oficial,Suíça,4,Bósnia e Herz.,1
+Aline,Suíça,2,Bósnia e Herz.,0
+Matheus,Suíça,0,Bósnia e Herz.,0
+Eduardo,Suíça,2,Bósnia e Herz.,0
+Sidney,Suíça,2,Bósnia e Herz.,1
+Silvio,Suíça,2,Bósnia e Herz.,1
+Daniel,Suíça,1,Bósnia e Herz.,1
 Oficial,Escócia,0,Marrocos,1
 Aline,Escócia,1,Marrocos,2
 Matheus,Escócia,1,Marrocos,2
@@ -398,13 +398,13 @@ Eduardo,Noruega,1,França,2
 Sidney,Noruega,1,França,3
 Silvio,Noruega,4,França,3
 Daniel,Noruega,2,França,3
-Oficial,Argélia,3,Áustria,3
-Aline,Argélia,1,Áustria,2
-Matheus,Argélia,1,Áustria,2
-Eduardo,Argélia,1,Áustria,1
-Sidney,Argélia,1,Áustria,1
-Silvio,Argélia,1,Áustria,3
-Daniel,Argélia,1,Áustria,2
+Oficial,Argélia,3,Austria,3
+Aline,Argélia,1,Austria,2
+Matheus,Argélia,1,Austria,2
+Eduardo,Argélia,1,Austria,1
+Sidney,Argélia,1,Austria,1
+Silvio,Argélia,1,Austria,3
+Daniel,Argélia,1,Austria,2
 Oficial,Colômbia,0,Portugal,0
 Aline,Colômbia,1,Portugal,3
 Matheus,Colômbia,1,Portugal,2
@@ -426,13 +426,13 @@ Eduardo,África do Sul,1,Coreia do Sul,3
 Sidney,África do Sul,2,Coreia do Sul,1
 Silvio,África do Sul,1,Coreia do Sul,0
 Daniel,África do Sul,1,Coreia do Sul,2
-Oficial,Bósnia,3,Catar,1
-Aline,Bósnia,1,Catar,0
-Matheus,Bósnia,2,Catar,0
-Eduardo,Bósnia,0,Catar,2
-Sidney,Bósnia,1,Catar,2
-Silvio,Bósnia,0,Catar,1
-Daniel,Bósnia,2,Catar,2
+Oficial,Bósnia e Herz.,3,Catar,1
+Aline,Bósnia e Herz.,1,Catar,0
+Matheus,Bósnia e Herz.,2,Catar,0
+Eduardo,Bósnia e Herz.,0,Catar,2
+Sidney,Bósnia e Herz.,1,Catar,2
+Silvio,Bósnia e Herz.,0,Catar,1
+Daniel,Bósnia e Herz.,2,Catar,2
 Oficial,Escócia,0,Brasil,3
 Aline,Escócia,0,Brasil,3
 Matheus,Escócia,0,Brasil,2
@@ -440,13 +440,13 @@ Eduardo,Escócia,0,Brasil,2
 Sidney,Escócia,1,Brasil,3
 Silvio,Escócia,1,Brasil,2
 Daniel,Escócia,0,Brasil,2
-Oficial,Paraguai,0,Austrália,0
-Aline,Paraguai,1,Austrália,1
-Matheus,Paraguai,1,Austrália,1
-Eduardo,Paraguai,2,Austrália,1
-Sidney,Paraguai,2,Austrália,1
-Silvio,Paraguai,2,Austrália,0
-Daniel,Paraguai,1,Austrália,0
+Oficial,Paraguai,0,Australia,0
+Aline,Paraguai,1,Australia,1
+Matheus,Paraguai,1,Australia,1
+Eduardo,Paraguai,2,Australia,1
+Sidney,Paraguai,2,Australia,1
+Silvio,Paraguai,2,Australia,0
+Daniel,Paraguai,1,Australia,0
 Oficial,Equador,2,Alemanha,1
 Aline,Equador,1,Alemanha,3
 Matheus,Equador,0,Alemanha,2
@@ -461,13 +461,13 @@ Eduardo,Tunísia,0,Holanda,4
 Sidney,Tunísia,1,Holanda,3
 Silvio,Tunísia,1,Holanda,4
 Daniel,Tunísia,0,Holanda,4
-Oficial,Bélgica,5,Nova Zelândia,1
-Aline,Bélgica,2,Nova Zelândia,0
-Matheus,Bélgica,2,Nova Zelândia,0
-Eduardo,Bélgica,3,Nova Zelândia,0
-Sidney,Bélgica,2,Nova Zelândia,2
-Silvio,Bélgica,2,Nova Zelândia,0
-Daniel,Bélgica,2,Nova Zelândia,0
+Oficial,Nova Zelândia,1,Bélgica,5
+Aline,Nova Zelândia,0,Bélgica,2
+Matheus,Nova Zelândia,0,Bélgica,2
+Eduardo,Nova Zelândia,0,Bélgica,3
+Sidney,Nova Zelândia,2,Bélgica,2
+Silvio,Nova Zelândia,0,Bélgica,2
+Daniel,Nova Zelândia,0,Bélgica,2
 Oficial,Cabo Verde,0,Arábia Saudita,0
 Aline,Cabo Verde,1,Arábia Saudita,0
 Matheus,Cabo Verde,1,Arábia Saudita,1
@@ -496,27 +496,27 @@ Eduardo,RD Congo,2,Uzbequistão,1
 Sidney,RD Congo,1,Uzbequistão,1
 Silvio,RD Congo,0,Uzbequistão,0
 Daniel,RD Congo,2,Uzbequistão,0
-Oficial,Panamá,0,Inglaterra,2
-Aline,Panamá,0,Inglaterra,3
-Matheus,Panamá,0,Inglaterra,4
-Eduardo,Panamá,0,Inglaterra,4
-Sidney,Panamá,1,Inglaterra,2
-Silvio,Panamá,0,Inglaterra,3
-Daniel,Panamá,0,Inglaterra,3
-Oficial,Canadá,1,África do Sul,0
-Aline,Canadá,2,África do Sul,1
-Daniel,Canadá,2,África do Sul,1
-Eduardo,Canadá,2,África do Sul,1
-Matheus,Canadá,2,África do Sul,1
-Sidney,Canadá,1,África do Sul,2
-Silvio,Canadá,1,África do Sul,2
-Oficial,Marrocos,,Holanda,
-Aline,Marrocos,1,Holanda,3
-Daniel,Marrocos,2,Holanda,3
-Eduardo,Marrocos,1,Holanda,2
-Matheus,Marrocos,1,Holanda,2
-Sidney,Marrocos,1,Holanda,3
-Silvio,Marrocos,1,Holanda,3
+Oficial,Panama,0,Inglaterra,2
+Aline,Panama,0,Inglaterra,3
+Matheus,Panama,0,Inglaterra,4
+Eduardo,Panama,0,Inglaterra,4
+Sidney,Panama,1,Inglaterra,2
+Silvio,Panama,0,Inglaterra,3
+Daniel,Panama,0,Inglaterra,3
+Oficial,África do Sul,0,Canadá,1
+Aline,África do Sul,1,Canadá,2
+Daniel,África do Sul,1,Canadá,2
+Eduardo,África do Sul,1,Canadá,2
+Matheus,África do Sul,1,Canadá,2
+Sidney,África do Sul,2,Canadá,1
+Silvio,África do Sul,2,Canadá,1
+Oficial,Holanda,,Marrocos,
+Aline,Holanda,3,Marrocos,1
+Daniel,Holanda,3,Marrocos,2
+Eduardo,Holanda,2,Marrocos,1
+Matheus,Holanda,2,Marrocos,1
+Sidney,Holanda,3,Marrocos,1
+Silvio,Holanda,3,Marrocos,1
 Oficial,Alemanha,,Paraguai,
 Aline,Alemanha,3,Paraguai,0
 Daniel,Alemanha,3,Paraguai,1
@@ -552,13 +552,13 @@ Eduardo,Costa do Marfim,2,Noruega,3
 Matheus,Costa do Marfim,2,Noruega,1
 Sidney,Costa do Marfim,,Noruega,
 Silvio,Costa do Marfim,2,Noruega,1
-Oficial,Inglaterra,,República Democrática do Congo,
-Aline,Inglaterra,3,República Democrática do Congo,0
-Daniel,Inglaterra,2,República Democrática do Congo,0
-Eduardo,Inglaterra,3,República Democrática do Congo,0
-Matheus,Inglaterra,,República Democrática do Congo,
-Sidney,Inglaterra,,República Democrática do Congo,
-Silvio,Inglaterra,2,República Democrática do Congo,0
+Oficial,Inglaterra,,RD Congo,
+Aline,Inglaterra,3,RD Congo,0
+Daniel,Inglaterra,2,RD Congo,0
+Eduardo,Inglaterra,3,RD Congo,0
+Matheus,Inglaterra,,RD Congo,
+Sidney,Inglaterra,,RD Congo,
+Silvio,Inglaterra,2,RD Congo,0
 Oficial,Bélgica,,Senegal,
 Aline,Bélgica,1,Senegal,0
 Daniel,Bélgica,1,Senegal,2
@@ -566,20 +566,20 @@ Eduardo,Bélgica,1,Senegal,0
 Matheus,Bélgica,,Senegal,
 Sidney,Bélgica,,Senegal,
 Silvio,Bélgica,1,Senegal,0
-Oficial,EUA,,Bósnia,
-Aline,EUA,2,Bósnia,1
-Daniel,EUA,3,Bósnia,1
-Eduardo,EUA,3,Bósnia,1
-Matheus,EUA,2,Bósnia,1
-Sidney,EUA,2,Bósnia,1
-Silvio,EUA,2,Bósnia,0
-Oficial,Espanha,,Áustria,
-Aline,Espanha,2,Áustria,0
-Daniel,Espanha,2,Áustria,1
-Eduardo,Espanha,3,Áustria,1
-Matheus,Espanha,,Áustria,
-Sidney,Espanha,,Áustria,
-Silvio,Espanha,3,Áustria,1
+Oficial,EUA,,Bósnia e Herz.,
+Aline,EUA,2,Bósnia e Herz.,1
+Daniel,EUA,3,Bósnia e Herz.,1
+Eduardo,EUA,3,Bósnia e Herz.,1
+Matheus,EUA,2,Bósnia e Herz.,1
+Sidney,EUA,2,Bósnia e Herz.,1
+Silvio,EUA,2,Bósnia e Herz.,0
+Oficial,Espanha,,Austria,
+Aline,Espanha,2,Austria,0
+Daniel,Espanha,2,Austria,1
+Eduardo,Espanha,3,Austria,1
+Matheus,Espanha,,Austria,
+Sidney,Espanha,,Austria,
+Silvio,Espanha,3,Austria,1
 Oficial,Portugal,,Croácia,
 Aline,Portugal,1,Croácia,0
 Daniel,Portugal,2,Croácia,1
@@ -594,13 +594,13 @@ Eduardo,Suíça,2,Argélia,0
 Matheus,Suíça,,Argélia,
 Sidney,Suíça,,Argélia,
 Silvio,Suíça,1,Argélia,0
-Oficial,Austrália,,Egito,
-Aline,Austrália,,Egito,
-Daniel,Austrália,2,Egito,1
-Eduardo,Austrália,2,Egito,1
-Matheus,Austrália,0,Egito,1
-Sidney,Austrália,,Egito,
-Silvio,Austrália,0,Egito,1
+Oficial,Australia,,Egito,
+Aline,Australia,,Egito,
+Daniel,Australia,2,Egito,1
+Eduardo,Australia,2,Egito,1
+Matheus,Australia,0,Egito,1
+Sidney,Australia,,Egito,
+Silvio,Australia,0,Egito,1
 Oficial,Argentina,,Cabo Verde,
 Aline,Argentina,,Cabo Verde,
 Daniel,Argentina,3,Cabo Verde,1
