@@ -126,6 +126,11 @@ function App() {
   const [adminGolsCasa, setAdminGolsCasa] = useState('');
   const [adminGolsFora, setAdminGolsFora] = useState('');
   const [adminVencedorPenaltis, setAdminVencedorPenaltis] = useState('');
+
+  // Visualização de palpites de outros integrantes (Admin)
+  const [jogoSelecionadoPalpitesAdmin, setJogoSelecionadoPalpitesAdmin] = useState('');
+  const [participanteSelecionadoPalpitesAdmin, setParticipanteSelecionadoPalpitesAdmin] = useState('');
+  const [tabPalpitesAdmin, setTabPalpitesAdmin] = useState('jogo'); // 'jogo' ou 'participante'
   
   // Modal de configurações do Supabase
   const [modalConfigAberto, setModalConfigAberto] = useState(false);
@@ -204,8 +209,9 @@ function App() {
           setIdxNaData(0);
         }
         
-        // Inicializa o jogo do admin
+        // Inicializa o jogo do admin e de palpites
         setJogoSelecionadoAdmin(dataJogos[0].id.toString());
+        setJogoSelecionadoPalpitesAdmin(dataJogos[0].id.toString());
       }
     } catch (e) {
       console.error("Erro ao carregar os dados:", e);
@@ -213,6 +219,13 @@ function App() {
       setLoading(false);
     }
   };
+
+  // Inicializa o participante selecionado quando a lista de perfis carregar
+  useEffect(() => {
+    if (perfis.length > 0 && !participanteSelecionadoPalpitesAdmin) {
+      setParticipanteSelecionadoPalpitesAdmin(perfis[0].nome);
+    }
+  }, [perfis, participanteSelecionadoPalpitesAdmin]);
 
   // Busca o nome do jogador da tabela perfis (fonte de verdade para bater com os palpites)
   const buscarNomeDoPerfil = async (user) => {
@@ -799,6 +812,56 @@ function App() {
     return jogo && jogo.data === dataSelecionada && p.jogador_nome.toLowerCase() === nomeJogador.trim().toLowerCase();
   }) : [];
 
+  // Obter alertas para palpites pendentes cuja data limite é em menos de 24 horas
+  const obterAlertasPalpitesPendentes = () => {
+    if (!nomeJogador.trim()) return [];
+    
+    const agora = new Date();
+    const jogosPendentes = [];
+    
+    jogos.forEach(jogo => {
+      // Parse da data/hora do jogo
+      const [dia, mes, ano] = jogo.data.split('/');
+      const horaStr = jogo.hora || '23:59:59';
+      const dataFormatada = `${ano}-${mes}-${dia}T${horaStr.length === 5 ? `${horaStr}:00` : horaStr}`;
+      const dataHoraJogo = new Date(dataFormatada);
+      const limitePalpite = new Date(dataHoraJogo.getTime() - 3600000); // 1 hora antes
+      
+      // Se o limite ainda não passou, mas o jogo está próximo (ex: nas próximas 24 horas)
+      if (agora < limitePalpite) {
+        const diffMs = limitePalpite.getTime() - agora.getTime();
+        const diffHoras = diffMs / 3600000;
+        
+        // Limite de 24 horas para o alerta
+        if (diffHoras <= 24) {
+          const jaTemPalpite = palpites.some(p => 
+            p.jogo_id === jogo.id && 
+            p.jogador_nome.toLowerCase() === nomeJogador.trim().toLowerCase()
+          );
+          
+          if (!jaTemPalpite) {
+            let tempoRestanteStr = '';
+            if (diffHoras < 1) {
+              const minutos = Math.round(diffMs / 60000);
+              tempoRestanteStr = `${minutos} min`;
+            } else {
+              const horas = Math.floor(diffHoras);
+              const minutos = Math.round((diffHoras - horas) * 60);
+              tempoRestanteStr = `${horas}h ${minutos}min`;
+            }
+            
+            jogosPendentes.push({
+              jogo,
+              tempoRestante: tempoRestanteStr
+            });
+          }
+        }
+      }
+    });
+    
+    return jogosPendentes;
+  };
+
   // Obter datas únicas para o seletor de data
   const datasUnicas = Array.from(new Set(jogos.map(j => j.data)));
   
@@ -878,6 +941,11 @@ function App() {
           <div className="alert alert-info">
             Calendário alinhado com os blocos oficiais da FIFA para a Copa de 2026. Os confrontos deste projeto continuam sendo a base do bolão.
           </div>
+          {obterAlertasPalpitesPendentes().map(({ jogo, tempoRestante }) => (
+            <div key={`pended-${jogo.id}`} className="alert alert-danger" style={{ backgroundColor: '#fee2e2', border: '1px solid #fecaca', color: '#991b1b', fontWeight: 'bold' }}>
+              ⚠️ Atenção, {nomeJogador}! Você ainda não enviou palpite para {jogo.time_casa} x {jogo.time_fora} (resta apenas {tempoRestante} para o limite de envio).
+            </div>
+          ))}
         </div>
 
         {loading && (
@@ -1234,6 +1302,247 @@ function App() {
             {/* Painéis de admin - só para admin */}
             {(isAdmin || !isSupabaseConfigured()) && (
               <div style={{display: 'flex', flexDirection: 'column', gap: '16px'}}>
+
+                {/* Painel: Visualizar Palpites dos Integrantes */}
+                <div className="panel">
+                  <h2>Palpites dos Integrantes</h2>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '16px' }}>
+                    Veja os palpites enviados pelos outros participantes do bolão. Esta visão é visível apenas para administradores.
+                  </p>
+
+                  {/* Abas para alternar a visualização */}
+                  <div style={{ display: 'flex', gap: '8px', marginBottom: '16px', borderBottom: '1px solid var(--border-color)', paddingBottom: '12px' }}>
+                    <button
+                      type="button"
+                      className="btn-submit"
+                      style={{
+                        padding: '6px 12px',
+                        margin: 0,
+                        width: 'auto',
+                        fontSize: '0.85rem',
+                        backgroundColor: tabPalpitesAdmin === 'jogo' ? 'var(--color-primary)' : 'var(--color-primary-light)',
+                        color: tabPalpitesAdmin === 'jogo' ? '#fff' : 'var(--color-dark)',
+                        border: 'none',
+                        borderRadius: '4px',
+                        cursor: 'pointer',
+                        fontWeight: '600'
+                      }}
+                      onClick={() => setTabPalpitesAdmin('jogo')}
+                    >
+                      Ver por Jogo
+                    </button>
+                    <button
+                      type="button"
+                      className="btn-submit"
+                      style={{
+                        padding: '6px 12px',
+                        margin: 0,
+                        width: 'auto',
+                        fontSize: '0.85rem',
+                        backgroundColor: tabPalpitesAdmin === 'participante' ? 'var(--color-primary)' : 'var(--color-primary-light)',
+                        color: tabPalpitesAdmin === 'participante' ? '#fff' : 'var(--color-dark)',
+                        border: 'none',
+                        borderRadius: '4px',
+                        cursor: 'pointer',
+                        fontWeight: '600'
+                      }}
+                      onClick={() => setTabPalpitesAdmin('participante')}
+                    >
+                      Ver por Participante
+                    </button>
+                  </div>
+
+                  {tabPalpitesAdmin === 'jogo' ? (
+                    <div>
+                      <div className="form-group">
+                        <label htmlFor="admin-select-game-palpites">Selecionar Jogo</label>
+                        <select
+                          id="admin-select-game-palpites"
+                          className="input-control"
+                          value={jogoSelecionadoPalpitesAdmin}
+                          onChange={(e) => setJogoSelecionadoPalpitesAdmin(e.target.value)}
+                        >
+                          {jogos.map(j => (
+                            <option key={j.id} value={j.id.toString()}>
+                              {j.time_casa} x {j.time_fora} - {j.data} às {j.hora ? j.hora.substring(0,5) : 'A definir'}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+
+                      {(() => {
+                        const jogoId = parseInt(jogoSelecionadoPalpitesAdmin);
+                        const jogo = jogos.find(j => j.id === jogoId);
+                        if (!jogo) return <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Nenhum jogo selecionado.</p>;
+
+                        // Lista de todos os participantes únicos
+                        const nomesUnicos = Array.from(new Set([
+                          ...perfis.map(p => p.nome),
+                          ...palpites.map(p => p.jogador_nome)
+                        ])).filter(Boolean).sort((a, b) => a.localeCompare(b));
+
+                        const palpitesDoJogo = palpites.filter(p => p.jogo_id === jogoId);
+
+                        return (
+                          <div className="table-wrapper">
+                            <table className="ranking-table">
+                              <thead>
+                                <tr>
+                                  <th>Participante</th>
+                                  <th>Palpite</th>
+                                  <th>Pontos</th>
+                                  <th>Envio</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {nomesUnicos.map(nome => {
+                                  const palpite = palpitesDoJogo.find(p => p.jogador_nome.toLowerCase() === nome.toLowerCase());
+                                  let pts = '-';
+                                  if (palpite && jogo.gols_casa_real !== null && jogo.gols_fora_real !== null) {
+                                    pts = calcularPontos(palpite.palpite_casa, palpite.palpite_fora, jogo);
+                                  }
+
+                                  return (
+                                    <tr key={nome}>
+                                      <td className="player-name">{nome}</td>
+                                      <td style={{ fontWeight: 'bold' }}>
+                                        {palpite ? (
+                                          <span className="score predicted" style={{ fontSize: '0.85rem' }}>
+                                            {palpite.palpite_casa} x {palpite.palpite_fora}
+                                          </span>
+                                        ) : (
+                                          <span className="score missing" style={{ backgroundColor: '#f1f5f9', color: '#94a3b8', fontSize: '0.85rem' }}>
+                                            Sem palpite
+                                          </span>
+                                        )}
+                                      </td>
+                                      <td style={{ fontWeight: 'bold' }}>
+                                        {pts !== '-' ? (
+                                          <span style={{ 
+                                            color: pts > 0 ? 'var(--color-primary)' : pts < 0 ? '#ef4444' : 'var(--color-dark)',
+                                            backgroundColor: pts > 0 ? 'var(--color-primary-light)' : pts < 0 ? '#fee2e2' : '#f1f5f9',
+                                            padding: '2px 8px',
+                                            borderRadius: '4px',
+                                            fontSize: '0.85rem'
+                                          }}>
+                                            {pts > 0 ? `+${pts}` : pts}
+                                          </span>
+                                        ) : (
+                                          <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>-</span>
+                                        )}
+                                      </td>
+                                      <td style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
+                                        {palpite && palpite.created_at ? new Date(palpite.created_at).toLocaleString('pt-BR') : '-'}
+                                      </td>
+                                    </tr>
+                                  );
+                                })}
+                              </tbody>
+                            </table>
+                          </div>
+                        );
+                      })()}
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="form-group">
+                        <label htmlFor="admin-select-participante-palpites">Selecionar Participante</label>
+                        <select
+                          id="admin-select-participante-palpites"
+                          className="input-control"
+                          value={participanteSelecionadoPalpitesAdmin}
+                          onChange={(e) => setParticipanteSelecionadoPalpitesAdmin(e.target.value)}
+                        >
+                          {Array.from(new Set([
+                            ...perfis.map(p => p.nome),
+                            ...palpites.map(p => p.jogador_nome)
+                          ])).filter(Boolean).sort((a, b) => a.localeCompare(b)).map(nome => (
+                            <option key={nome} value={nome}>
+                              {nome}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+
+                      {(() => {
+                        if (!participanteSelecionadoPalpitesAdmin) return <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Nenhum participante selecionado.</p>;
+
+                        const palpitesDoJogador = palpites.filter(p => p.jogador_nome.toLowerCase() === participanteSelecionadoPalpitesAdmin.toLowerCase());
+
+                        return (
+                          <div className="table-wrapper" style={{ maxHeight: '400px', overflowY: 'auto' }}>
+                            <table className="ranking-table">
+                              <thead style={{ position: 'sticky', top: 0, zIndex: 1, backgroundColor: '#0b1a2c' }}>
+                                <tr>
+                                  <th>Jogo</th>
+                                  <th>Palpite</th>
+                                  <th>Oficial</th>
+                                  <th>Pontos</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {jogos.map(jogo => {
+                                  const palpite = palpitesDoJogador.find(p => p.jogo_id === jogo.id);
+                                  const temResultado = jogo.gols_casa_real !== null && jogo.gols_fora_real !== null;
+                                  let pts = '-';
+                                  if (palpite && temResultado) {
+                                    pts = calcularPontos(palpite.palpite_casa, palpite.palpite_fora, jogo);
+                                  }
+
+                                  return (
+                                    <tr key={jogo.id}>
+                                      <td style={{ fontSize: '0.85rem' }}>
+                                        <strong>{jogo.time_casa} x {jogo.time_fora}</strong>
+                                        <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>{jogo.data} às {jogo.hora ? jogo.hora.substring(0,5) : 'A definir'}</div>
+                                      </td>
+                                      <td style={{ fontWeight: 'bold' }}>
+                                        {palpite ? (
+                                          <span className="score predicted" style={{ fontSize: '0.85rem' }}>
+                                            {palpite.palpite_casa} x {palpite.palpite_fora}
+                                          </span>
+                                        ) : (
+                                          <span className="score missing" style={{ backgroundColor: '#f1f5f9', color: '#94a3b8', fontSize: '0.85rem' }}>
+                                            ? x ?
+                                          </span>
+                                        )}
+                                      </td>
+                                      <td style={{ fontWeight: 'bold' }}>
+                                        {temResultado ? (
+                                          <span className="score predicted" style={{ backgroundColor: 'var(--color-primary)', color: 'white', fontSize: '0.85rem' }}>
+                                            {jogo.gols_casa_real} x {jogo.gols_fora_real}
+                                          </span>
+                                        ) : (
+                                          <span className="score missing" style={{ fontSize: '0.85rem' }}>- x -</span>
+                                        )}
+                                      </td>
+                                      <td style={{ fontWeight: 'bold' }}>
+                                        {pts !== '-' ? (
+                                          <span style={{ 
+                                            color: pts > 0 ? 'var(--color-primary)' : pts < 0 ? '#ef4444' : 'var(--color-dark)',
+                                            backgroundColor: pts > 0 ? 'var(--color-primary-light)' : pts < 0 ? '#fee2e2' : '#f1f5f9',
+                                            padding: '2px 8px',
+                                            borderRadius: '4px',
+                                            fontSize: '0.85rem'
+                                          }}>
+                                            {pts > 0 ? `+${pts}` : pts}
+                                          </span>
+                                        ) : (
+                                          <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+                                            {palpite ? 'Aguardando' : '-'}
+                                          </span>
+                                        )}
+                                      </td>
+                                    </tr>
+                                  );
+                                })}
+                              </tbody>
+                            </table>
+                          </div>
+                        );
+                      })()}
+                    </div>
+                  )}
+                </div>
 
                 {/* Painel 1: Importar CSV */}
                 <div className="panel">
