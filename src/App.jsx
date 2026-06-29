@@ -45,6 +45,21 @@ export function calcularPontos(palpiteCasa, palpiteFora, jogo) {
   return 0;
 }
 
+// Função para formatar a data/hora de envio de forma compacta (ex: 29/06 09:25)
+export function formatarDataEnvio(dateStr) {
+  if (!dateStr) return '-';
+  try {
+    const d = new Date(dateStr);
+    const dia = String(d.getDate()).padStart(2, '0');
+    const mes = String(d.getMonth() + 1).padStart(2, '0');
+    const horas = String(d.getHours()).padStart(2, '0');
+    const minutos = String(d.getMinutes()).padStart(2, '0');
+    return `${dia}/${mes} ${horas}:${minutos}`;
+  } catch (e) {
+    return '-';
+  }
+}
+
 // Retorna a data de hoje no formato DD/MM/YYYY
 function obterDataHoje() {
   const hoje = new Date();
@@ -1388,10 +1403,10 @@ function App() {
                             <table className="ranking-table">
                               <thead>
                                 <tr>
-                                  <th>Participante</th>
-                                  <th>Palpite</th>
-                                  <th>Pontos</th>
-                                  <th>Envio</th>
+                                  <th style={{ textAlign: 'left' }}>Participante</th>
+                                  <th style={{ textAlign: 'center' }}>Palpite</th>
+                                  <th style={{ textAlign: 'center' }}>Pontos</th>
+                                  <th style={{ textAlign: 'center' }}>Envio</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -1405,7 +1420,7 @@ function App() {
                                   return (
                                     <tr key={nome}>
                                       <td className="player-name">{nome}</td>
-                                      <td style={{ fontWeight: 'bold' }}>
+                                      <td style={{ fontWeight: 'bold', textAlign: 'center' }}>
                                         {palpite ? (
                                           <span className="score predicted" style={{ fontSize: '0.85rem' }}>
                                             {palpite.palpite_casa} x {palpite.palpite_fora}
@@ -1416,7 +1431,7 @@ function App() {
                                           </span>
                                         )}
                                       </td>
-                                      <td style={{ fontWeight: 'bold' }}>
+                                      <td style={{ fontWeight: 'bold', textAlign: 'center' }}>
                                         {pts !== '-' ? (
                                           <span style={{ 
                                             color: pts > 0 ? 'var(--color-primary)' : pts < 0 ? '#ef4444' : 'var(--color-dark)',
@@ -1431,8 +1446,8 @@ function App() {
                                           <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>-</span>
                                         )}
                                       </td>
-                                      <td style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                                        {palpite && palpite.created_at ? new Date(palpite.created_at).toLocaleString('pt-BR') : '-'}
+                                      <td style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textAlign: 'center' }}>
+                                        {palpite && palpite.created_at ? formatarDataEnvio(palpite.created_at) : '-'}
                                       </td>
                                     </tr>
                                   );
@@ -1472,12 +1487,12 @@ function App() {
                         return (
                           <div className="table-wrapper" style={{ maxHeight: '400px', overflowY: 'auto' }}>
                             <table className="ranking-table">
-                              <thead style={{ position: 'sticky', top: 0, zIndex: 1, backgroundColor: '#0b1a2c' }}>
+                              <thead style={{ position: 'sticky', top: 0, zIndex: 1 }}>
                                 <tr>
-                                  <th>Jogo</th>
-                                  <th>Palpite</th>
-                                  <th>Oficial</th>
-                                  <th>Pontos</th>
+                                  <th style={{ backgroundColor: '#0b1a2c', position: 'sticky', top: 0, zIndex: 1, textAlign: 'left' }}>Jogo</th>
+                                  <th style={{ backgroundColor: '#0b1a2c', position: 'sticky', top: 0, zIndex: 1, textAlign: 'center' }}>Palpite</th>
+                                  <th style={{ backgroundColor: '#0b1a2c', position: 'sticky', top: 0, zIndex: 1, textAlign: 'center' }}>Oficial</th>
+                                  <th style={{ backgroundColor: '#0b1a2c', position: 'sticky', top: 0, zIndex: 1, textAlign: 'center' }}>Pontos</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -1491,11 +1506,11 @@ function App() {
 
                                   return (
                                     <tr key={jogo.id}>
-                                      <td style={{ fontSize: '0.85rem' }}>
+                                      <td style={{ fontSize: '0.85rem', textAlign: 'left' }}>
                                         <strong>{jogo.time_casa} x {jogo.time_fora}</strong>
                                         <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>{jogo.data} às {jogo.hora ? jogo.hora.substring(0,5) : 'A definir'}</div>
                                       </td>
-                                      <td style={{ fontWeight: 'bold' }}>
+                                      <td style={{ fontWeight: 'bold', textAlign: 'center' }}>
                                         {palpite ? (
                                           <span className="score predicted" style={{ fontSize: '0.85rem' }}>
                                             {palpite.palpite_casa} x {palpite.palpite_fora}
@@ -1506,7 +1521,7 @@ function App() {
                                           </span>
                                         )}
                                       </td>
-                                      <td style={{ fontWeight: 'bold' }}>
+                                      <td style={{ fontWeight: 'bold', textAlign: 'center' }}>
                                         {temResultado ? (
                                           <span className="score predicted" style={{ backgroundColor: 'var(--color-primary)', color: 'white', fontSize: '0.85rem' }}>
                                             {jogo.gols_casa_real} x {jogo.gols_fora_real}
@@ -1515,7 +1530,7 @@ function App() {
                                           <span className="score missing" style={{ fontSize: '0.85rem' }}>- x -</span>
                                         )}
                                       </td>
-                                      <td style={{ fontWeight: 'bold' }}>
+                                      <td style={{ fontWeight: 'bold', textAlign: 'center' }}>
                                         {pts !== '-' ? (
                                           <span style={{ 
                                             color: pts > 0 ? 'var(--color-primary)' : pts < 0 ? '#ef4444' : 'var(--color-dark)',
