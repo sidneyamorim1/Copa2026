@@ -8,9 +8,9 @@
   },
   {
     "jogo_id": 1,
-    "jogador_nome": "Matheus",
+    "jogador_nome": "Daniel",
     "palpite_casa": 2,
-    "palpite_fora": 0,
+    "palpite_fora": 1,
     "created_at": "2026-06-25T13:21:12.564Z"
   },
   {
@@ -18,6 +18,13 @@
     "jogador_nome": "Eduardo",
     "palpite_casa": 2,
     "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.564Z"
+  },
+  {
+    "jogo_id": 1,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
     "created_at": "2026-06-25T13:21:12.564Z"
   },
   {
@@ -35,11 +42,214 @@
     "created_at": "2026-06-25T13:21:12.564Z"
   },
   {
-    "jogo_id": 1,
+    "jogo_id": 2,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 2,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 2,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 2,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 2,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 2,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 3,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 3,
     "jogador_nome": "Daniel",
     "palpite_casa": 2,
     "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.564Z"
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 3,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 3,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 3,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 3,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 4,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 4,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 4,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 4,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 4,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 4,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 5,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:15:44.751Z"
+  },
+  {
+    "jogo_id": 5,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:16:20.751Z"
+  },
+  {
+    "jogo_id": 5,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 5,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:15:56.751Z"
+  },
+  {
+    "jogo_id": 5,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 5,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:08.751Z"
+  },
+  {
+    "jogo_id": 6,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:32.751Z"
+  },
+  {
+    "jogo_id": 6,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:17:08.751Z"
+  },
+  {
+    "jogo_id": 6,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 6,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:44.751Z"
+  },
+  {
+    "jogo_id": 6,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 6,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:16:56.751Z"
   },
   {
     "jogo_id": 7,
@@ -50,15 +260,22 @@
   },
   {
     "jogo_id": 7,
-    "jogador_nome": "Matheus",
+    "jogador_nome": "Daniel",
     "palpite_casa": 2,
-    "palpite_fora": 1,
+    "palpite_fora": 0,
     "created_at": "2026-06-25T13:21:12.564Z"
   },
   {
     "jogo_id": 7,
     "jogador_nome": "Eduardo",
     "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.564Z"
+  },
+  {
+    "jogo_id": 7,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
     "palpite_fora": 1,
     "created_at": "2026-06-25T13:21:12.564Z"
   },
@@ -77,11 +294,214 @@
     "created_at": "2026-06-25T13:21:12.564Z"
   },
   {
-    "jogo_id": 7,
+    "jogo_id": 8,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 8,
     "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 8,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 8,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 8,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 8,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 9,
+    "jogador_nome": "Aline",
     "palpite_casa": 2,
     "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.564Z"
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 9,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 9,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 9,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 9,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 9,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 10,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 10,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 10,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 10,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 10,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 10,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 11,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:15:45.751Z"
+  },
+  {
+    "jogo_id": 11,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:16:21.751Z"
+  },
+  {
+    "jogo_id": 11,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 11,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:15:57.751Z"
+  },
+  {
+    "jogo_id": 11,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 11,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:09.751Z"
+  },
+  {
+    "jogo_id": 12,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:16:33.751Z"
+  },
+  {
+    "jogo_id": 12,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:17:09.751Z"
+  },
+  {
+    "jogo_id": 12,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 12,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:16:45.751Z"
+  },
+  {
+    "jogo_id": 12,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 12,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:16:57.751Z"
   },
   {
     "jogo_id": 13,
@@ -92,15 +512,22 @@
   },
   {
     "jogo_id": 13,
-    "jogador_nome": "Matheus",
+    "jogador_nome": "Daniel",
     "palpite_casa": 2,
-    "palpite_fora": 1,
+    "palpite_fora": 2,
     "created_at": "2026-06-25T13:21:12.564Z"
   },
   {
     "jogo_id": 13,
     "jogador_nome": "Eduardo",
     "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.564Z"
+  },
+  {
+    "jogo_id": 13,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
     "palpite_fora": 1,
     "created_at": "2026-06-25T13:21:12.564Z"
   },
@@ -119,11 +546,214 @@
     "created_at": "2026-06-25T13:21:12.564Z"
   },
   {
-    "jogo_id": 13,
+    "jogo_id": 14,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 14,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 14,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 14,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 14,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 14,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 15,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 15,
     "jogador_nome": "Daniel",
     "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 15,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
     "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.564Z"
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 15,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 15,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 15,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 16,
+    "jogador_nome": "Aline",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 16,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 16,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 5,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 16,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 16,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 16,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 17,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:16:34.751Z"
+  },
+  {
+    "jogo_id": 17,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:17:10.751Z"
+  },
+  {
+    "jogo_id": 17,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 17,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:46.751Z"
+  },
+  {
+    "jogo_id": 17,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 17,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:58.751Z"
+  },
+  {
+    "jogo_id": 18,
+    "jogador_nome": "Aline",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:15:46.751Z"
+  },
+  {
+    "jogo_id": 18,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 4,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:16:22.751Z"
+  },
+  {
+    "jogo_id": 18,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 18,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:15:58.751Z"
+  },
+  {
+    "jogo_id": 18,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 18,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 4,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:16:10.751Z"
   },
   {
     "jogo_id": 19,
@@ -131,6 +761,20 @@
     "palpite_casa": 2,
     "palpite_fora": 1,
     "created_at": "2026-06-25T13:21:12.564Z"
+  },
+  {
+    "jogo_id": 19,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 19,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
   },
   {
     "jogo_id": 19,
@@ -141,13 +785,6 @@
   },
   {
     "jogo_id": 19,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 19,
     "jogador_nome": "Sidney",
     "palpite_casa": 2,
     "palpite_fora": 2,
@@ -161,11 +798,214 @@
     "created_at": "2026-06-25T13:21:12.565Z"
   },
   {
-    "jogo_id": 19,
+    "jogo_id": 20,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 20,
     "jogador_nome": "Daniel",
     "palpite_casa": 1,
     "palpite_fora": 2,
     "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 20,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 20,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 20,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 20,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 21,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 21,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 21,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 21,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 21,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 21,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 22,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 22,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 22,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 22,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 22,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 22,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 23,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:15:47.751Z"
+  },
+  {
+    "jogo_id": 23,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:16:23.751Z"
+  },
+  {
+    "jogo_id": 23,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 23,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:15:59.751Z"
+  },
+  {
+    "jogo_id": 23,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 23,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:16:11.751Z"
+  },
+  {
+    "jogo_id": 24,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:16:35.751Z"
+  },
+  {
+    "jogo_id": 24,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:17:11.751Z"
+  },
+  {
+    "jogo_id": 24,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 24,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:16:47.751Z"
+  },
+  {
+    "jogo_id": 24,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 24,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:16:59.751Z"
   },
   {
     "jogo_id": 25,
@@ -176,8 +1016,8 @@
   },
   {
     "jogo_id": 25,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 3,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 4,
     "palpite_fora": 0,
     "created_at": "2026-06-25T13:21:12.565Z"
   },
@@ -185,6 +1025,13 @@
     "jogo_id": 25,
     "jogador_nome": "Eduardo",
     "palpite_casa": 6,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 25,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
     "palpite_fora": 0,
     "created_at": "2026-06-25T13:21:12.565Z"
   },
@@ -203,11 +1050,214 @@
     "created_at": "2026-06-25T13:21:12.565Z"
   },
   {
-    "jogo_id": 25,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 4,
+    "jogo_id": 26,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
     "palpite_fora": 0,
     "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 26,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 26,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 26,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 26,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 26,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 27,
+    "jogador_nome": "Aline",
+    "palpite_casa": 4,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 27,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 27,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 4,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 27,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 27,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 27,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 5,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 28,
+    "jogador_nome": "Aline",
+    "palpite_casa": 4,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 28,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 28,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 6,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 28,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 28,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 28,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 29,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:15:48.751Z"
+  },
+  {
+    "jogo_id": 29,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:24.751Z"
+  },
+  {
+    "jogo_id": 29,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 29,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:16:00.751Z"
+  },
+  {
+    "jogo_id": 29,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 29,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:16:12.751Z"
+  },
+  {
+    "jogo_id": 30,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:16:36.751Z"
+  },
+  {
+    "jogo_id": 30,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:17:12.751Z"
+  },
+  {
+    "jogo_id": 30,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 30,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:48.751Z"
+  },
+  {
+    "jogo_id": 30,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 30,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 4,
+    "created_at": "2026-06-29T14:17:00.751Z"
   },
   {
     "jogo_id": 31,
@@ -218,9 +1268,9 @@
   },
   {
     "jogo_id": 31,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 1,
-    "palpite_fora": 0,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
     "created_at": "2026-06-25T13:21:12.565Z"
   },
   {
@@ -228,6 +1278,13 @@
     "jogador_nome": "Eduardo",
     "palpite_casa": 2,
     "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 31,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
     "created_at": "2026-06-25T13:21:12.565Z"
   },
   {
@@ -245,11 +1302,214 @@
     "created_at": "2026-06-25T13:21:12.565Z"
   },
   {
-    "jogo_id": 31,
+    "jogo_id": 32,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 32,
     "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 32,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 32,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 32,
+    "jogador_nome": "Sidney",
     "palpite_casa": 2,
     "palpite_fora": 1,
     "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 32,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 33,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 33,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 33,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 33,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 33,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 33,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 34,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 34,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 34,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 34,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 34,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 34,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 35,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:15:49.751Z"
+  },
+  {
+    "jogo_id": 35,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:16:25.751Z"
+  },
+  {
+    "jogo_id": 35,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 35,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:16:01.751Z"
+  },
+  {
+    "jogo_id": 35,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 35,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:16:13.751Z"
+  },
+  {
+    "jogo_id": 36,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:16:37.751Z"
+  },
+  {
+    "jogo_id": 36,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 4,
+    "created_at": "2026-06-29T14:17:13.751Z"
+  },
+  {
+    "jogo_id": 36,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 4,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 36,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:49.751Z"
+  },
+  {
+    "jogo_id": 36,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 36,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 1,
+    "palpite_fora": 4,
+    "created_at": "2026-06-29T14:17:01.751Z"
   },
   {
     "jogo_id": 37,
@@ -260,9 +1520,9 @@
   },
   {
     "jogo_id": 37,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 2,
     "created_at": "2026-06-25T13:21:12.565Z"
   },
   {
@@ -270,6 +1530,13 @@
     "jogador_nome": "Eduardo",
     "palpite_casa": 3,
     "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 37,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
     "created_at": "2026-06-25T13:21:12.565Z"
   },
   {
@@ -287,11 +1554,214 @@
     "created_at": "2026-06-25T13:21:12.565Z"
   },
   {
-    "jogo_id": 37,
+    "jogo_id": 38,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 38,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 38,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 38,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 38,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 38,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 39,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 39,
     "jogador_nome": "Daniel",
     "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 39,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 39,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 39,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 39,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 40,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
     "palpite_fora": 2,
     "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 40,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 40,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 40,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 40,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 40,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 41,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:15:50.751Z"
+  },
+  {
+    "jogo_id": 41,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:16:26.751Z"
+  },
+  {
+    "jogo_id": 41,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 41,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:16:02.751Z"
+  },
+  {
+    "jogo_id": 41,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 41,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:16:14.751Z"
+  },
+  {
+    "jogo_id": 42,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:38.751Z"
+  },
+  {
+    "jogo_id": 42,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:17:14.751Z"
+  },
+  {
+    "jogo_id": 42,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 42,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:50.751Z"
+  },
+  {
+    "jogo_id": 42,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 42,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:17:02.751Z"
   },
   {
     "jogo_id": 43,
@@ -302,8 +1772,8 @@
   },
   {
     "jogo_id": 43,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 2,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 4,
     "palpite_fora": 0,
     "created_at": "2026-06-25T13:21:12.565Z"
   },
@@ -316,6 +1786,13 @@
   },
   {
     "jogo_id": 43,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 43,
     "jogador_nome": "Sidney",
     "palpite_casa": 3,
     "palpite_fora": 1,
@@ -329,475 +1806,6 @@
     "created_at": "2026-06-25T13:21:12.565Z"
   },
   {
-    "jogo_id": 43,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 4,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 49,
-    "jogador_nome": "Aline",
-    "palpite_casa": 5,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 49,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 4,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 49,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 49,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 49,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 3,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 49,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 55,
-    "jogador_nome": "Aline",
-    "palpite_casa": 3,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 55,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 55,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 55,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 55,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 4,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 55,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 61,
-    "jogador_nome": "Aline",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 61,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 3,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 61,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 4,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 61,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 61,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 4,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 61,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 3,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 68,
-    "jogador_nome": "Aline",
-    "palpite_casa": 1,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 68,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 1,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 68,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 68,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 68,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 68,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 2,
-    "jogador_nome": "Aline",
-    "palpite_casa": 0,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 2,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 2,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 2,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 2,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 2,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 1,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 8,
-    "jogador_nome": "Aline",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 8,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 8,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 8,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 8,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 0,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 8,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 14,
-    "jogador_nome": "Aline",
-    "palpite_casa": 0,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 14,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 0,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 14,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 14,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 0,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 14,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 0,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 14,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 0,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 20,
-    "jogador_nome": "Aline",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 20,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 0,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 20,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 20,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 20,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 20,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 26,
-    "jogador_nome": "Aline",
-    "palpite_casa": 0,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 26,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 0,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 26,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 26,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 26,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 0,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 26,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 32,
-    "jogador_nome": "Aline",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 32,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 32,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 32,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 32,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 32,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 38,
-    "jogador_nome": "Aline",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 38,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 1,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 38,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 38,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 38,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 38,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
     "jogo_id": 44,
     "jogador_nome": "Aline",
     "palpite_casa": 0,
@@ -806,7 +1814,7 @@
   },
   {
     "jogo_id": 44,
-    "jogador_nome": "Matheus",
+    "jogador_nome": "Daniel",
     "palpite_casa": 1,
     "palpite_fora": 3,
     "created_at": "2026-06-25T13:21:12.565Z"
@@ -816,6 +1824,13 @@
     "jogador_nome": "Eduardo",
     "palpite_casa": 2,
     "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 44,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
     "created_at": "2026-06-25T13:21:12.565Z"
   },
   {
@@ -833,475 +1848,6 @@
     "created_at": "2026-06-25T13:21:12.565Z"
   },
   {
-    "jogo_id": 44,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 1,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 50,
-    "jogador_nome": "Aline",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 50,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 50,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 50,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 50,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 0,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 50,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 56,
-    "jogador_nome": "Aline",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 56,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 56,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 3,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 56,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 56,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 56,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 62,
-    "jogador_nome": "Aline",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 62,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 62,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 62,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 62,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 62,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 0,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 67,
-    "jogador_nome": "Aline",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 67,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 67,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 67,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 67,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 67,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 3,
-    "jogador_nome": "Aline",
-    "palpite_casa": 1,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 3,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 3,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 3,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 3,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 3,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 10,
-    "jogador_nome": "Aline",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 10,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 10,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 10,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 10,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 0,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 10,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 16,
-    "jogador_nome": "Aline",
-    "palpite_casa": 4,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 16,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 3,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 16,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 5,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 16,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 4,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 16,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 4,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 16,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 3,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 21,
-    "jogador_nome": "Aline",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 21,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 21,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 21,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 21,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 4,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 21,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 3,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 27,
-    "jogador_nome": "Aline",
-    "palpite_casa": 4,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 27,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 27,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 4,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 27,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 27,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 5,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 27,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 33,
-    "jogador_nome": "Aline",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 33,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 33,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 33,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 33,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 3,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 33,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 39,
-    "jogador_nome": "Aline",
-    "palpite_casa": 1,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 39,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 39,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 4,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 39,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 39,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 39,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
     "jogo_id": 45,
     "jogador_nome": "Aline",
     "palpite_casa": 3,
@@ -1310,9 +1856,9 @@
   },
   {
     "jogo_id": 45,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
     "created_at": "2026-06-25T13:21:12.565Z"
   },
   {
@@ -1320,6 +1866,13 @@
     "jogador_nome": "Eduardo",
     "palpite_casa": 3,
     "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 45,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
     "created_at": "2026-06-25T13:21:12.565Z"
   },
   {
@@ -1334,475 +1887,6 @@
     "jogador_nome": "Silvio",
     "palpite_casa": 4,
     "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 45,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 51,
-    "jogador_nome": "Aline",
-    "palpite_casa": 4,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 51,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 3,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 51,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 5,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 51,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 3,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 51,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 51,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 3,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 57,
-    "jogador_nome": "Aline",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 57,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 57,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 3,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 57,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 57,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 4,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 57,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 63,
-    "jogador_nome": "Aline",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 63,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 3,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 63,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 4,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 63,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 63,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 3,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 63,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 4,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 70,
-    "jogador_nome": "Aline",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 70,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 70,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 70,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 70,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 1,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 70,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 1,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 4,
-    "jogador_nome": "Aline",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 4,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 4,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 4,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 4,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 4,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 9,
-    "jogador_nome": "Aline",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 9,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 0,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 9,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 9,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 9,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 9,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 15,
-    "jogador_nome": "Aline",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 15,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 15,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 15,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 15,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 15,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 22,
-    "jogador_nome": "Aline",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 22,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 22,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 22,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 22,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 22,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 28,
-    "jogador_nome": "Aline",
-    "palpite_casa": 4,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 28,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 3,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 28,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 6,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 28,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 28,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 3,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 28,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 34,
-    "jogador_nome": "Aline",
-    "palpite_casa": 0,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 34,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 34,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 34,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 34,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 0,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 34,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 40,
-    "jogador_nome": "Aline",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 40,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 40,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 40,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 40,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 3,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 40,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
     "created_at": "2026-06-25T13:21:12.565Z"
   },
   {
@@ -1814,7 +1898,7 @@
   },
   {
     "jogo_id": 46,
-    "jogador_nome": "Matheus",
+    "jogador_nome": "Daniel",
     "palpite_casa": 2,
     "palpite_fora": 0,
     "created_at": "2026-06-25T13:21:12.565Z"
@@ -1823,6 +1907,13 @@
     "jogo_id": 46,
     "jogador_nome": "Eduardo",
     "palpite_casa": 4,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 46,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
     "palpite_fora": 0,
     "created_at": "2026-06-25T13:21:12.565Z"
   },
@@ -1841,445 +1932,18 @@
     "created_at": "2026-06-25T13:21:12.565Z"
   },
   {
-    "jogo_id": 46,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 52,
+    "jogo_id": 47,
     "jogador_nome": "Aline",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 52,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 52,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 52,
-    "jogador_nome": "Sidney",
     "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 52,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 3,
     "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
+    "created_at": "2026-06-29T14:16:39.751Z"
   },
   {
-    "jogo_id": 52,
+    "jogo_id": 47,
     "jogador_nome": "Daniel",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 58,
-    "jogador_nome": "Aline",
-    "palpite_casa": 0,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 58,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 58,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 58,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 58,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 0,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 58,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 0,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 64,
-    "jogador_nome": "Aline",
     "palpite_casa": 2,
     "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 64,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 3,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 64,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 5,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 64,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 64,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 4,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 64,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 3,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 69,
-    "jogador_nome": "Aline",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 69,
-    "jogador_nome": "Matheus",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 69,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 69,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 69,
-    "jogador_nome": "Silvio",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 69,
-    "jogador_nome": "Daniel",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 5,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 5,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 11,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 11,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 18,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 3,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 18,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 23,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 23,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 29,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 0,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 29,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 35,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 35,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 41,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 41,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 48,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 48,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 53,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 53,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 59,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 59,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 65,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 65,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 72,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 3,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 72,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 0,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 6,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 6,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 12,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 12,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 17,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 0,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 17,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 24,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 24,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 1,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 30,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 1,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 30,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 36,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 0,
-    "palpite_fora": 4,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 36,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 1,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 42,
-    "jogador_nome": "Eduardo",
-    "palpite_casa": 0,
-    "palpite_fora": 3,
-    "created_at": "2026-06-25T13:21:12.565Z"
-  },
-  {
-    "jogo_id": 42,
-    "jogador_nome": "Sidney",
-    "palpite_casa": 2,
-    "palpite_fora": 2,
-    "created_at": "2026-06-25T13:21:12.565Z"
+    "created_at": "2026-06-29T14:17:15.751Z"
   },
   {
     "jogo_id": 47,
@@ -2290,10 +1954,290 @@
   },
   {
     "jogo_id": 47,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:16:51.751Z"
+  },
+  {
+    "jogo_id": 47,
     "jogador_nome": "Sidney",
     "palpite_casa": 1,
     "palpite_fora": 2,
     "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 47,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:17:03.751Z"
+  },
+  {
+    "jogo_id": 48,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:15:51.751Z"
+  },
+  {
+    "jogo_id": 48,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:27.751Z"
+  },
+  {
+    "jogo_id": 48,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 48,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:16:03.751Z"
+  },
+  {
+    "jogo_id": 48,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 48,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:16:15.751Z"
+  },
+  {
+    "jogo_id": 49,
+    "jogador_nome": "Aline",
+    "palpite_casa": 5,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 49,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 49,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 49,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 49,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 49,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 50,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 50,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 50,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 50,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 50,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 50,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 51,
+    "jogador_nome": "Aline",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 51,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 51,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 5,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 51,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 51,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 51,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 52,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 52,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 52,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 52,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 52,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 52,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 53,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:15:52.751Z"
+  },
+  {
+    "jogo_id": 53,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:16:28.751Z"
+  },
+  {
+    "jogo_id": 53,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 53,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:04.751Z"
+  },
+  {
+    "jogo_id": 53,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 53,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 4,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:16:16.751Z"
+  },
+  {
+    "jogo_id": 54,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:16:40.751Z"
+  },
+  {
+    "jogo_id": 54,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:17:16.751Z"
   },
   {
     "jogo_id": 54,
@@ -2304,10 +2248,248 @@
   },
   {
     "jogo_id": 54,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:16:52.751Z"
+  },
+  {
+    "jogo_id": 54,
     "jogador_nome": "Sidney",
     "palpite_casa": 1,
     "palpite_fora": 0,
     "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 54,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:17:04.751Z"
+  },
+  {
+    "jogo_id": 55,
+    "jogador_nome": "Aline",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 55,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 55,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 55,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 55,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 55,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 56,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 56,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 56,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 56,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 56,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 56,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 57,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 57,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 57,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 57,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 57,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 57,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 4,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 58,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 58,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 58,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 58,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 58,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 58,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 59,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:15:53.751Z"
+  },
+  {
+    "jogo_id": 59,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:29.751Z"
+  },
+  {
+    "jogo_id": 59,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 59,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:05.751Z"
+  },
+  {
+    "jogo_id": 59,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 59,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:16:17.751Z"
+  },
+  {
+    "jogo_id": 60,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 4,
+    "created_at": "2026-06-29T14:16:41.751Z"
+  },
+  {
+    "jogo_id": 60,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:17:17.751Z"
   },
   {
     "jogo_id": 60,
@@ -2318,10 +2500,248 @@
   },
   {
     "jogo_id": 60,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 4,
+    "created_at": "2026-06-29T14:16:53.751Z"
+  },
+  {
+    "jogo_id": 60,
     "jogador_nome": "Sidney",
     "palpite_casa": 0,
     "palpite_fora": 3,
     "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 60,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 5,
+    "created_at": "2026-06-29T14:17:05.751Z"
+  },
+  {
+    "jogo_id": 61,
+    "jogador_nome": "Aline",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 61,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 61,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 4,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 61,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 61,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 61,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 62,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 62,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 62,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 62,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 62,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 62,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 63,
+    "jogador_nome": "Aline",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 63,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 63,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 63,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 63,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 63,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 64,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 64,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 64,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 5,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 64,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 64,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 64,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 4,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 65,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:15:54.751Z"
+  },
+  {
+    "jogo_id": 65,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:16:30.751Z"
+  },
+  {
+    "jogo_id": 65,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 65,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:06.751Z"
+  },
+  {
+    "jogo_id": 65,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 65,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:18.751Z"
+  },
+  {
+    "jogo_id": 66,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:16:42.751Z"
+  },
+  {
+    "jogo_id": 66,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:17:18.751Z"
   },
   {
     "jogo_id": 66,
@@ -2332,10 +2752,206 @@
   },
   {
     "jogo_id": 66,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:16:54.751Z"
+  },
+  {
+    "jogo_id": 66,
     "jogador_nome": "Sidney",
     "palpite_casa": 1,
     "palpite_fora": 1,
     "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 66,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:17:06.751Z"
+  },
+  {
+    "jogo_id": 67,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 67,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 67,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 67,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 67,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 67,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 68,
+    "jogador_nome": "Aline",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 68,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 68,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 68,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 1,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 68,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 68,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 69,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 69,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 69,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 69,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 69,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 69,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 70,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 70,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 70,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 70,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 70,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 1,
+    "palpite_fora": 2,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 70,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 1,
+    "palpite_fora": 3,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 71,
+    "jogador_nome": "Aline",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:16:43.751Z"
+  },
+  {
+    "jogo_id": 71,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:17:19.751Z"
   },
   {
     "jogo_id": 71,
@@ -2346,9 +2962,65 @@
   },
   {
     "jogo_id": 71,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 0,
+    "palpite_fora": 4,
+    "created_at": "2026-06-29T14:16:55.751Z"
+  },
+  {
+    "jogo_id": 71,
     "jogador_nome": "Sidney",
     "palpite_casa": 1,
     "palpite_fora": 2,
     "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 71,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 0,
+    "palpite_fora": 3,
+    "created_at": "2026-06-29T14:17:07.751Z"
+  },
+  {
+    "jogo_id": 72,
+    "jogador_nome": "Aline",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:15:55.751Z"
+  },
+  {
+    "jogo_id": 72,
+    "jogador_nome": "Daniel",
+    "palpite_casa": 2,
+    "palpite_fora": 1,
+    "created_at": "2026-06-29T14:16:31.751Z"
+  },
+  {
+    "jogo_id": 72,
+    "jogador_nome": "Eduardo",
+    "palpite_casa": 3,
+    "palpite_fora": 1,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 72,
+    "jogador_nome": "Matheus",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-29T14:16:07.751Z"
+  },
+  {
+    "jogo_id": 72,
+    "jogador_nome": "Sidney",
+    "palpite_casa": 2,
+    "palpite_fora": 0,
+    "created_at": "2026-06-25T13:21:12.565Z"
+  },
+  {
+    "jogo_id": 72,
+    "jogador_nome": "Silvio",
+    "palpite_casa": 2,
+    "palpite_fora": 2,
+    "created_at": "2026-06-29T14:16:19.751Z"
   }
 ]
