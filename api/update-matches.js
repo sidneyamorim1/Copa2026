@@ -110,27 +110,49 @@ export default async function handler(req, res) {
       const homeTranslated = nameTranslation[match.team1] || match.team1;
       const awayTranslated = nameTranslation[match.team2] || match.team2;
 
-      // Busca no banco um jogo com esses dois times
-      // O Supabase tem .ilike() para ignorar maiúsculas/minúsculas
-      const { data: jogos, error } = await supabase
-        .from('jogos')
-        .select('id, time_casa, time_fora')
-        .ilike('time_casa', homeTranslated)
-        .ilike('time_fora', awayTranslated);
-
-      if (error) {
-        console.error('Erro ao buscar jogo:', error);
-        continue;
+      let vencedorPenaltis = null;
+      if (goalsHome === goalsAway && (match.score.p || match.score.ps)) {
+        const penScore = match.score.p || match.score.ps;
+        vencedorPenaltis = penScore[0] > penScore[1] ? 'casa' : 'fora';
       }
 
-      if (jogos && jogos.length > 0) {
+      let dbMatch = null;
+      if (match.num) {
+        // Busca diretamente pelo ID para evitar erros de tradução e inversão de times no mata-mata
+        const { data: jogoById, error: errById } = await supabase
+          .from('jogos')
+          .select('id, time_casa, time_fora')
+          .eq('id', match.num)
+          .maybeSingle();
+        
+        if (errById) {
+          console.error(`Erro ao buscar jogo por ID ${match.num}:`, errById);
+        } else {
+          dbMatch = jogoById;
+        }
+      } else {
+        // Busca por times para a fase de grupos (onde match.num não existe no JSON da API)
+        const { data: jogos, error: errByName } = await supabase
+          .from('jogos')
+          .select('id, time_casa, time_fora')
+          .ilike('time_casa', homeTranslated)
+          .ilike('time_fora', awayTranslated);
+        
+        if (errByName) {
+          console.error('Erro ao buscar jogo por nome:', errByName);
+        } else if (jogos && jogos.length > 0) {
+          dbMatch = jogos[0];
+        }
+      }
+
+      if (dbMatch) {
         // Encontrou o jogo! Vamos gravar o placar oficial nele
-        const dbMatch = jogos[0];
         const { error: updateError } = await supabase
           .from('jogos')
           .update({
             gols_casa_real: goalsHome,
-            gols_fora_real: goalsAway
+            gols_fora_real: goalsAway,
+            vencedor_penaltis: vencedorPenaltis
           })
           .eq('id', dbMatch.id);
 
@@ -139,10 +161,11 @@ export default async function handler(req, res) {
         } else {
           atualizacoes.push({ 
             id: dbMatch.id, 
-            home: homeTranslated, 
-            away: awayTranslated, 
+            home: dbMatch.time_casa, 
+            away: dbMatch.time_fora, 
             gols_casa: goalsHome, 
-            gols_fora: goalsAway 
+            gols_fora: goalsAway,
+            vencedor_penaltis: vencedorPenaltis
           });
         }
       }

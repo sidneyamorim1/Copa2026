@@ -150,9 +150,10 @@ async function updateKnockout() {
         golsCasaReal = apiMatch.score.ft[0];
         golsForaReal = apiMatch.score.ft[1];
 
-        // Se empatou no mata-mata, verificar disputa por pênaltis
-        if (golsCasaReal === golsForaReal && apiMatch.score.ps) {
-          vencedorPenaltis = apiMatch.score.ps[0] > apiMatch.score.ps[1] ? 'casa' : 'fora';
+        // Se empatou no mata-mata, verificar disputa por pênaltis (pode vir como 'p' ou 'ps')
+        if (golsCasaReal === golsForaReal && (apiMatch.score.p || apiMatch.score.ps)) {
+          const penScore = apiMatch.score.p || apiMatch.score.ps;
+          vencedorPenaltis = penScore[0] > penScore[1] ? 'casa' : 'fora';
         }
       }
 

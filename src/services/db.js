@@ -3,7 +3,7 @@ import seedGames from '../seed.json';
 import seedPalpites from '../palpites_seed.json';
 
 // Versão do seed - incrementar quando os dados mudarem para forçar reload
-const SEED_VERSION = '1005';
+const SEED_VERSION = '1006';
 
 // Chaves do localStorage
 const LOCAL_JOGOS_KEY = 'bolao_jogos_local';

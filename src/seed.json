@@ -737,11 +737,11 @@
     "hora": "17:30",
     "time_casa": "Alemanha",
     "time_fora": "Paraguai",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 1,
+    "gols_fora_real": 1,
     "grupo": "16-avos",
     "fase": "Mata-Mata",
-    "vencedor_penaltis": null
+    "vencedor_penaltis": "fora"
   },
   {
     "id": 75,
@@ -749,11 +749,11 @@
     "hora": "22:00",
     "time_casa": "Holanda",
     "time_fora": "Marrocos",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 1,
+    "gols_fora_real": 1,
     "grupo": "16-avos",
     "fase": "Mata-Mata",
-    "vencedor_penaltis": null
+    "vencedor_penaltis": "fora"
   },
   {
     "id": 76,
@@ -785,8 +785,8 @@
     "hora": "14:00",
     "time_casa": "Costa do Marfim",
     "time_fora": "Noruega",
-    "gols_casa_real": null,
-    "gols_fora_real": null,
+    "gols_casa_real": 1,
+    "gols_fora_real": 2,
     "grupo": "16-avos",
     "fase": "Mata-Mata",
     "vencedor_penaltis": null
@@ -927,7 +927,7 @@
     "id": 90,
     "data": "04/07/2026",
     "hora": "14:00",
-    "time_casa": "Venc. Jogo 73",
+    "time_casa": "Canadá",
     "time_fora": "Venc. Jogo 75",
     "gols_casa_real": null,
     "gols_fora_real": null,
