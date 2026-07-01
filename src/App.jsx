@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { dbService } from './services/db';
 import { isSupabaseConfigured, configSupabaseLocal, authService, getSupabaseClient } from './supabaseClient';
 import LoginScreen from './components/LoginScreen';
@@ -140,6 +140,8 @@ function App() {
   // Comemoração final da copa
   const [forcarComemora, setForcarComemora] = useState(false);
   const [modalComemoraFechado, setModalComemoraFechado] = useState(false);
+  const [audioMutado, setAudioMutado] = useState(false);
+  const audioRef = useRef(null);
   
   // Formulário de palpites
   const [nomeJogador, setNomeJogador] = useState(localStorage.getItem('bolao_nome_jogador') || '');
@@ -857,6 +859,31 @@ function App() {
   const finalJogo = jogos.find(j => j.id === 104);
   const copaFinalizada = !!(finalJogo && finalJogo.gols_casa_real !== null && finalJogo.gols_fora_real !== null);
   const exibirComemora = !!((copaFinalizada || forcarComemora) && !modalComemoraFechado);
+
+  // Controla a música "We Are the Champions" ao abrir/fechar o modal de comemoração
+  useEffect(() => {
+    if (exibirComemora) {
+      if (!audioRef.current) {
+        audioRef.current = new Audio('/we-are-the-Champions.mp3');
+        audioRef.current.loop = true;
+      }
+      
+      audioRef.current.muted = audioMutado;
+
+      if (!audioMutado) {
+        audioRef.current.play().catch(err => {
+          console.warn("Autoplay da música de comemoração foi impedido pelo navegador ou arquivo ausente.", err);
+        });
+      } else {
+        audioRef.current.pause();
+      }
+    } else {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    }
+  }, [exibirComemora, audioMutado]);
 
   // Palpites enviados pelo jogador ativo HOJE (na data selecionada)
   const palpitesHoje = jogoAtivo ? palpites.filter(p => {
@@ -1965,6 +1992,16 @@ function App() {
         <div className="celebration-overlay">
           <Confetes />
           <div className="celebration-container">
+            {/* Controle de Áudio Flutuante */}
+            <button 
+              onClick={() => setAudioMutado(prev => !prev)}
+              className="btn-audio-control"
+              title={audioMutado ? "Tocar música" : "Mutar música"}
+              aria-label="Controle de Áudio"
+            >
+              {audioMutado ? '🔇' : '🔊'}
+            </button>
+
             <div className="celebration-header">
               <h1>🏆 Campeão da Copa 2026! 🏆</h1>
               <p>A Copa do Mundo de 2026 chegou ao fim e nosso bolão tem um vencedor!</p>
