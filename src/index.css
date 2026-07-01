@@ -1051,4 +1051,122 @@ body {
   }
 }
 
+/* Responsividade geral para celulares e telas pequenas */
+@media (max-width: 600px) {
+  /* Margens gerais */
+  .app-container {
+    margin: 12px auto;
+    padding: 0 8px 24px;
+  }
+  
+  /* Diminuir paddings dos painéis no celular */
+  .panel {
+    padding: 16px 12px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+  }
+  
+  /* Cabeçalho de seções */
+  .panel h2 {
+    font-size: 1.15rem;
+  }
+  
+  /* Ajustar cabeçalho do ranking (título e botões) */
+  .ranking-header-container {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 8px;
+    margin-bottom: 12px !important;
+  }
+  
+  /* Diminuir padding e tamanho do texto da tabela de classificação */
+  .ranking-table th, .ranking-table td {
+    padding: 8px 6px;
+    font-size: 0.8rem;
+  }
+  
+  .ranking-table td.pos {
+    width: 32px;
+  }
+  
+  /* Ajustar botões e badges do header principal */
+  .main-header {
+    padding: 20px 12px 24px;
+  }
+  
+  .main-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .main-header p {
+    font-size: 0.82rem;
+  }
+  
+  .header-logo {
+    width: 70px !important;
+    height: 70px !important;
+  }
+  
+  /* Alinhamento dos botões/badges de login e status no cabeçalho */
+  .header-actions {
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-top: 8px !important;
+  }
+  
+  .header-actions > * {
+    margin: 0 !important;
+    width: auto !important;
+  }
+  
+  /* Ajustar grid do calendário no celular */
+  .calendar-grid {
+    gap: 4px;
+  }
+  
+  .cal-weekday {
+    font-size: 0.68rem;
+    padding: 2px 0;
+  }
+  
+  .cal-day {
+    font-size: 0.78rem;
+    border-radius: 6px;
+  }
+  
+  .legend-dot {
+    width: 5px;
+    height: 5px;
+  }
+  
+  /* Ajustes do card de confronto ativo */
+  .match-teams {
+    font-size: 1.15rem;
+  }
+  
+  .score-input {
+    width: 60px;
+    font-size: 1.25rem;
+    padding: 4px;
+  }
+  
+  /* Ajustes dos widgets de resumo no topo */
+  .summary-widget-container {
+    gap: 8px;
+  }
+  
+  .summary-widget {
+    padding: 8px 4px;
+  }
+  
+  .summary-widget .value {
+    font-size: 1.25rem;
+  }
+  
+  .summary-widget .label {
+    font-size: 0.58rem;
+  }
+}
+
+
 

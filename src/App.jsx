@@ -960,7 +960,7 @@ function App() {
           </div>
         </div>
         
-        <div style={{ marginTop: '12px', display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <div className="header-actions" style={{ marginTop: '12px', display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
           {(copaFinalizada || forcarComemora) && (
             <button
               onClick={() => setModalComemoraFechado(false)}
@@ -1314,7 +1314,7 @@ function App() {
 
             {/* Painel Ranking de Usuários */}
             <div className="panel">
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+              <div className="ranking-header-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                 <h2>Ranking do Bolão</h2>
                 <div style={{ display: 'flex', gap: '4px', backgroundColor: 'var(--color-primary-light)', padding: '2px', borderRadius: '6px' }}>
                   <button
