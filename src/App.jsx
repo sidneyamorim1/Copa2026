@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { dbService } from './services/db';
 import { isSupabaseConfigured, configSupabaseLocal, authService, getSupabaseClient } from './supabaseClient';
 import LoginScreen from './components/LoginScreen';
+import logo from './assets/logo.jpg';
 import { resolverNomeParticipante, isNomeParticipanteValido } from './utils/nomeUtils';
 
 // Função para calcular pontos de um palpite
@@ -106,6 +107,15 @@ const Confetes = () => {
   );
 };
 
+const PONTOS_BASE_OITAVAS = {
+  'Aline': 175,
+  'Matheus': 144,
+  'Sidney': 140,
+  'Daniel': 142,
+  'Eduardo': 141,
+  'Silvio': 111
+};
+
 function App() {
   // Dados do banco
   const [jogos, setJogos] = useState([]);
@@ -146,6 +156,7 @@ function App() {
   const [jogoSelecionadoPalpitesAdmin, setJogoSelecionadoPalpitesAdmin] = useState('');
   const [participanteSelecionadoPalpitesAdmin, setParticipanteSelecionadoPalpitesAdmin] = useState('');
   const [tabPalpitesAdmin, setTabPalpitesAdmin] = useState('jogo'); // 'jogo' ou 'participante'
+  const [rankingFase, setRankingFase] = useState('oitavas'); // 'oitavas' ou 'geral'
   
   // Modal de configurações do Supabase
   const [modalConfigAberto, setModalConfigAberto] = useState(false);
@@ -188,11 +199,12 @@ function App() {
       }
       setPerfis(dataPerfis);
       
-      if (dataJogos.length > 0) {
+      const dataJogosOitavas = dataJogos.filter(j => j.id >= 80);
+      if (dataJogosOitavas.length > 0) {
         const hoje = obterDataHoje();
         
         // 1. Tenta achar jogo de HOJE
-        let dataHoje = dataJogos.find(j => j.data === hoje)?.data;
+        let dataHoje = dataJogosOitavas.find(j => j.data === hoje)?.data;
         
         if (dataHoje) {
           setDataSelecionada(dataHoje);
@@ -200,7 +212,7 @@ function App() {
         } else {
           // 2. Não tem jogo hoje — busca a data futura mais próxima
           const hojeDate = parseDateBR(hoje);
-          const datasUnicas = Array.from(new Set(dataJogos.map(j => j.data)));
+          const datasUnicas = Array.from(new Set(dataJogosOitavas.map(j => j.data)));
           
           let diaMaisProximo = null;
           let menorDiff = Infinity;
@@ -219,14 +231,14 @@ function App() {
           }
           
           // Encontra um dia válido se possível
-          const melhorData = dataHoje || diaMaisProximo || (dataJogos.length > 0 ? dataJogos[0].data : '');
+          const melhorData = dataHoje || diaMaisProximo || (dataJogosOitavas.length > 0 ? dataJogosOitavas[0].data : '');
           setDataSelecionada(melhorData);
           setIdxNaData(0);
         }
         
         // Inicializa o jogo do admin e de palpites
-        setJogoSelecionadoAdmin(dataJogos[0].id.toString());
-        setJogoSelecionadoPalpitesAdmin(dataJogos[0].id.toString());
+        setJogoSelecionadoAdmin(dataJogosOitavas[0].id.toString());
+        setJogoSelecionadoPalpitesAdmin(dataJogosOitavas[0].id.toString());
       }
     } catch (e) {
       console.error("Erro ao carregar os dados:", e);
@@ -369,7 +381,7 @@ function App() {
   }, [authChecked, usuario]);
 
   const dataSelecionadaStr = dataSelecionada || '';
-  const jogosDaData = jogos.filter(j => j.data === dataSelecionadaStr);
+  const jogosDaData = jogos.filter(j => j.id >= 80 && j.data === dataSelecionadaStr);
   const jogoAtivo = jogosDaData[idxNaData] || null;
 
   // Atualiza os palpites exibidos nos inputs quando o jogo ativo ou o nome do jogador mudar
@@ -674,8 +686,8 @@ function App() {
   const handleDownloadTemplate = () => {
     let csvContent = "Nome;Time Casa;Gols Casa;Time Fora;Gols Fora\n";
     
-    // Para cada jogo, vamos gerar uma linha de 'Oficial' em branco
-    jogos.forEach(jogo => {
+    // Para cada jogo das oitavas em diante, vamos gerar uma linha de 'Oficial' em branco
+    jogos.filter(j => j.id >= 80).forEach(jogo => {
       csvContent += `Oficial;${jogo.time_casa};;${jogo.time_fora};\n`;
     });
     
@@ -706,6 +718,16 @@ function App() {
     let novoAno = calAno;
     if (novoMes < 0) { novoMes = 11; novoAno--; }
     if (novoMes > 11) { novoMes = 0; novoAno++; }
+    
+    // Bloqueia navegação para Junho de 2026 ou anterior (mês 5 ou menor no ano 2026)
+    if (novoAno < 2026 || (novoAno === 2026 && novoMes < 6)) {
+      return;
+    }
+    // Também bloqueia ir além de Julho de 2026 para manter a experiência focada nos jogos finais
+    if (novoAno > 2026 || (novoAno === 2026 && novoMes > 6)) {
+      return;
+    }
+    
     setCalMes(novoMes);
     setCalAno(novoAno);
   };
@@ -725,8 +747,8 @@ function App() {
     // Dias do mês
     for (let d = 1; d <= diasNoMes; d++) {
       const dataStr = `${String(d).padStart(2, '0')}/${String(calMes + 1).padStart(2, '0')}/${calAno}`;
-      const temJogo = jogos.some(j => j.data === dataStr);
-      const qtdJogos = jogos.filter(j => j.data === dataStr).length;
+      const temJogo = jogos.some(j => j.id >= 80 && j.data === dataStr);
+      const qtdJogos = jogos.filter(j => j.id >= 80 && j.data === dataStr).length;
       const ehHoje = d === hoje.getDate() && calMes === hoje.getMonth() && calAno === hoje.getFullYear();
       const ehSelecionado = dataStr === dataSelecionada;
       cells.push({ dia: d, dataStr, temJogo, qtdJogos, ehHoje, ehSelecionado });
@@ -767,34 +789,49 @@ function App() {
       // Retorna o nome original com a grafia correta (primeira ocorrência)
       return palpites.find(p => p.jogador_nome.toLowerCase() === nomeLower).jogador_nome;
     });
+
+  // Lista filtrada de participantes para o ranking baseado na fase selecionada
+  const participantesUnicosRanking = rankingFase === 'oitavas'
+    ? Object.keys(PONTOS_BASE_OITAVAS)
+    : participantesUnicos;
     
   // 2. Jogos avaliados (que possuem resultado real preenchido)
-  const jogosAvaliadosCount = jogos.filter(j => j.gols_casa_real !== null && j.gols_fora_real !== null).length;
+  const jogosAvaliadosCount = rankingFase === 'oitavas'
+    ? jogos.filter(j => j.id >= 80 && j.gols_casa_real !== null && j.gols_fora_real !== null).length
+    : jogos.filter(j => j.gols_casa_real !== null && j.gols_fora_real !== null).length;
   
-    const ranking = participantesUnicos.map(nome => {
-      let pontos = 0;
-      let acertos = 0; // +5 ou +3
-      let erros = 0; // 0 ou -3
-      
-      const palpitesDoJogador = palpites.filter(p => p.jogador_nome.toLowerCase() === nome.toLowerCase());
-      
-      palpitesDoJogador.forEach(p => {
-        const jogo = jogos.find(j => j.id === p.jogo_id);
-        if (jogo && jogo.gols_casa_real !== null && jogo.gols_fora_real !== null) {
-          const pts = calcularPontos(p.palpite_casa, p.palpite_fora, jogo);
-          pontos += pts;
-          if (pts > 0) {
-            acertos += 1;
-          } else {
-            erros += 1;
-          }
+  const ranking = participantesUnicosRanking.map(nome => {
+    let pontos = 0;
+    let acertos = 0; // +5 ou +3
+    let erros = 0; // 0 ou -3
+    
+    if (rankingFase === 'oitavas') {
+      pontos = PONTOS_BASE_OITAVAS[nome] || 0;
+    }
+    
+    const palpitesDoJogador = palpites.filter(p => p.jogador_nome.toLowerCase() === nome.toLowerCase());
+    
+    palpitesDoJogador.forEach(p => {
+      const jogo = jogos.find(j => j.id === p.jogo_id);
+      if (jogo && jogo.gols_casa_real !== null && jogo.gols_fora_real !== null) {
+        if (rankingFase === 'oitavas' && jogo.id < 80) {
+          return;
         }
-      });
+        
+        const pts = calcularPontos(p.palpite_casa, p.palpite_fora, jogo);
+        pontos += pts;
+        if (pts > 0) {
+          acertos += 1;
+        } else {
+          erros += 1;
+        }
+      }
+    });
 
-      // Busca pontos de bônus do perfil do participante
-      const perfilUser = perfis.find(pf => pf.nome.toLowerCase() === nome.toLowerCase());
-      const bonus = perfilUser ? (perfilUser.pontos_bonus || 0) : 0;
-      pontos += bonus;
+    // Busca pontos de bônus do perfil do participante (apenas para ranking geral, para evitar duplicidade de bônus antigos)
+    const perfilUser = perfis.find(pf => pf.nome.toLowerCase() === nome.toLowerCase());
+    const bonus = (rankingFase === 'geral' && perfilUser) ? (perfilUser.pontos_bonus || 0) : 0;
+    pontos += bonus;
     
     return {
       jogador: nome,
@@ -881,7 +918,7 @@ function App() {
   const datasUnicas = Array.from(new Set(jogos.map(j => j.data)));
   
   // Quantidade de jogos na data selecionada
-  const jogosNaDataCount = jogos.filter(j => j.data === dataSelecionada).length;
+  const jogosNaDataCount = jogos.filter(j => j.id >= 80 && j.data === dataSelecionada).length;
 
   // Gate de autenticação
   if (isSupabaseConfigured()) {
@@ -899,10 +936,29 @@ function App() {
 
   return (
     <div>
-      {/* Header */}
       <header className="main-header">
-        <h1>Bolão Copa 2026</h1>
-        <p>Competição interna entre amigos, sem pagamentos, prêmios ou monetização</p>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+          <img 
+            src={logo} 
+            alt="Logo Missão Hexa" 
+            style={{ 
+              width: '90px', 
+              height: '90px', 
+              borderRadius: '50%', 
+              objectFit: 'cover', 
+              border: '3px solid var(--color-accent)', 
+              boxShadow: 'var(--shadow-md)',
+              transition: 'transform 0.3s ease'
+            }} 
+            className="header-logo"
+            onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
+            onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+          />
+          <div style={{ textAlign: 'center' }}>
+            <h1 style={{ margin: 0 }}>Bolão Copa 2026</h1>
+            <p style={{ margin: '4px auto 0', opacity: 0.9 }}>Competição interna entre amigos, sem pagamentos, prêmios ou monetização</p>
+          </div>
+        </div>
         
         <div style={{ marginTop: '12px', display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
           {(copaFinalizada || forcarComemora) && (
@@ -977,44 +1033,30 @@ function App() {
             <div className="panel">
               <div style={{ display: 'flex', gap: '10px', marginBottom: '16px', alignItems: 'center', justifyContent: 'space-between' }}>
                 <h2 style={{ margin: 0 }}>Calendário</h2>
-                <div style={{ display: 'flex', gap: '8px' }}>
-                  <button 
-                    className="btn-submit" 
-                    style={{ 
-                      padding: '6px 12px', 
-                      margin: 0, 
-                      width: 'auto', 
-                      fontSize: '0.85rem', 
-                      backgroundColor: (!jogoAtivo || jogoAtivo.fase !== 'Mata-Mata') ? 'var(--color-primary)' : 'var(--bg-page)', 
-                      color: (!jogoAtivo || jogoAtivo.fase !== 'Mata-Mata') ? '#fff' : 'var(--text-color)' 
-                    }}
-                    onClick={() => { setDataSelecionada('12/06/2026'); setIdxNaData(0); }}
-                  >
-                    Fase de Grupos
-                  </button>
-                  <button 
-                    className="btn-submit" 
-                    style={{ 
-                      padding: '6px 12px', 
-                      margin: 0, 
-                      width: 'auto', 
-                      fontSize: '0.85rem', 
-                      backgroundColor: (jogoAtivo && jogoAtivo.fase === 'Mata-Mata') ? 'var(--color-primary)' : 'var(--bg-page)', 
-                      color: (jogoAtivo && jogoAtivo.fase === 'Mata-Mata') ? '#fff' : 'var(--text-color)' 
-                    }}
-                    onClick={() => { setDataSelecionada('28/06/2026'); setIdxNaData(0); }}
-                  >
-                    Mata-Mata
-                  </button>
-                </div>
               </div>
               
               <div className="calendar-widget">
                 {/* Cabeçalho do mês */}
-                <div className="calendar-header">
-                  <button className="cal-nav-btn" onClick={() => navegarCalendario(-1)} title="Mês anterior">‹</button>
+                 <div className="calendar-header">
+                  <button 
+                    className="cal-nav-btn" 
+                    onClick={() => navegarCalendario(-1)} 
+                    title="Mês anterior"
+                    disabled={calAno === 2026 && calMes <= 6}
+                    style={(calAno === 2026 && calMes <= 6) ? { opacity: 0.3, cursor: 'not-allowed' } : {}}
+                  >
+                    ‹
+                  </button>
                   <span className="cal-month-label">{nomeMeses[calMes]} {calAno}</span>
-                  <button className="cal-nav-btn" onClick={() => navegarCalendario(1)} title="Próximo mês">›</button>
+                  <button 
+                    className="cal-nav-btn" 
+                    onClick={() => navegarCalendario(1)} 
+                    title="Próximo mês"
+                    disabled={calAno === 2026 && calMes >= 6}
+                    style={(calAno === 2026 && calMes >= 6) ? { opacity: 0.3, cursor: 'not-allowed' } : {}}
+                  >
+                    ›
+                  </button>
                 </div>
                 
                 {/* Dias da semana */}
@@ -1195,7 +1237,7 @@ function App() {
                 </div>
               ) : (
                 <div className="user-palpites-list">
-                  {jogos.filter(j => j.data === dataSelecionada).map(jogo => {
+                  {jogos.filter(j => j.id >= 80 && j.data === dataSelecionada).map(jogo => {
                     const palpite = palpites.find(p => 
                       p.jogo_id === jogo.id && 
                       p.jogador_nome.toLowerCase() === nomeJogador.trim().toLowerCase()
@@ -1224,7 +1266,7 @@ function App() {
               </p>
               
               <div className="user-palpites-list">
-                {jogos.filter(j => j.data === dataSelecionada).map(jogo => {
+                {jogos.filter(j => j.id >= 80 && j.data === dataSelecionada).map(jogo => {
                   const temResultado = jogo.gols_casa_real !== null && jogo.gols_fora_real !== null;
                   
                   return (
@@ -1272,9 +1314,53 @@ function App() {
 
             {/* Painel Ranking de Usuários */}
             <div className="panel">
-              <h2>Usuários com ranking</h2>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                <h2>Ranking do Bolão</h2>
+                <div style={{ display: 'flex', gap: '4px', backgroundColor: 'var(--color-primary-light)', padding: '2px', borderRadius: '6px' }}>
+                  <button
+                    type="button"
+                    style={{
+                      padding: '4px 8px',
+                      fontSize: '0.75rem',
+                      backgroundColor: rankingFase === 'oitavas' ? 'var(--color-primary)' : 'transparent',
+                      color: rankingFase === 'oitavas' ? '#fff' : 'var(--color-dark)',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      fontWeight: '600',
+                      transition: 'all 0.2s ease',
+                      margin: 0,
+                      width: 'auto'
+                    }}
+                    onClick={() => setRankingFase('oitavas')}
+                  >
+                    Oitavas+
+                  </button>
+                  <button
+                    type="button"
+                    style={{
+                      padding: '4px 8px',
+                      fontSize: '0.75rem',
+                      backgroundColor: rankingFase === 'geral' ? 'var(--color-primary)' : 'transparent',
+                      color: rankingFase === 'geral' ? '#fff' : 'var(--color-dark)',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      fontWeight: '600',
+                      transition: 'all 0.2s ease',
+                      margin: 0,
+                      width: 'auto'
+                    }}
+                    onClick={() => setRankingFase('geral')}
+                  >
+                    Geral
+                  </button>
+                </div>
+              </div>
               <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
-                Lista resumida dos participantes, ordenada pelos pontos acumulados.
+                {rankingFase === 'oitavas'
+                  ? 'Ranking a partir de 01/07 (Oitavas e reta final). Pontos base herdados em 30/06.'
+                  : 'Classificação geral considerando todos os jogos da Copa.'}
               </p>
 
               {ranking.length > 0 ? (
@@ -1377,7 +1463,7 @@ function App() {
                           value={jogoSelecionadoPalpitesAdmin}
                           onChange={(e) => setJogoSelecionadoPalpitesAdmin(e.target.value)}
                         >
-                          {jogos.map(j => (
+                          {jogos.filter(j => j.id >= 80).map(j => (
                             <option key={j.id} value={j.id.toString()}>
                               {j.time_casa} x {j.time_fora} - {j.data} às {j.hora ? j.hora.substring(0,5) : 'A definir'}
                             </option>
@@ -1496,7 +1582,7 @@ function App() {
                                 </tr>
                               </thead>
                               <tbody>
-                                {jogos.map(jogo => {
+                                {jogos.filter(jogo => jogo.id >= 80).map(jogo => {
                                   const palpite = palpitesDoJogador.find(p => p.jogo_id === jogo.id);
                                   const temResultado = jogo.gols_casa_real !== null && jogo.gols_fora_real !== null;
                                   let pts = '-';
@@ -1619,8 +1705,8 @@ function App() {
                   </p>
                   <button 
                     onClick={async () => {
-                      if (!window.location.hostname.includes('vercel.app')) {
-                         alert("O robô mora nos servidores da Vercel! Por favor, abra o site online (link verdinho da Vercel) para usar esse botão.");
+                      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                         alert("O robô roda no servidor de produção! Por favor, abra o site online publicado (e não o localhost) para usar esse botão.");
                          return;
                       }
                       try {
@@ -1679,7 +1765,7 @@ function App() {
                         value={jogoSelecionadoAdmin}
                         onChange={(e) => setJogoSelecionadoAdmin(e.target.value)}
                       >
-                        {jogos.map(j => (
+                        {jogos.filter(j => j.id >= 80).map(j => (
                           <option key={j.id} value={j.id.toString()}>
                             {j.time_casa} x {j.time_fora} - {j.data} às {j.hora ? j.hora.substring(0,5) : 'A definir'}
                           </option>
@@ -1732,31 +1818,7 @@ function App() {
                   </form>
                 </div>
 
-                {/* Painel 3: Resultados Oficiais */}
-                <div className="panel">
-                  <h2 style={{fontSize: '1rem', marginBottom: '12px', color: 'var(--color-primary)'}}>
-                    Resultados Oficiais Registrados
-                  </h2>
-                  <div style={{display: 'flex', flexWrap: 'wrap', gap: '8px'}}>
-                    {jogos.filter(j => j.gols_casa_real !== null && j.gols_fora_real !== null).length === 0 ? (
-                      <p style={{fontSize: '0.8rem', color: 'var(--text-muted)'}}>Nenhum resultado oficial registrado ainda.</p>
-                    ) : (
-                      jogos.filter(j => j.gols_casa_real !== null && j.gols_fora_real !== null).map(j => (
-                        <div key={j.id} style={{
-                          padding: '8px 14px',
-                          backgroundColor: 'var(--color-light)',
-                          border: '1px solid var(--border-color)',
-                          borderRadius: '8px',
-                          fontSize: '0.85rem',
-                          minWidth: '180px'
-                        }}>
-                          <strong>{j.time_casa} {j.gols_casa_real} x {j.gols_fora_real} {j.time_fora}</strong>
-                          <div style={{fontSize: '0.72rem', color: 'var(--text-muted)'}}>{j.data} às {j.hora ? j.hora.substring(0,5) : 'A definir'}</div>
-                        </div>
-                      ))
-                    )}
-                  </div>
-                </div>
+
 
                 {/* Painel 4: Gerenciar Bônus de Participantes */}
                 <div className="panel">
@@ -1889,30 +1951,7 @@ function App() {
                       Desconectar Supabase
                     </button>
 
-                    <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '10px', marginTop: '10px' }}>
-                      Se a nuvem estiver faltando jogos, force a sincronização para enviar todos os 72 jogos.
-                    </p>
-                    <button 
-                      type="button" 
-                      className="btn-secondary" 
-                      style={{ width: '100%', borderColor: '#f59e0b', color: '#b45309' }}
-                      onClick={async (e) => {
-                        const btn = e.target;
-                        btn.textContent = 'Sincronizando... aguarde';
-                        btn.disabled = true;
-                        try {
-                          await dbService.forcarSincronizacaoSupabase();
-                          alert('Supabase atualizado com sucesso (72 jogos e 294 palpites sincronizados)!');
-                          window.location.reload();
-                        } catch (err) {
-                          alert('Erro ao sincronizar: ' + err.message);
-                          btn.textContent = 'Forçar Sincronização (Nuvem)';
-                          btn.disabled = false;
-                        }
-                      }}
-                    >
-                      Forçar Sincronização (Nuvem)
-                    </button>
+
                   </>
                 )}
               </div>

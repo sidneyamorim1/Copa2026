@@ -107,12 +107,22 @@ async function getRanking() {
 
   console.log(`Loaded ${jogos.length} games and ${palpites.length} predictions from ${source}.`);
 
+  const PONTOS_BASE_OITAVAS = {
+    'Aline': 175,
+    'Matheus': 144,
+    'Sidney': 140,
+    'Daniel': 142,
+    'Eduardo': 141,
+    'Silvio': 111
+  };
+
   const participantesUnicos = Array.from(new Set(palpites.map(p => p.jogador_nome.toLowerCase())))
     .map(nomeLower => {
       return palpites.find(p => p.jogador_nome.toLowerCase() === nomeLower).jogador_nome;
     });
 
-  const ranking = participantesUnicos.map(nome => {
+  // 1. Ranking Geral (Histórico)
+  const rankingGeral = participantesUnicos.map(nome => {
     let pontos = 0;
     let acertos = 0;
     let erros = 0;
@@ -143,15 +153,59 @@ async function getRanking() {
     };
   });
 
-  ranking.sort((a, b) => {
+  rankingGeral.sort((a, b) => {
     if (b.pontos !== a.pontos) return b.pontos - a.pontos;
     if (b.acertos !== a.acertos) return b.acertos - a.acertos;
     if (a.erros !== b.erros) return a.erros - b.erros;
     return a.jogador.localeCompare(b.jogador);
   });
 
-  console.log('\n--- RANKING GERAL ---');
-  ranking.forEach((r, idx) => {
+  // 2. Ranking Oitavas em Diante
+  const rankingOitavas = Object.keys(PONTOS_BASE_OITAVAS).map(nome => {
+    let pontos = PONTOS_BASE_OITAVAS[nome] || 0;
+    let acertos = 0;
+    let erros = 0;
+    let qtdPalpites = 0;
+
+    const palpitesDoJogador = palpites.filter(p => p.jogador_nome.toLowerCase() === nome.toLowerCase());
+
+    palpitesDoJogador.forEach(p => {
+      const jogo = jogos.find(j => j.id === p.jogo_id);
+      if (jogo && jogo.id >= 80 && jogo.gols_casa_real !== null && jogo.gols_fora_real !== null) {
+        const pts = calcularPontos(p.palpite_casa, p.palpite_fora, jogo);
+        pontos += pts;
+        qtdPalpites++;
+        if (pts > 0) {
+          acertos += 1;
+        } else {
+          erros += 1;
+        }
+      }
+    });
+
+    return {
+      jogador: nome,
+      pontos,
+      acertos,
+      erros,
+      total_palpites_calculados: qtdPalpites
+    };
+  });
+
+  rankingOitavas.sort((a, b) => {
+    if (b.pontos !== a.pontos) return b.pontos - a.pontos;
+    if (b.acertos !== a.acertos) return b.acertos - a.acertos;
+    if (a.erros !== b.erros) return a.erros - b.erros;
+    return a.jogador.localeCompare(b.jogador);
+  });
+
+  console.log('\n--- RANKING OITAVAS EM DIANTE (NOVA TABELA) ---');
+  rankingOitavas.forEach((r, idx) => {
+    console.log(`${idx + 1}. ${r.jogador}: ${r.pontos} pts (${r.acertos} acertos, ${r.erros} erros, de ${r.total_palpites_calculados} palpites computados nas oitavas+)`);
+  });
+
+  console.log('\n--- RANKING GERAL (HISTÓRICO) ---');
+  rankingGeral.forEach((r, idx) => {
     console.log(`${idx + 1}. ${r.jogador}: ${r.pontos} pts (${r.acertos} acertos, ${r.erros} erros, de ${r.total_palpites_calculados} palpites computados)`);
   });
 }

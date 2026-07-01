@@ -48,12 +48,22 @@ body {
 
 /* Header principal */
 .main-header {
-  background: var(--color-white);
-  color: var(--color-dark);
-  padding: 24px 16px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #063f2b 100%);
+  color: var(--color-white);
+  padding: 32px 16px;
   text-align: center;
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
+  border-bottom: 5px solid var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.main-header .config-trigger-btn {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: var(--color-white);
+}
+
+.main-header .config-trigger-btn:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
 }
 
 .main-header h1 {
