@@ -855,9 +855,9 @@ function App() {
       }
     });
 
-    // Busca pontos de bônus do perfil do participante (apenas para ranking geral, para evitar duplicidade de bônus antigos)
+    // Busca pontos de bônus do perfil do participante para refletir a classificação do painel
     const perfilUser = perfis.find(pf => pf.nome.toLowerCase() === nome.toLowerCase());
-    const bonus = (rankingFase === 'geral' && perfilUser) ? (perfilUser.pontos_bonus || 0) : 0;
+    const bonus = perfilUser ? (perfilUser.pontos_bonus || 0) : 0;
     pontos += bonus;
     
     return {
@@ -1414,6 +1414,37 @@ function App() {
                   ? 'Ranking a partir de 01/07 (Oitavas e reta final). Pontos base herdados em 30/06.'
                   : 'Classificação geral considerando todos os jogos da Copa.'}
               </p>
+
+              {ranking[0] && (
+                <div style={{ 
+                  display: 'flex', 
+                  justifyContent: 'space-between', 
+                  alignItems: 'center', 
+                  gap: '12px', 
+                  padding: '10px 12px', 
+                  borderRadius: '10px', 
+                  marginBottom: '12px',
+                  background: 'linear-gradient(135deg, rgba(5, 150, 105, 0.12), rgba(15, 118, 110, 0.08))',
+                  border: '1px solid rgba(5, 150, 105, 0.25)'
+                }}>
+                  <div>
+                    <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)', fontWeight: 700 }}>
+                      Líder atual
+                    </div>
+                    <div style={{ fontWeight: 800, color: 'var(--color-dark)', fontSize: '1rem' }}>
+                      {ranking[0].jogador}
+                    </div>
+                  </div>
+                  <div style={{ textAlign: 'right' }}>
+                    <div style={{ fontWeight: 800, color: 'var(--color-primary)', fontSize: '1.1rem' }}>
+                      {ranking[0].pontos} pts
+                    </div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                      {ranking[0].acertos} acertos
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {ranking.length > 0 ? (
                 <div className="table-wrapper">
