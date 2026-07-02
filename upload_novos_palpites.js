@@ -90,7 +90,8 @@ async function run() {
             .from('jogos')
             .update({
               gols_casa_real: jogoPlanilha.gols_casa_real,
-              gols_fora_real: jogoPlanilha.gols_fora_real
+              gols_fora_real: jogoPlanilha.gols_fora_real,
+              vencedor_penaltis: jogoPlanilha.vencedor_penaltis ?? jogoDB.vencedor_penaltis ?? null
             })
             .eq('id', jogoDB.id);
             

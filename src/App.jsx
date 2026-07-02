@@ -116,6 +116,17 @@ const PONTOS_BASE_OITAVAS = {
   'Silvio': 111
 };
 
+const DATA_CORTE_OITAVAS = '01/07/2026';
+
+function jogoEhDeApos1oDeJulho(jogo) {
+  if (!jogo?.data) return false;
+  try {
+    return parseDateBR(jogo.data) >= parseDateBR(DATA_CORTE_OITAVAS);
+  } catch (e) {
+    return false;
+  }
+}
+
 function App() {
   // Dados do banco
   const [jogos, setJogos] = useState([]);
@@ -164,6 +175,8 @@ function App() {
   const [modalConfigAberto, setModalConfigAberto] = useState(false);
   const [inputUrl, setInputUrl] = useState(localStorage.getItem('bolao_supabase_url') || '');
   const [inputKey, setInputKey] = useState(localStorage.getItem('bolao_supabase_anon_key') || '');
+  const [bonusSalvandoId, setBonusSalvandoId] = useState(null);
+  const [bonusDrafts, setBonusDrafts] = useState({});
   
   // Carrega jogos e palpites iniciais
   const carregarDados = async () => {
@@ -200,8 +213,11 @@ function App() {
         }
       }
       setPerfis(dataPerfis);
+      setBonusDrafts(
+        Object.fromEntries(dataPerfis.map(p => [p.id, String(p.pontos_bonus ?? 0)]))
+      );
       
-      const dataJogosOitavas = dataJogos.filter(j => j.id >= 80);
+      const dataJogosOitavas = dataJogos.filter(j => jogoEhDeApos1oDeJulho(j));
       if (dataJogosOitavas.length > 0) {
         const hoje = obterDataHoje();
         
@@ -383,7 +399,7 @@ function App() {
   }, [authChecked, usuario]);
 
   const dataSelecionadaStr = dataSelecionada || '';
-  const jogosDaData = jogos.filter(j => j.id >= 80 && j.data === dataSelecionadaStr);
+  const jogosDaData = jogos.filter(j => jogoEhDeApos1oDeJulho(j) && j.data === dataSelecionadaStr);
   const jogoAtivo = jogosDaData[idxNaData] || null;
 
   // Atualiza os palpites exibidos nos inputs quando o jogo ativo ou o nome do jogador mudar
@@ -412,6 +428,7 @@ function App() {
       if (jogo) {
         setAdminGolsCasa(jogo.gols_casa_real !== null ? jogo.gols_casa_real.toString() : '');
         setAdminGolsFora(jogo.gols_fora_real !== null ? jogo.gols_fora_real.toString() : '');
+        setAdminVencedorPenaltis(jogo.vencedor_penaltis || '');
       }
     }
   }, [jogoSelecionadoAdmin, jogos]);
@@ -517,7 +534,8 @@ function App() {
       setJogos(jogos.map(j => j.id === jogoId ? {
         ...j,
         gols_casa_real: null,
-        gols_fora_real: null
+        gols_fora_real: null,
+        vencedor_penaltis: null
       } : j));
     } catch (err) {
       console.error(err);
@@ -529,7 +547,7 @@ function App() {
 
   const handleSalvarBonus = async (perfilId, nomeJogador, novoBonus) => {
     try {
-      setLoading(true);
+      setBonusSalvandoId(perfilId);
       const bonusInt = parseInt(novoBonus, 10) || 0;
       
       if (isSupabaseConfigured()) {
@@ -553,13 +571,17 @@ function App() {
       setPerfis(prev => prev.map(p => 
         p.id === perfilId ? { ...p, pontos_bonus: bonusInt } : p
       ));
+      setBonusDrafts(prev => ({
+        ...prev,
+        [perfilId]: String(bonusInt)
+      }));
       
       alert(`Bônus de ${nomeJogador} atualizado para +${bonusInt} pontos!`);
     } catch (err) {
       console.error(err);
       alert("Erro ao salvar bônus: " + err.message);
     } finally {
-      setLoading(false);
+      setBonusSalvandoId(null);
     }
   };
 
@@ -632,7 +654,8 @@ function App() {
             atualizacoes.push({
               jogoId: jogo.id,
               golsCasa,
-              golsFora
+              golsFora,
+              vencedorPenaltis: jogo.vencedor_penaltis || null
             });
           } else if (isNomeParticipanteValido(nomeNormalizado)) {
             novosPalpites.push({
@@ -659,10 +682,12 @@ function App() {
           
           setJogos(jogos.map(j => {
             if (jogosAtualizadosMap[j.id]) {
+              const atualizacao = jogosAtualizadosMap[j.id];
               return {
                 ...j,
-                gols_casa_real: jogosAtualizadosMap[j.id].golsCasa,
-                gols_fora_real: jogosAtualizadosMap[j.id].golsFora
+                gols_casa_real: atualizacao.golsCasa,
+                gols_fora_real: atualizacao.golsFora,
+                vencedor_penaltis: atualizacao.vencedorPenaltis ?? j.vencedor_penaltis ?? null
               };
             }
             return j;
@@ -689,7 +714,7 @@ function App() {
     let csvContent = "Nome;Time Casa;Gols Casa;Time Fora;Gols Fora\n";
     
     // Para cada jogo das oitavas em diante, vamos gerar uma linha de 'Oficial' em branco
-    jogos.filter(j => j.id >= 80).forEach(jogo => {
+    jogos.filter(j => jogoEhDeApos1oDeJulho(j)).forEach(jogo => {
       csvContent += `Oficial;${jogo.time_casa};;${jogo.time_fora};\n`;
     });
     
@@ -749,8 +774,8 @@ function App() {
     // Dias do mês
     for (let d = 1; d <= diasNoMes; d++) {
       const dataStr = `${String(d).padStart(2, '0')}/${String(calMes + 1).padStart(2, '0')}/${calAno}`;
-      const temJogo = jogos.some(j => j.id >= 80 && j.data === dataStr);
-      const qtdJogos = jogos.filter(j => j.id >= 80 && j.data === dataStr).length;
+      const temJogo = jogos.some(j => jogoEhDeApos1oDeJulho(j) && j.data === dataStr);
+      const qtdJogos = jogos.filter(j => jogoEhDeApos1oDeJulho(j) && j.data === dataStr).length;
       const ehHoje = d === hoje.getDate() && calMes === hoje.getMonth() && calAno === hoje.getFullYear();
       const ehSelecionado = dataStr === dataSelecionada;
       cells.push({ dia: d, dataStr, temJogo, qtdJogos, ehHoje, ehSelecionado });
@@ -799,7 +824,7 @@ function App() {
     
   // 2. Jogos avaliados (que possuem resultado real preenchido)
   const jogosAvaliadosCount = rankingFase === 'oitavas'
-    ? jogos.filter(j => j.id >= 80 && j.gols_casa_real !== null && j.gols_fora_real !== null).length
+    ? jogos.filter(j => jogoEhDeApos1oDeJulho(j) && j.gols_casa_real !== null && j.gols_fora_real !== null).length
     : jogos.filter(j => j.gols_casa_real !== null && j.gols_fora_real !== null).length;
   
   const ranking = participantesUnicosRanking.map(nome => {
@@ -816,7 +841,7 @@ function App() {
     palpitesDoJogador.forEach(p => {
       const jogo = jogos.find(j => j.id === p.jogo_id);
       if (jogo && jogo.gols_casa_real !== null && jogo.gols_fora_real !== null) {
-        if (rankingFase === 'oitavas' && jogo.id < 80) {
+        if (rankingFase === 'oitavas' && !jogoEhDeApos1oDeJulho(jogo)) {
           return;
         }
         
@@ -945,7 +970,7 @@ function App() {
   const datasUnicas = Array.from(new Set(jogos.map(j => j.data)));
   
   // Quantidade de jogos na data selecionada
-  const jogosNaDataCount = jogos.filter(j => j.id >= 80 && j.data === dataSelecionada).length;
+  const jogosNaDataCount = jogos.filter(j => jogoEhDeApos1oDeJulho(j) && j.data === dataSelecionada).length;
 
   // Gate de autenticação
   if (isSupabaseConfigured()) {
@@ -1264,7 +1289,7 @@ function App() {
                 </div>
               ) : (
                 <div className="user-palpites-list">
-                  {jogos.filter(j => j.id >= 80 && j.data === dataSelecionada).map(jogo => {
+                  {jogos.filter(j => jogoEhDeApos1oDeJulho(j) && j.data === dataSelecionada).map(jogo => {
                     const palpite = palpites.find(p => 
                       p.jogo_id === jogo.id && 
                       p.jogador_nome.toLowerCase() === nomeJogador.trim().toLowerCase()
@@ -1293,7 +1318,7 @@ function App() {
               </p>
               
               <div className="user-palpites-list">
-                {jogos.filter(j => j.id >= 80 && j.data === dataSelecionada).map(jogo => {
+                {jogos.filter(j => jogoEhDeApos1oDeJulho(j) && j.data === dataSelecionada).map(jogo => {
                   const temResultado = jogo.gols_casa_real !== null && jogo.gols_fora_real !== null;
                   
                   return (
@@ -1490,7 +1515,7 @@ function App() {
                           value={jogoSelecionadoPalpitesAdmin}
                           onChange={(e) => setJogoSelecionadoPalpitesAdmin(e.target.value)}
                         >
-                          {jogos.filter(j => j.id >= 80).map(j => (
+                          {jogos.filter(j => jogoEhDeApos1oDeJulho(j)).map(j => (
                             <option key={j.id} value={j.id.toString()}>
                               {j.time_casa} x {j.time_fora} - {j.data} às {j.hora ? j.hora.substring(0,5) : 'A definir'}
                             </option>
@@ -1609,7 +1634,7 @@ function App() {
                                 </tr>
                               </thead>
                               <tbody>
-                                {jogos.filter(jogo => jogo.id >= 80).map(jogo => {
+                                {jogos.filter(jogo => jogoEhDeApos1oDeJulho(jogo)).map(jogo => {
                                   const palpite = palpitesDoJogador.find(p => p.jogo_id === jogo.id);
                                   const temResultado = jogo.gols_casa_real !== null && jogo.gols_fora_real !== null;
                                   let pts = '-';
@@ -1792,7 +1817,7 @@ function App() {
                         value={jogoSelecionadoAdmin}
                         onChange={(e) => setJogoSelecionadoAdmin(e.target.value)}
                       >
-                        {jogos.filter(j => j.id >= 80).map(j => (
+                        {jogos.filter(j => jogoEhDeApos1oDeJulho(j)).map(j => (
                           <option key={j.id} value={j.id.toString()}>
                             {j.time_casa} x {j.time_fora} - {j.data} às {j.hora ? j.hora.substring(0,5) : 'A definir'}
                           </option>
@@ -1872,22 +1897,23 @@ function App() {
                                 type="number" 
                                 className="input-control"
                                 style={{ margin: 0, padding: '4px 8px', width: '80px', textAlign: 'center' }}
-                                defaultValue={p.pontos_bonus || 0}
-                                id={`bonus-input-${p.id}`}
+                                value={bonusDrafts[p.id] ?? String(p.pontos_bonus || 0)}
+                                onChange={(e) => setBonusDrafts(prev => ({
+                                  ...prev,
+                                  [p.id]: e.target.value
+                                }))}
                               />
                             </td>
                             <td>
                               <button 
                                 onClick={async () => {
-                                  const inputEl = document.getElementById(`bonus-input-${p.id}`);
-                                  if (inputEl) {
-                                    await handleSalvarBonus(p.id, p.nome, inputEl.value);
-                                  }
+                                  await handleSalvarBonus(p.id, p.nome, bonusDrafts[p.id] ?? String(p.pontos_bonus || 0));
                                 }}
                                 className="btn-submit"
-                                style={{ padding: '6px 12px', margin: 0, width: 'auto', fontSize: '0.8rem' }}
+                                disabled={bonusSalvandoId === p.id}
+                                style={{ padding: '6px 12px', margin: 0, width: 'auto', fontSize: '0.8rem', opacity: bonusSalvandoId === p.id ? 0.7 : 1 }}
                               >
-                                Salvar
+                                {bonusSalvandoId === p.id ? 'Salvando...' : 'Salvar'}
                               </button>
                             </td>
                           </tr>

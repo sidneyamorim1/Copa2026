@@ -56,6 +56,7 @@ export const dbService = {
             time_fora: j.time_fora,
             gols_casa_real: j.gols_casa_real,
             gols_fora_real: j.gols_fora_real,
+            vencedor_penaltis: j.vencedor_penaltis ?? null,
             grupo: j.grupo,
             fase: j.fase || 'Grupos'
           }));
@@ -78,6 +79,7 @@ export const dbService = {
           time_fora: j.time_fora,
           gols_casa_real: j.gols_casa_real,
           gols_fora_real: j.gols_fora_real,
+          vencedor_penaltis: j.vencedor_penaltis ?? null,
           grupo: j.grupo,
           fase: j.fase
         }));
@@ -225,7 +227,8 @@ export const dbService = {
             .from('jogos')
             .update({
               gols_casa_real: upd.golsCasa,
-              gols_fora_real: upd.golsFora
+              gols_fora_real: upd.golsFora,
+              vencedor_penaltis: upd.vencedorPenaltis ?? null
             })
             .eq('id', upd.jogoId)
         );
@@ -250,6 +253,7 @@ export const dbService = {
       if (idx >= 0) {
         jogos[idx].gols_casa_real = upd.golsCasa;
         jogos[idx].gols_fora_real = upd.golsFora;
+        jogos[idx].vencedor_penaltis = upd.vencedorPenaltis ?? null;
       }
     });
     
@@ -341,6 +345,7 @@ export const dbService = {
         time_fora: j.time_fora,
         gols_casa_real: j.gols_casa_real,
         gols_fora_real: j.gols_fora_real,
+        vencedor_penaltis: j.vencedor_penaltis ?? null,
         grupo: j.grupo
       }));
       
